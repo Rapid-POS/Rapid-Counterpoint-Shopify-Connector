@@ -157,33 +157,6 @@ Read-Only. Automatically updated.
 
 ## Items Up 
  
-### [Field] 
- 
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
- 
-**Explanation** 
-
- 
-**Valid Values** 
-
- 
-**Recommendations** 
-
- 
-**Notes** 
-
-  
-**Create and Overwrite (Update) Notes** 
-
- 
-**Change Support Required** 
-
-  
-
----
-
 ### Add Update Items Up 
  
 - **Column Name:** ADD_UPDATE_ITEMS_UP 
@@ -211,3 +184,28 @@ Read-Only. Automatically updated.
 - Change should be made by Rapid staff.
   
 ---
+
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+  
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+  
