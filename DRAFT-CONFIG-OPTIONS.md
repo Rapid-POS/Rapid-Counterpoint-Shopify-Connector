@@ -2,10 +2,9 @@
 
 ## Overall
 
-### ACCOUNT_NAME
+### Account Name
 
 - **Column Name:** `ACCOUNT_NAME`
-- **Data Type:** 
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -20,10 +19,9 @@ Change should be made by Rapid staff.
 
 ---
 
-### IS_ENABLED
+### Enabled
 
 - **Column Name:** `IS_ENABLED`
-- **Data Type:** 
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -38,10 +36,9 @@ Change should be made by Rapid staff.
 
 ---
 
-### API_URL
+### API URL
 
 - **Column Name:** `API_URL`
-- **Data Type:** varchar(255)
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -56,10 +53,9 @@ Change should be made by Rapid staff.
 
 ---
 
-### API_KEY
+### API KEY
 
 - **Column Name:** `API_KEY`
-- **Data Type:** varchar(255)
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -74,10 +70,9 @@ Change should be made by Rapid staff.
 
 ---
 
-### API_PWD
+### Encrypted API Access Token
 
 - **Column Name:** `API_PWD`
-- **Data Type:** varchar(255)
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -92,10 +87,9 @@ Change should be made by Rapid staff.
 
 ---
 
-### LST_SYNC_DT
+### Last Sync Date Time
 
 - **Column Name:** `LST_SYNC_DT`
-- **Data Type:** 
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -110,10 +104,9 @@ Read-Only. Automatically updated.
 
 ---
 
-### APP_VERSION
+### Version
 
 - **Column Name:** `APP_VERSION`
-- **Data Type:** 
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -128,10 +121,9 @@ Read-Only. Automatically updated.
 
 ---
 
-### LST_MAINT_USR_ID
+### Lasy Maintained By
 
 - **Column Name:** `LST_MAINT_USR_ID`
-- **Data Type:** 
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -146,10 +138,9 @@ Read-Only. Automatically updated.
 
 ---
 
-### LST_MAINT_DT
+### Last Maintained
 
 - **Column Name:** `LST_MAINT_DT`
-- **Data Type:** 
 - **Default Type:** Read-Only/Sticky
 - **Default Value:** null
 
@@ -162,4 +153,61 @@ This field will be automatically populated by the connector.
 **Change Support Required**  
 Read-Only. Automatically updated.
 
+---
+
+## Items Up 
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+  
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+  
+
+---
+
+### Add Update Items Up 
+ 
+- **Column Name:** ADD_UPDATE_ITEMS_UP 
+- **Default Type:** Sticky 
+- **Default Value:** Y
+ 
+**Explanation** 
+- Controls whether newly added or updated items in Counterpoint with a Shopify Item Record are synchronized to Shopify as products. 
+ 
+**Valid Values** 
+- **Yes** – Newly added or updated items in Counterpoint with a Shopify Item Record will be created or updated as products in Shopify. 
+- **No** – Newly added or updated items in Counterpoint will not be synchronized to Shopify. 
+ 
+**Recommendations** 
+- Choose **yes**. This should always be set to **yes** to ensure that product data is synchronized to Shopify. 
+- Choosing no will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
+ 
+**Notes** 
+- This setting is typically used by Rapid staff for troubleshooting to temporarily disable item synchronization and should not be adjusted by clients. 
+  
+**Create and Overwrite (Update) Notes** 
+- When set to yes, products on Shopify will be created and updated by the connector.
+  
+**Change Support Required** 
+- Change should be made by Rapid staff.
+  
 ---
