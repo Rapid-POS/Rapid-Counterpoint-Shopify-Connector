@@ -6,7 +6,7 @@
  
 - **Column Name:** `ACCOUNT_NAME` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation**  
 - Identifies the Shopify account and its associated credentials. 
@@ -23,7 +23,7 @@
  
 - **Column Name:** `IS_ENABLED` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation** 
 - Used to temporarily disable the connector while troubleshooting or testing. 
@@ -40,7 +40,7 @@
  
 - **Column Name:** `API_URL` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation** 
 - Identifies the Shopify account and its associated credentials. 
@@ -57,7 +57,7 @@
  
 - **Column Name:** `API_KEY` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation** 
 - Identifies the Shopify account and its associated credentials. 
@@ -74,7 +74,7 @@
  
 - **Column Name:** `API_PWD` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation** 
 - Identifies the Shopify account and its associated credentials. 
@@ -91,7 +91,7 @@
  
 - **Column Name:** `LST_SYNC_DT` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation** 
 - Displays the current connector version and the most recent maintenance information for reference. 
@@ -108,7 +108,7 @@
  
 - **Column Name:** `APP_VERSION` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation** 
 - Displays the current connector version and the most recent maintenance information for reference. 
@@ -125,7 +125,7 @@
  
 - **Column Name:** `LST_MAINT_USR_ID` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation** 
 - Displays the current connector version and the most recent maintenance information for reference. 
@@ -142,7 +142,7 @@
  
 - **Column Name:** `LST_MAINT_DT` 
 - **Default Type:** Read-Only/Sticky 
-- **Default Value:** null 
+- **Default Value:** _null_ 
  
 **Explanation** 
 - Displays the current connector version and the most recent maintenance information for reference. 
@@ -517,7 +517,7 @@
  
 **Valid Values** 
 - **[Null]** – Sends the first barcode listed in the barcode table for the item, regardless of barcode type. 
-- **[Barcode Type]** – Sends the first barcode that matches the selected type. Configuration examples include ITEM, UPC, SKU, or any other type defined in the barcode table in Counterpoint. 
+- **[Barcode Type]** – Sends the first barcode that matches the selected type. Configuration examples include **ITEM**, **UPC**, **SKU**, or any other type defined in the barcode table in Counterpoint. 
  
 **Recommendations** 
 - Select a specific barcode type to ensure a consistent and predictable barcode is sent to Shopify.
@@ -549,153 +549,186 @@
 - Controls how the product handle (URL slug) is generated for products on Shopify. 
  
 **Valid Values** 
-- **[Null]** – Uses the Item Number from Counterpoint as the fallback product handle on Shopify.
-- **[Query]** – Uses the configured query to generate the product handle on Shopify. This might include some combination of multiple fields from Counterpoint such as description and item number or long description and item number.
-- _Query Output Examples:_
-  - website.com/Description-ItemNumber
-  - website.com/LongDescription-ItemNumber
+- **[Null]** – Uses the Item Number from Counterpoint as the fallback product handle on Shopify. 
+- **[Query]** – Uses the configured query to generate the product handle on Shopify. This might include some combination of multiple fields from Counterpoint such as description and item number or long description and item number. 
+- _Query Output Examples:_ 
+  - website.com/Description-ItemNumber 
+  - website.com/LongDescription-ItemNumber 
  
 **Recommendations** 
-
+- Use a **query** that generates customer-friendly, descriptive handles if product URLs are important for SEO or usability. 
+- Otherwise, using the fallback of Item Number provides a simple and consistent default. Based on the **Update Handle** setting, the handle can then be customized on Shopify if a more descriptive value is desired. 
  
 **Notes** 
-
+- The product handle on Shopify is used in the product URL and should be unique and URL-friendly. When using a query, including the Item Number as part of the URL can help ensure the handle remains unique. 
+- Whether the handle is updated after the initial synchronization is controlled by the **Update Handle** configuration setting. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Whether the handle is sent only during product creation or is updated on subsequent syncs is controlled by the **Update Handle** config setting. 
  
 **Change Support Required** 
-
+- Consult Rapid staff. 
+- This query should be written and reviewed by Rapid staff. 
+- If Update Handle is Yes, a full resync is recommended to update handles on Shopify. 
+- If Update Handle is No, this setting applies to newly created Shopify Item Records going forward. 
  
 ---
  
-### [Field] 
+### Update Handle 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `UPDATE_HANDLE` 
+- **Default Type:** No Preference 
+- **Default Value:** N 
  
 **Explanation** 
-
+- Controls whether the product handle (URL slug) on Shopify is updated when the corresponding item in Counterpoint is updated. 
  
 **Valid Values** 
-
+- **Yes** – The product handle on Shopify will be updated based on the Handle Definition Query when the item is updated in Counterpoint. 
+- **No** – The product handle on Shopify will only be set during the initial synchronization and will not be updated on subsequent changes. 
  
 **Recommendations** 
-
+- Choose **yes** if the handle is derived from data in Counterpoint (such as description or naming conventions) and should stay in sync as that data changes. 
+- Choose **no** if handles are edited or managed directly on Shopify, or if maintaining stable URLs is important for SEO and external links. 
  
 **Notes** 
-
+- This setting works in conjunction with the **Handle Definition Query** configuration. Changes to the query or underlying data in Counterpoint will only be reflected on Shopify if this setting is set to Yes. 
  
 **Create and Overwrite (Update) Notes** 
-
+- When set to **Yes**, product handles on Shopify will always be updated (overwritten) by the connector. 
+- When set to **No**, product handles will only be sent to Shopify during product creation. Subsequent syncs will **not** update (overwrite) data on Shopify. 
  
 **Change Support Required** 
-
+- Changing from **Yes → No** can be done by a client. 
+- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to update handles on Shopify. 
  
 ---
  
-### [Field] 
+### Update Html Description 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `UPDATE_HTML_DESCR` 
+- **Default Type:** Recommended 
+- **Default Value:** N 
  
 **Explanation** 
-
+- Controls whether the HTML description on Shopify is updated when the corresponding Shopify Item Record in Counterpoint is updated. 
  
 **Valid Values** 
-
+- **Yes** – The HTML Description field on the Shopify Item Record in Counterpoint will overwrite the product description on Shopify when updated. 
+- **No** – The HTML Description will only be set during the initial synchronization and will not overwrite changes made on Shopify. 
  
 **Recommendations** 
-
+- Choose **no**. It is easier to manage product descriptions directly on Shopify, where a WYSIWYG editor allows for easier formatting and content management without requiring HTML. 
  
 **Notes** 
-
+- The HTML Description field on the Shopify Item Record in Counterpoint allows for plain text or HTML-formatted content to be entered. 
+- This value is sent to Shopify when the product is first synchronized. 
+- When this setting is enabled, any updates to the HTML Description in Counterpoint will overwrite the existing product description on Shopify. 
  
 **Create and Overwrite (Update) Notes** 
-
+- When set to **Yes**, product descriptions on Shopify will always be updated (overwritten) by the connector. 
+- When set to **No**, product descriptions will only be sent to Shopify during product creation. Subsequent syncs will **not** update (overwrite) data on Shopify. 
  
 **Change Support Required** 
-
+- Changing from **Yes → No** can be done by a client. 
+- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to update HTML descriptions on Shopify. 
  
 ---
  
-### [Field] 
+### Item Categories as Product Type 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `ITEM_CATEG_AS_PRODUCT_TYPE` 
+- **Default Type:** No Preference 
+- **Default Value:** N 
  
 **Explanation** 
-
+- Controls whether item categories in Counterpoint are used to populate the product type on Shopify. 
  
 **Valid Values** 
-
+- **Yes** – The item category from Counterpoint will be used as the product type on Shopify. 
+- **No** – The product type on Shopify will not be populated from item categories. 
  
 **Recommendations** 
-
+- Choose **yes** if it is helpful to sync the item category to the product type on Shopify. 
+- Choose **no** if product types are managed directly on Shopify or if item categories in Counterpoint do not reflect how products should be organized on Shopify. 
  
 **Notes** 
-
+- While the item category in Counterpoint is limited to a 10-character code, when this setting is enabled, the connector sends the full description of that code as the product type on Shopify. 
+- The product type on Shopify is used for internal organization, filtering, and reporting. It is not commonly displayed on the customer-facing website. 
  
 **Create and Overwrite (Update) Notes** 
-
+- When set to **Yes**, product type on Shopify will always be updated (overwritten) by the connector. 
+- When set to **No**, product type will **not** update (overwrite) data on Shopify. 
  
 **Change Support Required** 
-
+- Consult Rapid staff. 
+- A full resync is recommended to update product type on Shopify. 
  
 ---
  
-### [Field] 
+### Sub-Categories To Collections 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `SUBCAT_TO_COLLECTIONS` 
+- **Default Type:** Recommended 
+- **Default Value:** N 
  
 **Explanation** 
-
+- Controls whether sub-categories in Counterpoint are used to create or assign collections on Shopify. 
  
 **Valid Values** 
-
+- **Yes** – The sub-category from Counterpoint will be used to create and assign products to collections on Shopify. 
+- **No** – Sub-categories will not be used to create or assign collections on Shopify. 
  
 **Recommendations** 
-
+- Choose **no** if collections are managed directly on Shopify or if sub-categories in Counterpoint do not reflect ecommerce navigation or merchandising needs. 
+- Only choose **yes** if sub-categories in Counterpoint are well-structured and align with how products should be grouped and displayed on Shopify. 
  
 **Notes** 
-
+- The connector sends the description of the code, not the sub-category code. 
+- If the sub-category for an item is changed in Counterpoint, the product will be added to the new collection on Shopify, but it will not be removed from any existing collections. The connector only adds products to collections and does not remove collections. 
  
 **Create and Overwrite (Update) Notes** 
-
+- When set to **Yes**, subcategories will be added on Shopify as collections. Existing collections will not be updated (overwritten) by the connector. 
+- When set to **No**, subcategories will not be added on Shopify as collections. Existing collections will not be updated (overwritten) by the connector. 
  
 **Change Support Required** 
-
+- Changing from **Yes → No** can be done by a client and applies to newly created Shopify Item Records only (existing collections must be manually removed on Shopify). 
+- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to update collections on Shopify. 
  
 ---
  
-### [Field] 
+### Use Item Attributes For Tags 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `USE_ITEM_ATTRIBUTES_AS_TAGS` 
+- **Default Type:** Recommended 
+- **Default Value:** N 
  
 **Explanation** 
-
+- Controls whether all six item attributes in Counterpoint are used to populate product tags on Shopify. 
  
 **Valid Values** 
-
+- **Yes** – All item attribute fields from Counterpoint will be used to populate product tags on Shopify. 
+- **No** – Item attributes will not be used to populate product tags on Shopify. 
  
 **Recommendations** 
-
+- Choose **no**. Most clients do not have consistent attribute data, which can lead to cluttered tags. Managing tags on Shopify or using custom metafields to sync specific item attributes is typically a better approach. 
  
 **Notes** 
-
+- Product tags on Shopify are used for filtering, search, and automated collection rules and are often managed directly on Shopify. 
+- Instead of syncing attributes as tags, many clients prefer to sync specific attributes as metadata using the custom mapping table (a separate configuration option). 
+- Up to six item attribute fields can be defined per item in Counterpoint. When enabled, these are located on the Description tab of the Item Record. Example item attributes include values such as brand or color, and are defined and customized per client. Most clients do not use all six fields. 
+- When this setting is enabled, all populated attribute values will be sent to Shopify as product tags. 
+- The connector sends the description of the attribute value, not the attribute code. 
+- If an attribute value is changed in Counterpoint, a new tag will be added on Shopify, but existing tags will not be removed. The connector only adds tags and does not delete them. 
+- Instead of using attribute fields, some clients choose to populate tags on the Shopify Item Record or directly on Shopify. 
  
 **Create and Overwrite (Update) Notes** 
-
+- When set to **Yes**, item attributes will be added on Shopify as tags. Existing tags will not be updated (overwritten) by the connector. 
+- When set to **No**, item attributes will not be added on Shopify as tags. Existing tags will **not** be updated (overwritten) by the connector. 
  
 **Change Support Required** 
-
+- Changing from **Yes → No** can be done by a client and applies to newly created Shopify Item Records only (existing tags must be manually removed on Shopify). 
+- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to update tags on Shopify. 
  
 ---
  
