@@ -732,6 +732,318 @@
  
 ---
  
+### Tags Item Field 
+ 
+- **Column Name:** ITEM_FIELD_TO_TAGS 
+- **Default Type:** Recommended 
+- **Default Value:** _null_ 
+ 
+**Explanation** 
+- Controls which single field in Counterpoint is used to populate a product tag on Shopify. 
+ 
+**Valid Values** 
+- **[Null]** – No additional tag will be sent from a Counterpoint field. 
+- **[Item Field]** – The selected field from the Item Record in Counterpoint will be sent as a product tag on Shopify. 
+ 
+**Recommendations** 
+- Do not use this setting unless there is a single field in Counterpoint that consistently maps to a meaningful tag on Shopify. In most cases, this can lead to inconsistent or less useful tags, and alternative approaches such as managing tags on Shopify or using custom metafields are preferred. 
+ 
+**Notes** 
+- Only one field can be selected using this setting. 
+- If a field such as a category, profile code, or attribute code is selected, the code value will be sent, not the description. 
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+- Changing from **[Item Field] → [Null]** can be done by a client and applies to newly created Shopify Item Records only (existing tags must be manually removed on Shopify). 
+- Changing from **[Null] → [Item Field]** should be coordinated with Rapid staff. A full resync is recommended to update tags on Shopify. 
+ 
+---
+ 
+### Product Metafield Namespace 
+ 
+- **Column Name:** `PRODUCT_METAFIELD_NAMESPACE` 
+- **Default Type:** Sticky 
+- **Default Value:** Rapid 
+ 
+**Explanation** 
+- Controls the namespace used when creating product metafields on Shopify. 
+ 
+**Valid Values** 
+- **Rapid** – Uses the default namespace for all product metafields created by the connector. 
+- **[Custom Value]** – Uses a custom namespace for product metafields on Shopify; however, using a custom value is not recommended and would need to be quoted separately. 
+ 
+**Recommendations** 
+The standard namespace used by the connector is "**Rapid**" and should not be changed. Using a consistent namespace ensures compatibility and prevents conflicts with other metafields or integrations. 
+ 
+**Notes** 
+- This setting is used in conjunction with custom field mappings from Counterpoint, where item fields are synced as product metafields on Shopify. 
+- Shopify metafields use a combination of namespace (prefix) and key to uniquely identify each field. 
+- The connector uses the namespace as a prefix when creating metafields (e.g., rapid.brand, rapid.color). 
+- Namespaces help organize metafields and prevent naming conflicts with other apps or data. 
+ 
+**Create and Overwrite (Update) Notes** 
+- When the custom mapping table is used to create product metafields on Shopify, those fields will always be updated (overwritten) by the connector. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+## Orders Down 
+ 
+### Add Orders Down 
+ 
+- **Column Name:** `ADD_ORDERS_DOWN` 
+- **Default Type:** Sticky 
+- **Default Value:** Y 
+ 
+**Explanation** 
+- Controls whether orders on Shopify are imported into Counterpoint. 
+ 
+**Valid Values** 
+- **Yes** – Orders on Shopify will be imported into Counterpoint. 
+- **No** – Orders on Shopify will not be imported into Counterpoint. 
+ 
+**Recommendations** 
+- Choose **yes**. This should always be set to yes to ensure that orders are always imported into Counterpoint. 
+- Choosing no will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
+ 
+**Notes** 
+- This setting is typically used by Rapid staff for troubleshooting to temporarily disable order synchronization and should not be adjusted by clients. 
+ 
+**Create and Overwrite (Update) Notes** 
+- When set to **Yes**, orders on Shopify will be imported (created) in Counterpoint by the connector. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Use Shopify Order Number as Ticket # 
+ 
+- **Column Name:** `USE_SHOPIFY_ORDER_NO_AS_TKT_NO` 
+- **Default Type:** Sticky 
+- **Default Value:** Y 
+ 
+**Explanation** 
+- Controls whether the Shopify order number is used as the order number in Counterpoint. 
+ 
+**Valid Values** 
+- **Yes** – The Shopify order number will be used as the Counterpoint order number. 
+- **No** – Counterpoint will use the next available order number based on the Store order number configuration. 
+ 
+**Recommendations** 
+- Choose **yes**. Using the Shopify order number ensures consistency between Shopify and Counterpoint and simplifies order tracking and customer support. 
+ 
+**Notes** 
+- Shopify allows a prefix to be added to order numbers. It is recommended to keep this prefix to four or fewer characters. Otherwise, if the resulting order number is too long, Counterpoint may be unable to process it, which can prevent orders from being imported. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Order Source 
+ 
+- **Column Name:** `ORDER_SOURCE` 
+- **Default Type:** Sticky 
+- **Default Value:** All 
+ 
+**Explanation** 
+- Controls which Shopify sales channels are used when importing orders into Counterpoint. 
+ 
+**Valid Values** 
+- **All** – Orders from all sales channels will be imported into Counterpoint. 
+- **Web** – Only orders from the Online Store sales channel will be imported. 
+- **POS** – Only orders from the Shopify POS sales channel will be imported. 
+ 
+**Recommendations** 
+- This will be set to All to ensure all orders are consistently imported into Counterpoint without additional filtering. 
+- Selecting a more restrictive option (Web or POS) may require additional configuration and testing, which will result in billable services from Rapid. 
+ 
+**Notes** 
+- None 
+ 
+**Create and Overwrite (Update) Notes** 
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Customer Shopify Notes to Document Notes 
+ 
+- **Column Name:** `ORDER_NOTE` 
+- **Default Type:** Common 
+- **Default Value:** Y 
+ 
+**Explanation** 
+- Controls whether customer-entered order notes from Shopify are saved as document notes in Counterpoint. 
+ 
+**Valid Values** 
+- **Yes** – The Shopify order note entered during checkout will be saved as a document note on the order in Counterpoint. 
+- **No** – The Shopify order note will not be saved in Counterpoint. 
+ 
+**Recommendations** 
+- Choose **yes**. This ensures customer-provided notes (such as special instructions) are available in Counterpoint for order review and processing.
+- Chose **no** if customer notes are not needed or are managed separately.
+ 
+**Notes** 
+- Customers can enter notes during checkout on Shopify, which may include special instructions or additional information. 
+- When enabled, these notes are stored in Counterpoint for reference on the order. A Counterpoint user must open the document note to review the content (no notification or pop-up is generated). 
+ 
+**Create and Overwrite (Update) Notes** 
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
+ 
+**Change Support Required** 
+- Change can be made by a client. 
+- Applies to newly imported Shopify orders going forward. 
+ 
+---
+ 
+### Store 
+ 
+- **Column Name:** `STR_ID` 
+- **Default Type:** Sticky 
+- **Default Value:** 201 
+ 
+**Explanation** 
+- Controls which store in Counterpoint is assigned to orders imported from Shopify. 
+ 
+**Valid Values** 
+- **[Store ID]** – The selected store in Counterpoint will be assigned to all imported Shopify orders. 
+ 
+**Recommendations** 
+- This will be set to store **201** to ensure consistency amongst clients. Rapid staff are trained to recognize store 201 as the designated Shopify store. 
+- Choosing a different store number will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
+ 
+**Notes** 
+- It is important to use a dedicated store for Shopify orders to support accurate tracking and reporting. Orders can still be reviewed and fulfilled from other stores in Counterpoint as needed. 
+- Store 201 is the default store created by the installer for Shopify orders in Counterpoint. 
+- This store will be used for Shopify orders and will be saved as the store number in the order header. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
 ### [Field] 
  
 - **Column Name:** 
@@ -886,4 +1198,69 @@
 **Change Support Required** 
 
  
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
