@@ -159,7 +159,7 @@
  
 ### Add Update Items Up 
  
-- **Column Name:** ADD_UPDATE_ITEMS_UP 
+- **Column Name:** `ADD_UPDATE_ITEMS_UP` 
 - **Default Type:** Sticky 
 - **Default Value:** Y 
  
@@ -187,7 +187,7 @@
  
 ### Copy From Applies to Shopify Items 
  
-- **Column Name:** ENABLE_COPY_FROM 
+- **Column Name:** `ENABLE_COPY_FROM` 
 - **Default Type:** No Preference 
 - **Default Value:** N 
  
@@ -217,7 +217,7 @@
  
 ### Default Product Status 
  
-- **Column Name:** DEFAULT_PRODUCT_STATUS 
+- **Column Name:** `DEFAULT_PRODUCT_STATUS` 
 - **Default Type:** Recommended 
 - **Default Value:** Draft 
  
@@ -247,7 +247,7 @@
  
 ### Delete Item Type 
  
-- **Column Name:** DELETE_ITEM_TYPE 
+- **Column Name:** `DELETE_ITEM_TYPE` 
 - **Default Type:** Recommended 
 - **Default Value:** Archive 
  
@@ -277,7 +277,7 @@
  
 ### Product Title Field 
  
-- **Column Name:** UPDATE_TITLE_FIELD 
+- **Column Name:** `UPDATE_TITLE_FIELD` 
 - **Default Type:** No Preference 
 - **Default Value:** DESCR 
  
@@ -313,7 +313,7 @@
  
 ### Update Title 
  
-- **Column Name:** UPDATE_TITLE 
+- **Column Name:** `UPDATE_TITLE` 
 - **Default Type:** Recommended 
 - **Default Value:** N 
  
@@ -342,6 +342,233 @@
  
 ---
  
+### Product Inventory Qty 
+ 
+- **Column Name:** `ITEM_QTY_METH`
+- **Default Type:** Recommended 
+- **Default Value:** Item Qty Available 
+ 
+**Explanation** 
+- Controls which inventory quantity field in Counterpoint is used to populate product inventory levels on Shopify. 
+ 
+**Valid Values** 
+- **Item Qty Available** – Uses the available quantity in Counterpoint, which reflects stock available for sale. 
+- **Item Qty on Hand** – Uses the on-hand quantity in Counterpoint, which reflects total physical stock without accounting for commitments (such as unposted tickets), allocations or reservations. 
+ 
+**Recommendations** 
+- Choose **Item Qty Available**. This ensures that inventory levels on Shopify reflect what is actually available for sale. It accounts for unposted tickets and other committed inventory, helping prevent overselling on Shopify. 
+ 
+**Notes** 
+- None 
+ 
+**Create and Overwrite (Update) Notes** 
+- Quantity on Shopify will always be updated (overwritten) by the connector. 
+ 
+**Change Support Required** 
+- Consult Rapid staff. 
+- A full resync is recommended to update inventory levels on Shopify. 
+ 
+---
+ 
+### Hide Out of Stock Inventory 
+ 
+- **Column Name:** `HIDE_OUT_OF_STOCK_INVENTORY` 
+- **Default Type:** Common 
+- **Default Value:** N 
+ 
+**Explanation** 
+- Controls whether products on Shopify are hidden when their inventory quantity reaches zero. 
+ 
+**Valid Values** 
+- **Yes** – Products with zero inventory will be hidden on Shopify and will not be visible to customers. 
+- **No** – Products with zero inventory will remain visible on Shopify but will be shown as out of stock. 
+ 
+**Recommendations** 
+- Choosing **no** keeps out-of-stock products visible. It allows customers to see that the product is carried, even if it is currently unavailable. This helps maintain product visibility and supports searchability and SEO. 
+- However, if your products are not typically replenished once they are sold out, choosing **yes** may be preferred to avoid displaying unavailable products. 
+ 
+**Notes** 
+- This functionality works by removing the product from the **Online Sales Channel** on Shopify, which hides it from the customer-facing website. 
+- This setting only applies to items where the item type in Counterpoint is **Inventory** and the **Continue Selling Out of Stock** option in the Shopify Item Record is not enabled. 
+ 
+**Create and Overwrite (Update) Notes** 
+- When set to **Yes**, product visibility on Shopify will be updated (overwritten) by the connector. 
+- When set to **No**, product visibility on Shopify will not be updated (overwritten) by the connector. 
+ 
+**Change Support Required** 
+- Consult Rapid staff. 
+- A full resync is recommended to update product visibility on Shopify. 
+ 
+---
+ 
+### Product Price 
+ 
+- **Column Name:** `ITEM_PRC_METH` 
+- **Default Type:** Common 
+- **Default Value:** Price-1 
+ 
+**Explanation** 
+- Controls which price in Counterpoint is used to populate the product price on Shopify. 
+ 
+**Valid Values** 
+- **Price-1** – Uses Price-1 as the product price on Shopify. 
+- **Price-2** – Uses Price-2 as the product price on Shopify. 
+- **Price-3** – Uses Price-3 as the product price on Shopify. 
+- **Price-4** – Uses Price-4 as the product price on Shopify. 
+- **Price-5** – Uses Price-5 as the product price on Shopify. 
+- **Price-6** – Uses Price-6 as the product price on Shopify. 
+- **Regular Price** – Uses Regular Price as the product price on Shopify. 
+- **Calculated Price** – Uses the calculated price in Counterpoint based on a limited set of price rules (see documentation for more details). 
+ 
+**Recommendations** 
+- Typically **Price-1** is the standard selling price in Counterpoint. Use alternative price levels only if they are specifically configured for selling online. 
+ 
+**Notes** 
+- If the selected price level is blank for an item, the connector will use Price-1 as a fallback. 
+- Price-4, Price-5, and Price-6 are only available in Counterpoint for clients with an Advanced Pricing subscription from NCR Counterpoint. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Price on Shopify will always be updated (overwritten) by the connector. 
+ 
+**Change Support Required** 
+- Consult Rapid staff. 
+- A full resync is recommended to update pricing on Shopify. 
+ 
+---
+ 
+### Product Compare At Price 
+ 
+- **Column Name:** `ITEM_COMPARE_AT_PRC_METH` 
+- **Default Type:** No Preference 
+- **Default Value:** Price-1 
+ 
+**Explanation** 
+- Controls which price in Counterpoint is used to populate the product "Compare At" price on Shopify. 
+ 
+**Valid Values** 
+- **Price-1** – Uses Price-1 as the product compare at price on Shopify. 
+- **Price-2** – Uses Price-2 as the product compare at price on Shopify. 
+- **Price-3** – Uses Price-3 as the product compare at price on Shopify. 
+- **Price-4** – Uses Price-4 as the product compare at price on Shopify. 
+- **Price-5** – Uses Price-5 as the product compare at price on Shopify. 
+- **Price-6** – Uses Price-6 as the product compare at price on Shopify. 
+- **Regular Price** – Uses Regular Price as the product compare at price on Shopify. 
+- **Calculated Price** – Uses the calculated price in Counterpoint based on a limited set of price rules (see documentation for more details). 
+ 
+**Recommendations** 
+- To omit the Compare At Price, **select the same price field** used for the product price. Shopify will ignore the value when both prices are equal. 
+- To display a Compare At Price, **select a price that is typically higher** than the product price. 
+ 
+**Notes** 
+- The Compare At Price on Shopify is typically used to display a higher “original” price alongside a lower selling price. 
+- Shopify requires the Compare At Price to be greater than the product price. If a value equal to or lower than the product price is sent, Shopify will ignore it. 
+- If the selected price level is blank for an item, the connector will use Price-1 as a fallback. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Compare At Price on Shopify will always be updated (overwritten) by the connector. 
+ 
+**Change Support Required** 
+- Consult Rapid staff. 
+- A full resync is recommended to update pricing on Shopify. 
+ 
+---
+ 
+### Product Vendor Default 
+ 
+- **Column Name:** `PRODUCT_VENDOR_DEFAULT` 
+- **Default Type:** No Preference 
+- **Default Value:** Primary Vendor Name 
+ 
+**Explanation** 
+- Controls the fallback vendor assigned to products on Shopify when the Product Vendor field on the Shopify Item Record in Counterpoint is blank. 
+ 
+**Valid Values** 
+- **Primary Vendor Name** – Uses the primary vendor from the Item Record in Counterpoint as the product vendor on Shopify (only when the Product Vendor field on the Shopify Item Record is blank).
+- **None** – No value is sent to Shopify. Shopify will default the vendor to the store name.
+ 
+**Recommendations** 
+- Choose **Primary Vendor Name** if sending product vendor values from Counterpoint is helpful for organization or reporting in Shopify. 
+- Choose **None** if you plan to regularly populate the Product Vendor field on the Shopify Item Record, or if you prefer Shopify to default the vendor to the store name. 
+ 
+**Notes** 
+- The Product Vendor field on the Shopify Item Record always takes priority over this (fallback) setting. This setting is only used when the Product Vendor field is left blank. 
+- The product vendor on Shopify is typically not displayed on the customer-facing website and is most often used for internal organization and filtering within Shopify. 
+- _Special Note:_ 
+  - The Product Vendor field on the Shopify Item Record can be populated with any value and does not need to match a vendor in Counterpoint. 
+  - Some clients use this field to store alternate values such as brand names instead of vendor names. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Product Vendor on Shopify will always be updated (overwritten) by the connector.
+ 
+**Change Support Required** 
+- Consult Rapid staff. 
+- A full resync is recommended to update product vendor values on Shopify. 
+ 
+---
+ 
+### Filter Item Barcode by ID 
+ 
+- **Column Name:** `BARCODE_ID_FILTER` 
+- **Default Type:** No Preference 
+- **Default Value:** _null_ 
+ 
+**Explanation** 
+- Controls which barcode from Counterpoint is selected and sent to Shopify based on barcode type. 
+ 
+**Valid Values** 
+- **[Null]** – Sends the first barcode listed in the barcode table for the item, regardless of barcode type. 
+- **[Barcode Type]** – Sends the first barcode that matches the selected type. Configuration examples include ITEM, UPC, SKU, or any other type defined in the barcode table in Counterpoint. 
+ 
+**Recommendations** 
+- Select a specific barcode type to ensure a consistent and predictable barcode is sent to Shopify.
+- Counterpoint allows only one barcode with a type of **ITEM** per item, making it the most consistent and predictable option. Using ITEM ensures the same barcode is always sent to Shopify.
+- If multiple barcodes exist for other types (such as UPC), it may be difficult to control which barcode is listed first in Counterpoint and therefore which one is sent to Shopify.
+- If many items do not have a barcode defined with a type of ITEM, consider using another type or leaving this value as Null so that at least the first available barcode is sent to Shopify.
+ 
+**Notes** 
+- Items in Counterpoint can have multiple barcodes, each optionally assigned a type. 
+- When a specific barcode type is selected, the connector will send the first barcode that matches that type. 
+- When set to Null, the connector will send the first available barcode regardless of type. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Barcode on Shopify will always be updated (overwritten) by the connector. 
+ 
+**Change Support Required** 
+- Consult Rapid staff. 
+- A full resync is recommended to update barcodes on Shopify. 
+ 
+---
+ 
+### Handle Definition Query 
+ 
+- **Column Name:** `HANDLE_DEFINITION_QUERY` 
+- **Default Type:** No Preference 
+- **Default Value:** _null_ 
+ 
+**Explanation** 
+- Controls how the product handle (URL slug) is generated for products on Shopify. 
+ 
+**Valid Values** 
+- **[Null]** – Uses the Item Number from Counterpoint as the fallback product handle on Shopify.
+- **[Query]** – Uses the configured query to generate the product handle on Shopify. This might include some combination of multiple fields from Counterpoint such as description and item number or long description and item number.
+- _Query Output Examples:_
+  - website.com/Description-ItemNumber
+  - website.com/LongDescription-ItemNumber
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
 ### [Field] 
  
 - **Column Name:** 
@@ -366,3 +593,264 @@
 **Change Support Required** 
 
  
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+---
+ 
+### [Field] 
+ 
+- **Column Name:** 
+- **Default Type:** 
+- **Default Value:** 
+ 
+**Explanation** 
+
+ 
+**Valid Values** 
+
+ 
+**Recommendations** 
+
+ 
+**Notes** 
+
+ 
+**Create and Overwrite (Update) Notes** 
+
+ 
+**Change Support Required** 
+
+ 
+
