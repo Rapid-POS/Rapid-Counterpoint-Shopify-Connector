@@ -1,4 +1,66 @@
 # DRAFT Shopify Connector Configuration 
+
+## Table of Contents 
+ 
+- [Overall](#overall) 
+  - [Account Name](#account-name) 
+  - [Enabled](#enabled) 
+  - [API URL](#api-url) 
+  - [API KEY](#api-key) 
+  - [Encrypted API Access Token](#encrypted-api-access-token) 
+  - [Last Sync Date Time](#last-sync-date-time) 
+  - [Version](#version) 
+  - [Last Maintained By](#last-maintained-by) 
+  - [Last Maintained](#last-maintained) 
+ 
+- [Items Up](#items-up) 
+  - [Add Update Items Up](#add-update-items-up) 
+  - [Copy From Applies to Shopify Items](#copy-from-applies-to-shopify-items) 
+  - [Default Product Status](#default-product-status) 
+  - [Delete Item Type](#delete-item-type) 
+  - [Product Title Field](#product-title-field) 
+  - [Update Title](#update-title) 
+  - [Product Inventory Qty](#product-inventory-qty) 
+  - [Hide Out of Stock Inventory](#hide-out-of-stock-inventory) 
+  - [Product Price](#product-price) 
+  - [Product Compare At Price](#product-compare-at-price) 
+  - [Product Vendor Default](#product-vendor-default) 
+  - [Filter Item Barcode by ID](#filter-item-barcode-by-id) 
+  - [Handle Definition Query](#handle-definition-query) 
+  - [Update Handle](#update-handle) 
+  - [Update Html Description](#update-html-description) 
+  - [Item Categories as Product Type](#item-categories-as-product-type) 
+  - [Sub-Categories To Collections](#sub-categories-to-collections) 
+  - [Use Item Attributes For Tags](#use-item-attributes-for-tags) 
+  - [Tags Item Field](#tags-item-field) 
+  - [Product Metafield Namespace](#product-metafield-namespace) 
+ 
+- [Orders Down](#orders-down) 
+  - [Add Orders Down](#add-orders-down) 
+  - [Use Shopify Order Number as Ticket #](#use-shopify-order-number-as-ticket-) 
+  - [Order Source](#order-source) 
+  - [Customer Shopify Notes to Document Notes](#customer-shopify-notes-to-document-notes) 
+  - [Store](#store) 
+  - [Station](#station) 
+  - [Drawer](#drawer) 
+  - [User](#user) 
+  - [Shipping Misc Chrg #](#shipping-misc-chrg-) 
+  - [Pay Code](#pay-code) 
+  - [Order Line Item Description Column](#order-line-item-description-column) 
+  - [Match by Item #](#match-by-item-) 
+  - [Match by Barcode](#match-by-barcode) 
+  - [Interim Item #](#interim-item-) 
+ 
+- [Orders Up](#orders-up) 
+  - [Update Orders Up](#update-orders-up) 
+  - [Add Refunds Up](#add-refunds-up) 
+  - [Add Cancelled Orders Up](#add-cancelled-orders-up) 
+ 
+- [Customers Down](#customers-down) 
+  - [Workgroup](#workgroup) 
+  - [Phone Format](#phone-format) 
+  - [Capitalize Customer Fields](#capitalize-customer-fields) 
+  - [Order Billing Address Overrides Customer Address](#order-billing-address-overrides-customer-address) 
  
 ## Overall 
  
@@ -121,7 +183,7 @@
  
 ---
  
-### Lasy Maintained By 
+### Last Maintained By 
  
 - **Column Name:** `LST_MAINT_USR_ID` 
 - **Default Type:** Read-Only/Sticky 
