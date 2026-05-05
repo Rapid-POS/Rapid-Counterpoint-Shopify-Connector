@@ -940,327 +940,541 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 ---
  
-### [Field] 
+### Station 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `STA_ID` 
+- **Default Type:** Sticky 
+- **Default Value:** 201-01 
  
 **Explanation** 
-
+- Controls which station in Counterpoint is assigned to orders imported from Shopify. 
  
 **Valid Values** 
-
+- **[Station ID]** – The selected station in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendations** 
-
+- This will be set to station **201-01** to ensure consistency amongst clients. Rapid staff are trained to recognize station 201-01 as the designated Shopify station. 
+- Choosing a different station number will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
-
+- It is important to use a dedicated station for Shopify orders to support accurate tracking and reporting. Orders can still be reviewed and fulfilled from other stores and stations in Counterpoint as needed. 
+- Station 201-01 is the default station created by the installer for Shopify orders in Counterpoint. 
+- This station will be used for Shopify orders and will be saved as the station number in the order header. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change should be made by Rapid staff. 
  
 ---
  
-### [Field] 
+### Drawer 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** DRW_ID 
+- **Default Type:** Sticky 
+- **Default Value:** 201-01 
  
 **Explanation** 
-
+- Controls which drawer in Counterpoint is assigned to orders imported from Shopify. 
  
 **Valid Values** 
-
+- **[Drawer ID]** – The selected drawer in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendations** 
-
+- This will be set to drawer **201-01** to ensure consistency amongst clients. Rapid staff are trained to recognize drawer 201-01 as the designated Shopify drawer. 
+- Choosing a different drawer number will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
-
+- It is important to use a dedicated drawer for Shopify orders to support accurate tracking and reporting. Orders can still be reviewed and fulfilled from other stores, stations, and drawers in Counterpoint as needed. 
+- Drawer 201-01 is the default drawer created by the installer for Shopify orders in Counterpoint. 
+- This drawer will be used for Shopify orders and will be saved as the drawer number in the order header. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change should be made by Rapid staff. 
  
 ---
  
-### [Field] 
+### User 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `USR_ID` 
+- **Default Type:** Sticky 
+- **Default Value:** EC_SHOPIFY 
  
 **Explanation** 
-
+- Controls which user in Counterpoint is assigned to orders imported from Shopify. 
  
 **Valid Values** 
-
+- **[User ID]** – The selected user in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendations** 
-
+- This will be set to user **EC_SHOPIFY** to ensure consistency amongst clients. Rapid staff are trained to recognize user EC_SHOPIFY as the designated Shopify user. 
+- Choosing a different user will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
-
+- It is important to use a dedicated user for Shopify orders to support accurate tracking and reporting. The EC_SHOPIFY user cannot login to Touchscreen. Orders must be reviewed and fulfilled by actual users in Counterpoint. 
+- User EC_SHOPIFY is the default user created by the installer for Shopify orders in Counterpoint. 
+- This user will be assigned to Shopify orders and recorded as the user who created the order in the order header. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do not update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change should be made by Rapid staff. 
  
 ---
  
-### [Field] 
+### Shipping Misc Chrg # 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `MISC_CHRG_NO_FOR_SHIPPING` 
+- **Default Type:** Common 
+- **Default Value:** 4 
  
 **Explanation** 
-
+- Controls which miscellaneous charge in Counterpoint is used to record shipping charges from Shopify orders. 
  
 **Valid Values** 
-
+- **[Misc Charge #]** – The selected miscellaneous charge number will be used to record shipping charges on imported Shopify orders. 
  
 **Recommendations** 
-
+- **Misc Charge 4** is typically configured as the shipping charge and is the most common setup. Alternative miscellaneous charge numbers (1, 2, 3, or 5) may be used if preferred. 
  
 **Notes** 
-
+- Shipping charges calculated by Shopify will be imported into Counterpoint as a miscellaneous charge on the order. 
+- To ensure shipping charges import correctly, the selected miscellaneous charge must be configured in all of the following locations in Counterpoint: 
+  - System > Quick Setup > Point of Sale Tab > Misc Charges 
+  - Setup > POS > Point of Sale Control > Misc Charges > Misc Charge 
+  - Setup > POS > Stores > Shopify Store > Misc Charges Tab > Misc Chg 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do not update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change should be made by Rapid staff. 
  
 ---
  
-### [Field] 
+### Pay Code 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `PAYCOD_ID` 
+- **Default Type:** Sticky 
+- **Default Value:** EC_SHOPIFY 
  
 **Explanation** 
-
+- Controls which pay code in Counterpoint is assigned to orders imported from Shopify. 
  
 **Valid Values** 
-
+- **[Pay Code ID]** – The selected pay code in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendations** 
-
+- This will be set to pay code **EC_SHOPIFY** to ensure consistency amongst clients. Rapid staff are trained to recognize pay code EC_SHOPIFY as the designated Shopify pay code. 
+- Choosing a different pay code will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
-
+- It is important to use a dedicated pay code for Shopify orders to support accurate tracking and reporting. 
+- EC_SHOPIFY is the default pay code, created by the installer for Shopify orders in Counterpoint. 
+- This pay code will be assigned to Shopify orders and recorded in the order header to indicate payment was collected on Shopify, representing the “paid on Shopify” tender. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change should be made by Rapid staff. 
  
 ---
  
-### [Field] 
+### Order Line Item Description Column 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `ORDER_LINE_ITEM_DESCR_COLUMN` 
+- **Default Type:** Common 
+- **Default Value:** _null_ 
  
 **Explanation** 
-
+- Controls which field is used for the line item description on orders imported into Counterpoint. 
  
 **Valid Values** 
-
+- **[Null]** – Uses the product title from Shopify as the line item description on imported orders. 
+- **DESCR** – Uses the Description field from Counterpoint as the line item description. 
+- **LONG_DESCR** – Uses the Long Description field from Counterpoint as the line item description. 
  
 **Recommendations** 
-
+- **DESCR** is the recommended option, as it aligns with the line item description typically used in Counterpoint. This ensures consistency across orders, even if product titles on Shopify differ from item descriptions in Counterpoint. 
+- Use **Null** if it is important for the order in Counterpoint to match exactly what the customer saw during checkout for the Shopify product title. 
  
 **Notes** 
-
+- By default, the product title from Shopify is used as the line item description when orders are imported into Counterpoint. 
+- If the **Update Title** setting is set to **No**, product titles on Shopify may differ from item descriptions in Counterpoint. 
+- When a value is selected, that field from Counterpoint will override the Shopify product title for the line item description on imported orders. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change can be made by a client. 
+- Applies to newly imported Shopify orders going forward. 
+- Consult Rapid staff if guidance is needed on entering the appropriate field name. 
  
 ---
  
-### [Field] 
+### Match by Item # 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `MATCH_BY_ITEM_NO` 
+- **Default Type:** Recommended 
+- **Default Value:** Y 
  
 **Explanation** 
-
+- Controls whether the connector attempts to match Shopify order line items to Counterpoint items using the Shopify SKU mapped to the Counterpoint Item Number when a primary match is not found. 
  
 **Valid Values** 
-
+- **Yes** – If no match is found using the Shopify Variant ID or Shopify Product ID, the connector will attempt to match the Shopify line item SKU to a Counterpoint item number. 
+- **No** – The connector will not attempt an additional match if the primary match fails. 
  
 **Recommendations** 
-
+- Choose **yes**. This provides a fallback matching method and can help prevent unmatched items during order import. 
  
 **Notes** 
-
+- When importing orders, the connector first attempts to match products using the Shopify Variant ID. If no match is found, it then attempts to match using the Shopify Product ID. 
+- This setting acts as a fallback mechanism for improperly configured Shopify products, as the Shopify Variant ID and/or Product ID should normally match to Counterpoint. 
+- If no match is found and this setting is enabled, the connector will then attempt to match the Shopify line item SKU to a Counterpoint item number. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change can be made by a client. 
+- Applies to newly imported Shopify orders going forward. 
  
 ---
  
-### [Field] 
+### Match by Barcode 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `MATCH_BY_BARCOD` 
+- **Default Type:** Recommended 
+- **Default Value:** Y 
  
 **Explanation** 
-
+- Controls whether the connector attempts to match Shopify order line items to Counterpoint items using the Shopify SKU mapped to a barcode in Counterpoint when a primary match is not found. 
  
 **Valid Values** 
-
+- **Yes** – If no match is found using the Shopify Variant ID or Shopify Product ID, the connector will attempt to match the Shopify line item SKU to a barcode in Counterpoint. 
+- **No** – The connector will not attempt an additional match if the primary match fails. 
  
 **Recommendations** 
-
+- Choose **yes**. This provides a fallback matching method and can help prevent unmatched items during order import. 
  
 **Notes** 
-
+- When importing orders, the connector first attempts to match products using the Shopify Variant ID. If no match is found, it then attempts to match using the Shopify Product ID. 
+- This setting acts as a fallback mechanism for improperly configured Shopify products, as the Shopify Variant ID and/or Product ID should normally match to Counterpoint. 
+- If no match is found and this setting is enabled, the connector will then attempt to match the Shopify line item SKU to a barcode in Counterpoint. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change can be made by a client. 
+- Applies to newly imported Shopify orders going forward. 
  
 ---
  
-### [Field] 
+### Interim Item # 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `INTERIM_ITEM_NO` 
+- **Default Type:** Sticky
+- **Default Value:** SHOPIFY_INTERIM_ITEM 
  
 **Explanation** 
-
+- Controls which Counterpoint item number is used as a placeholder when a Shopify order line item cannot be matched to an item in Counterpoint. 
  
 **Valid Values** 
-
+- **[Item Number]** – The selected item number will be used as a placeholder for any unmatched line items. 
+- **Null** – Orders with unmatched items will not be imported into Counterpoint. 
  
 **Recommendations** 
-
+- Use the default value of **SHOPIFY_INTERIM_ITEM** to allow orders with unmatched items to be imported and reviewed. 
+- Only use **null** if unmatched items should prevent the order from being imported into Counterpoint. 
  
 **Notes** 
-
+- When an order is downloaded, each line item is checked for a match in Counterpoint. If no match is found, the connector will use this value as the Counterpoint Item Number for that line. 
+- The default value is SHOPIFY_INTERIM_ITEM and should not be changed. 
+- This placeholder item allows the order to be imported, but the order cannot be released until the interim item is replaced with a valid Counterpoint item. 
+- If Import Orders as Tickets is set to Yes, this value must be left null. In that case, orders containing unmatched items will error out and will not be imported into Counterpoint. 
  
 **Create and Overwrite (Update) Notes** 
-
+- Used when importing (creating) orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Support Required** 
-
+- Change should be made by Rapid staff. 
  
 ---
  
-### [Field] 
+## Orders Up
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+### Update Orders Up 
+ 
+- **Column Name:** `UPDATE_ORDERS_UP` 
+- **Default Type:** No Preference 
+- **Default Value:** N 
  
 **Explanation** 
-
+- Controls whether line-level order fulfillment in Counterpoint is pushed up to Shopify. 
  
 **Valid Values** 
-
+- **Yes** – When order lines are released in Counterpoint, the fulfilled quantities will be sent up to Shopify at the line level. Shopify will use this information to mark orders as fulfilled or partially fulfilled. 
+- **No** – Fulfillment quantities will not be sent to Shopify. Orders must be marked as fulfilled manually in Shopify. 
  
 **Recommendations** 
-
+- Choose **yes** to automate fulfillment updates from Counterpoint to Shopify and keep order status automatically aligned between systems. 
+- Choose **no** if fulfillment is managed directly in Shopify or if order edits in Counterpoint are common. 
  
 **Notes** 
-
+- This setting pushes fulfillment from Counterpoint up to Shopify, not the other way around. 
+- When enabled, fulfillment updates in Counterpoint (released tickets) will be reflected in Shopify and may trigger customer notifications (such as fulfillment emails). 
+- Only items that match the original Shopify order can be fulfilled. If an order line is edited in Counterpoint, the updated line will not be reflected in Shopify, and the order must be marked as fulfilled manually in Shopify. 
+- If an order contains the SHOPIFY_INTERIM_ITEM, the line must be replaced with the correct item before fulfillment can be sent to Shopify. Because this requires editing the line, the update will not be reflected in Shopify. 
  
 **Create and Overwrite (Update) Notes** 
-
+- When set to **Yes**, orders on Shopify will be updated (overwritten) by the connector to have lines marked as fulfilled when the specific requirements are met. 
+- When set to **No**, Counterpoint will **not** update (overwrite) fulfillment data on Shopify. 
  
 **Change Support Required** 
-
+- Change can be made by a client. 
+- Applies to newly released lines in Counterpoint going forward. 
  
 ---
  
-### [Field] 
+### Add Refunds Up 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `ADD_REFUNDS_UP` 
+- **Default Type:** No Preference 
+- **Default Value:** N 
  
 **Explanation** 
-
+- Controls whether validated returns in Counterpoint are pushed up to Shopify to automatically process refunds on the original order. 
  
 **Valid Values** 
-
+- **Yes** – Validated returns in Counterpoint using the EC_SHOPIFY pay code will be sent up to Shopify. Shopify will automatically process the refund to the original payment method used on the order. 
+- **No** – Validated returns will not be sent to Shopify. Refunds must be processed either directly in Shopify or manually in Counterpoint. 
  
 **Recommendations** 
-
+- Choose **yes** if validated returns are processed in Counterpoint and refunds should be automatically applied to the original Shopify order and payment method. 
+- Choose **no** if refunds are managed directly in Shopify or if returns are commonly processed using alternate payment methods (such as cash or in-store credit). 
  
 **Notes** 
-
+- This setting pushes order refunds from Counterpoint up to Shopify, not the other way around. 
+- This applies to validated returns created from both posted and unposted tickets in Counterpoint. 
+- Only lines that match the original Shopify order can be updated from Counterpoint. If an order line is edited in Counterpoint, the returned line will not be reflected in Shopify, and the line must be marked as returned manually in Shopify. 
+- When enabled, only returns using the EC_SHOPIFY pay code will be sent to Shopify. These will be applied to the original form of payment (such as the customer’s credit card). 
+- Returns processed with other pay codes (such as CASH) are assumed to be handled outside of Shopify and will not trigger a refund to the original payment method. 
  
 **Create and Overwrite (Update) Notes** 
-
+- When set to **Yes**, orders on Shopify will be updated (overwritten) by the connector to have lines marked as refunded when the specific requirements are met. 
+- When set to **No**, Counterpoint will not update (overwrite) refund data on Shopify. 
  
 **Change Support Required** 
-
+- Change can be made by a client. 
+- Applies to newly refunded lines in Counterpoint going forward. 
+- Consult Rapid staff if guidance is needed on accessing the EC_SHOPIFY pay code in Touchscreen. 
  
 ---
  
-### [Field] 
+### Add Cancelled Orders Up 
  
-- **Column Name:** 
-- **Default Type:** 
-- **Default Value:** 
+- **Column Name:** `ADD_CANCELLED_ORDERS_UP` 
+- **Default Type:** No Preference 
+- **Default Value:** N 
  
 **Explanation** 
-
+- Controls whether order cancellations in Counterpoint are pushed up to Shopify to automatically cancel the original order and process a refund. 
  
 **Valid Values** 
-
+- **Yes** – Order cancellations in Counterpoint that use the EC_SHOPIFY pay code for the associated refund will be sent up to Shopify. Shopify will automatically process the refund to the original payment method used on the order. 
+- **No** – Order cancellations in Counterpoint will not be sent to Shopify. Orders must be cancelled manually in Shopify. 
  
 **Recommendations** 
-
+- Choose **yes** if order cancellations are processed in Counterpoint and refunds should be automatically applied to the original Shopify order and payment method. 
+- Choose **no** if cancelled orders and their associated refunds are managed directly in Shopify or if returns are commonly processed using alternate payment methods (such as cash or in-store credit). 
  
 **Notes** 
-
+- This setting pushes order cancellations from Counterpoint up to Shopify, not the other way around.
+- When enabled, cancelling an order in Counterpoint will update the order status in Shopify.
+- Only orders that match the original Shopify order can be cancelled from Counterpoint. If an order is edited in Counterpoint, the order cancellation will not be reflected in Shopify, and the order must be marked as cancelled manually in Shopify.
+- When enabled, only refunds using the EC_SHOPIFY pay code from canceled orders in Counterpoint will be sent to Shopify. These will be applied to the original order and returned to the original form of payment (such as the customer’s credit card). 
+- Refunds processed with other pay codes (such as CASH) are assumed to be handled outside of Shopify and will not trigger a refund to the original payment method.
  
 **Create and Overwrite (Update) Notes** 
-
+- When set to **Yes**, orders on Shopify will be updated (overwritten) by the connector as cancelled when the specific requirements are met. 
+- When set to **No**, Counterpoint will not update (overwrite) cancellation data on Shopify. 
  
 **Change Support Required** 
-
+- Change can be made by a client. 
+- Applies to newly canceled orders in Counterpoint going forward. 
+- Consult Rapid staff if guidance is needed on accessing the EC_SHOPIFY pay code in Touchscreen. 
  
+---
+ 
+## Customers Down 
+ 
+### Workgroup 
+ 
+- **Column Name:** `WRKGRP_ID` 
+- **Default Type:** Sticky 
+- **Default Value:** 201 
+ 
+**Explanation** 
+-  Controls which workgroup in Counterpoint is used by the connector when processing Shopify orders and creating customers. 
+ 
+**Valid Values** 
+- **[Workgroup ID]** – The selected workgroup in Counterpoint will be used by the connector for processing Shopify orders. 
+ 
+**Recommendations** 
+-  This will be set to workgroup **201** to ensure consistency amongst clients. Rapid staff are trained to recognize workgroup 201 as the designated Shopify workgroup. 
+-  Choosing a different workgroup number will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
+ 
+**Notes** 
+- Workgroups in Counterpoint are used to control defaults, permissions, and system behavior, including how users interact with data and workflows. 
+- Workgroup 201 is the default workgroup created by the installer for importing Shopify orders and customers into Counterpoint. 
+- The workgroup determines which template customer is used when creating new customers from Shopify orders. For Shopify orders, this will be the **EC_SHOPIFY** template customer. When a new customer is created in Counterpoint from a Shopify order, the default values from the EC_SHOPIFY template customer will be applied. 
+- Using a separate workgroup (and therefore template customer) allows ecommerce customers to have different default values than customers created in-store. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Used when importing (creating) orders and customers in Counterpoint. 
+- Does not update (overwrite) existing orders or customers. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Phone Format 
+ 
+- **Column Name:** `PHONE_FORMAT` 
+- **Default Type:** No Preference 
+- **Default Value:** ###-###-#### 
+ 
+**Explanation** 
+-  Controls the format (mask) used when importing Shopify customer phone numbers into Counterpoint. 
+ 
+**Valid Values** 
+- **###-###-####** – Formats phone numbers with hyphens (e.g., 123-456-7890). 
+- **(###) ###-####** – Formats phone numbers with parentheses and a space (e.g., (123) 456-7890). 
+- **##########** – Formats phone numbers as a continuous string of digits (e.g., 1234567890). 
+- **[Custom 10-digit mask]** – Any custom format may be used, as long as it contains exactly 10 digits represented by #. 
+ 
+**Recommendations** 
+-  Most clients choose ###-###-#### and this is also the default. However, any preferred format may be selected. 
+ 
+**Notes** 
+- This setting determines how customer phone numbers from Shopify are formatted when saved in Counterpoint. 
+- The selected format will be applied consistently to all imported customer phone numbers. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Used when creating customers in Counterpoint. 
+- Does **not** update (overwrite) existing customer phone numbers in Counterpoint. 
+ 
+**Change Support Required** 
+- Change can be made by a client. 
+- Applies to newly imported customer phone numbers in Counterpoint going forward. 
+ 
+---
+ 
+### Capitalize Customer Fields 
+ 
+- **Column Name:** `CAPITALIZE_CUSTOMER_FIELDS` 
+- **Default Type:** No Preference 
+- **Default Value:** N 
+ 
+**Explanation** 
+-  Controls whether customer name and address fields are capitalized when imported into Counterpoint. 
+ 
+**Valid Values** 
+- **Yes** – Customer fields will be converted to uppercase when imported into Counterpoint. 
+- **No** – Customer fields will be imported as they appear in Shopify. 
+ 
+**Recommendations** 
+-  Most clients choose **no** as they prefer to preserve the original formatting from Shopify. 
+-  Some clients choose **yes** when uppercase formatting is important for consistency. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Notes** 
+- This setting applies to customer fields such as name, address, city, and state. 
+- When enabled, all applicable fields will be converted to uppercase. 
+ 
+**Create and Overwrite (Update) Notes** 
+- Used when creating customers in Counterpoint. 
+- Does not update (overwrite) existing customer addresses in Counterpoint. 
+ 
+**Change Support Required** 
+- Change can be made by a client. 
+- Applies to newly imported/created customers in Counterpoint going forward. 
+ 
+---
+ 
+### Order Billing Address Overrides Customer Address 
+ 
+- **Column Name:** `BILLING_ADDR_OVERRIDES_CUSTOMER_ADDR` 
+- **Default Type:** Common 
+- **Default Value:** N 
+ 
+**Explanation** 
+-  Controls whether the billing address from a Shopify order overrides the address on an existing customer record in Counterpoint. 
+ 
+**Valid Values** 
+- **Yes** – The billing address from Shopify will overwrite the existing customer address in Counterpoint when a match is found. 
+- **No** – The existing customer address in Counterpoint will not be overwritten. 
+ 
+**Recommendations** 
+-  Most clients choose **no** as they prefer to preserve the existing customer address in Counterpoint to avoid unintended changes from individual orders. 
+-  Choose **yes** if the billing address from each Shopify order should be treated as the most current and authoritative customer address. 
+ 
+**Notes** 
+- Shopify maintains multiple address types, including default, billing, and shipping addresses. 
+- If no matching customer is found in Counterpoint, a new customer record is always created using the billing address from Shopify. 
+- If a matching customer is found, a new customer record will not be created. Instead, the order will be added to the existing customer record. 
+- When this setting is enabled, the billing address from Shopify will overwrite the existing customer’s address in Counterpoint. 
+- When disabled, the billing address will remain on the order only and will not affect the customer record. 
+ 
+**Create and Overwrite (Update) Notes** 
+- When set to **Yes**, existing customer addresses in Counterpoint will be updated (overwritten) by the connector. 
+- When set to **No**, existing customer addresses in Counterpoint will not be updated (overwritten). 
+ 
+**Change Support Required** 
+- Change can be made by a client. 
+- Applies to newly imported Shopify orders with customer updates going forward. 
+ 
+---
+ 
+### Field 
+ 
+- **Column Name:**  
+- **Default Type:**  
+- **Default Value:**  
+ 
+**Explanation** 
+-  
+ 
+**Valid Values** 
+- 
+ 
+**Recommendations** 
+-  
+ 
+**Notes** 
+- 
+ 
+**Create and Overwrite (Update) Notes** 
+- 
+ 
+**Change Support Required** 
+- 
+ 
