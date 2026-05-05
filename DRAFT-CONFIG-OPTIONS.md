@@ -13,7 +13,7 @@
   - [Last Maintained By](#last-maintained-by)
   - [Last Maintained](#last-maintained)
 
-- [Items Up (Counterpoint → Shopify)](#items-up)
+- [Items Up](#items-up)
   - [Add Update Items Up](#add-update-items-up)
   - [Copy From Applies to Shopify Items](#copy-from-applies-to-shopify-items)
   - [Default Product Status](#default-product-status)
@@ -35,7 +35,7 @@
   - [Tags Item Field](#tags-item-field)
   - [Product Metafield Namespace](#product-metafield-namespace)
 
-- [Orders Down (Shopify → Counterpoint)](#orders-down)
+- [Orders Down](#orders-down)
   - [Add Orders Down](#add-orders-down)
   - [Use Shopify Order Number as Ticket #](#use-shopify-order-number-as-ticket-)
   - [Order Source](#order-source)
@@ -51,12 +51,12 @@
   - [Match by Barcode](#match-by-barcode)
   - [Interim Item #](#interim-item-)
 
-- [Orders Up (Counterpoint → Shopify)](#orders-up)
+- [Orders Up](#orders-up)
   - [Update Orders Up](#update-orders-up)
   - [Add Refunds Up](#add-refunds-up)
   - [Add Cancelled Orders Up](#add-cancelled-orders-up)
 
-- [Customers Down (Shopify → Counterpoint)](#customers-down)
+- [Customers Down](#customers-down)
   - [Workgroup](#workgroup)
   - [Phone Format](#phone-format)
   - [Capitalize Customer Fields](#capitalize-customer-fields)
