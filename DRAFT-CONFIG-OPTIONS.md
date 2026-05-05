@@ -1517,6 +1517,279 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Applies to newly imported Shopify orders with customer updates going forward. 
  
 ---
+
+## CRON Job Schedules 
+ 
+### Daily Event Execution Time 
+ 
+- **Column Name:** `DAILY_EVENT_EXEC_TIME` 
+- **Default Type:** Sticky 
+- **Default Value:** 0 6 * * * 
+ 
+**Explanation** 
+- CRON schedule controlling the frequency of the daily event execution. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Order Sync Execution Time 
+ 
+- **Column Name:** `ORDER_SYNC_EXEC_TIME` 
+- **Default Type:** Sticky 
+- **Default Value:** */15 * * * * 
+ 
+**Explanation** 
+- CRON schedule controlling the frequency of order synchronization. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Item Sync Execution Time 
+ 
+- **Column Name:** `ITEM_SYNC_EXEC_TIME` 
+- **Default Type:** Sticky 
+- **Default Value:** */15 * * * * 
+ 
+**Explanation** 
+- CRON schedule controlling the frequency of item synchronization. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Customer Sync Execution Time 
+ 
+- **Column Name:** `CUSTOMER_SYNC_EXEC_TIME` 
+- **Default Type:** Sticky 
+- **Default Value:** */15 * * * * 
+ 
+**Explanation** 
+- CRON schedule controlling the frequency of customer synchronization. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Manual Run Connector Execution Time 
+ 
+- **Column Name:** `RUN_CONNECTOR_EXEC_TIME` 
+- **Default Type:** Sticky 
+- **Default Value:** * * * * * 
+ 
+**Explanation** 
+- CRON schedule controlling how frequently the system checks for the Manual Run Connector action flag. 
+- When the action flag is detected, if the Shopify connector is not currently running, it will execute for all configured Shopify accounts, typically within one minute. If the connector is already running, the system waits for the current execution to complete, then automatically restarts the connector for all configured Shopify accounts. 
+- In both scenarios, the action flag is automatically cleared when execution begins. 
+  
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Manual Run Connector 
+ 
+- **Column Name:** `RUN_CONNECTOR` 
+- **Default Type:** Sticky 
+- **Default Value:** N 
+ 
+**Explanation** 
+- When the **Run Shopify Connector** menu option is selected, this action flag is set. 
+- This flag functions as a one-time execution request and remains enabled until it is processed by the connector. The action flag is automatically cleared when execution begins. 
+- Execution occurs in the background on the server (not on the workstation) to prevent overlapping executions. 
+ 
+**Change Support Required** 
+- This flag is changed to **yes** by clicking the **Run Shopify Connector** button (menu option), and then automatically cleared (set to **no**) when execution begins. 
+ 
+---
+ 
+## Sync Limits 
+ 
+### Orders Down Start Date 
+ 
+- **Column Name:** `ORDERS_DOWN_START_DAT` 
+- **Default Type:** No Preference 
+- **Default Value:** _null_, set during install 
+ 
+**Explanation** 
+- Used to define the earliest date from which Shopify orders will be imported into Counterpoint. 
+- Typically set to the go-live date unless otherwise specified. 
+ 
+**Change Support Required** 
+- Change can be made by a client. 
+ 
+---
+ 
+### Orders Down Lookback Days 
+ 
+- **Column Name:** `ORDERS_DOWN_LOOK_BACK_DAYS` 
+- **Default Type:** Recommended 
+- **Default Value:** -2 
+ 
+**Explanation** 
+- Defines how many days back the connector checks for Shopify orders that have not yet been imported. 
+- Helps ensure orders are synchronized after a power outage or temporary connector interruption. 
+- The **Orders Down Start Date** is always respected as the absolute limit. 
+ 
+**Change Support Required** 
+- Consult Rapid Staff. 
+- Changes to this value will impact log file size and may increase the overall runtime of the connector. 
+ 
+---
+ 
+### Max Number of Items to Sync 
+ 
+- **Column Name:** `MAX_ITEMS_TO_SYNC` 
+- **Default Type:** Sticky 
+- **Default Value:** 500 
+ 
+**Explanation** 
+- Used to optimize connector performance. 
+- Defines the maximum number of items that can be synchronized in a single connector run. 
+- Items with the most recent sync status of 2 will be processed first. 
+  
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+- This setting is specifically configured to optimize the connector’s efficiency and stability. Changing this value may impact connector performance. 
+ 
+---
+ 
+### Max Number of Customers to Sync 
+ 
+- **Column Name:** `MAX_CUSTOMERS_TO_SYNC` 
+- **Default Type:** Sticky 
+- **Default Value:** 250 
+ 
+**Explanation** 
+- Used to optimize connector performance. 
+- Defines the maximum number of customers that can be synchronized in a single connector run. 
+- Customers with the most recent sync status of 2 will be processed first. 
+  
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+- This setting is specifically configured to optimize the connector’s efficiency and stability. Changing this value may impact connector performance. 
+ 
+---
+ 
+## Log Files and Alerts 
+ 
+### Max Number of Log Files to Keep 
+ 
+- **Column Name:** `LOG_MAX_FILES_TO_KEEP` 
+- **Default Type:** Sticky 
+- **Default Value:** 10 
+ 
+**Explanation** 
+- By default, the connector retains 10 log files, each up to 10 MB in size. 
+- This typically provides sufficient historical data for troubleshooting without consuming excessive server storage. 
+- A new log file is created each day. 
+- If extended log history is required, these settings can be adjusted by Rapid staff. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+- Increasing this value will consume additional server storage. Reducing this value will limit the availability of historical data used for troubleshooting and diagnostics. 
+ 
+---
+ 
+### Max Log File Size 
+ 
+- **Column Name:** `LOG_MAX_FILE_SIZE` 
+- **Default Type:** Sticky 
+- **Default Value:** 10000000 
+ 
+**Explanation** 
+- By default, the connector retains log files up to 10 MB in size. 
+- This typically provides sufficient detail for troubleshooting without consuming excessive server storage. 
+- If larger log files are required, this setting can be adjusted by Rapid staff. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+- Increasing this value will consume additional server storage. Reducing this value will limit the availability of historical data used for troubleshooting and diagnostics. 
+ 
+---
+ 
+### Message Group # 
+ 
+- **Column Name:** `MAIL_GRP_ID` 
+- **Default Type:** Sticky 
+- **Default Value:** EC_SHOPIFY 
+ 
+**Explanation** 
+- Defines the Message Group ID (MAIL_GRP_ID) used for Shopify connector alert messages in Counterpoint. 
+- When an error or issue is encountered, alerts are sent to the Counterpoint users associated with this message group. 
+- It is recommended to assign 1–3 users to receive these alerts. 
+- This value must reference a valid Message Group containing the appropriate Counterpoint User IDs. 
+ 
+**Change Support Required** 
+- Change should be made by Rapid staff. 
+ 
+---
+ 
+### Mark Alerts as Read in Message Center After Days 
+ 
+- **Column Name:** `MSG_CENTER_MARK_AS_READ_DAYS` 
+- **Default Type:** Recommended 
+- **Default Value:** 3 
+ 
+**Explanation** 
+- Defines the number of days after which connector alerts are automatically marked as read. 
+- This helps prevent older messages from repeatedly appearing as pop-ups when logging into Counterpoint, reducing workflow interruptions. 
+ 
+**Change Support Required** 
+- Change can be made by a client. 
+ 
+---
+ 
+## Troubleshooting Controls 
+ 
+### Skip All Orders Except 
+ 
+- **Column Name:** `SKIP_ALL_ORDERS_EXCEPT` 
+- **Default Type:** Recommended 
+- **Default Value:** _null_ 
+ 
+**Explanation** 
+- Used by Rapid staff for troubleshooting or testing. 
+- Allows a single specific Shopify order to be imported, regardless of fulfillment status. 
+- The value should be the Shopify Order ID. 
+ 
+**Valid Values** 
+- **0** - Because this value does not match any Shopify Order IDs, setting it to 0 will prevent all orders from importing. 
+- **_Null_** - Leaving this value blank (null) allows all orders to import, based on other configured parameters. 
+- **[Single Shopify Order ID]** - When set to a specific Shopify Order ID, the connector will only attempt to import that order during execution (regardless of fulfillment status). If the order already exists in Rapid POS, it will not be re-imported or updated. 
+  
+**Change Support Required** 
+- This setting should only be modified with a clear understanding of its impact. 
+- Incorrect use can unintentionally block all order imports or restrict processing to a single order. 
+ 
+---
+ 
+### Skip All Items Except 
+ 
+- **Column Name:** `SKIP_ALL_ORDERS_EXCEPT` 
+- **Default Type:** Recommended 
+- **Default Value:** _null_ 
+ 
+**Explanation** 
+- Used by Rapid staff for troubleshooting or testing. 
+- Allows a single specific item from Counterpoint to be synchronized. 
+- The value should be the Counterpoint Item Number. 
+ 
+**Valid Values** 
+- **0** - Because this value does not match any Counterpoint Item Numbers, setting it to 0 will prevent all items from syncing. 
+- **_Null_** - Leaving this value blank (null) allows all Shopify Item Records to sync. 
+- **[Single Counterpoint Item Number]** - When set to a specific Counterpoint Item Number, the connector will only attempt to sync that Shopify Item Record during execution. 
+  
+**Change Support Required** 
+- This setting should only be modified with a clear understanding of its impact. 
+- Incorrect use can unintentionally block all item synchronization or restrict processing to a single item.
+ 
+---
  
 ### Field 
  
