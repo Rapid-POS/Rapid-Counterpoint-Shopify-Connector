@@ -59,7 +59,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 ---
  
-## Full Table of Contents
+## Full List of Configuration Changes
 
 - [Overall](#overall)
   - [Account Name](#account-name)
