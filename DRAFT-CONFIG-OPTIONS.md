@@ -11,7 +11,25 @@
 - [Sync Limits](#sync-limits)
 - [Log Files and Alerts](#log-files-and-alerts)
 - [Troubleshooting Controls](#troubleshooting-controls)
+ 
+---
+ 
+## Using this Document 
+ 
+### Understanding Default Types 
 
+These default types are intended to help identify which settings are broadly recommended, which are dependent on business preference, and which are not intended to be changed by clients. 
+ 
+- **Recommended** – Rapid recommends this value for most clients based on common Shopify and Counterpoint workflows. 
+ 
+- **Common** – A frequently used configuration choice based on common business practices, but not necessarily Rapid’s recommended option for all clients. 
+ 
+- **No Preference** – The best value depends entirely on the client’s business processes and operational preferences. 
+ 
+- **Sticky (Read-Only)** – This value is configured by Rapid during implementation and is not intended to be changed by clients. Alternative configurations are only supported in rare situations and require approval from Rapid (and may require billable services). 
+ 
+---
+ 
 ## Full Table of Contents
 
 - [Overall](#overall)
