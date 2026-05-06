@@ -98,7 +98,7 @@
   - [Skip All Orders Except](#skip-all-orders-except)
   - [Skip All Items Except](#skip-all-items-except)
 
-[↑ Back to Top](#quick-links)
+## [↑ Back to Top](#quick-links)
 
 ---
  
@@ -255,7 +255,7 @@
 **Change Support Required** 
 - Read-Only. Automatically updated. 
 
-[↑ Back to Top](#quick-links)
+## [↑ Back to Top](#quick-links)
 
 ---
  
