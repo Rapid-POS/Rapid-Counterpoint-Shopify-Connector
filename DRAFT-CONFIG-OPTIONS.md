@@ -107,7 +107,7 @@
 ### Account Name 
  
 - **Column Name:** `ACCOUNT_NAME` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation**  
@@ -124,7 +124,7 @@
 ### Enabled 
  
 - **Column Name:** `IS_ENABLED` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation** 
@@ -141,7 +141,7 @@
 ### API URL 
  
 - **Column Name:** `API_URL` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation** 
@@ -158,7 +158,7 @@
 ### API KEY 
  
 - **Column Name:** `API_KEY` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation** 
@@ -175,7 +175,7 @@
 ### Encrypted API Access Token 
  
 - **Column Name:** `API_PWD` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation** 
@@ -192,7 +192,7 @@
 ### Last Sync Date Time 
  
 - **Column Name:** `LST_SYNC_DT` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation** 
@@ -202,14 +202,14 @@
 - This field will be automatically populated by the connector. 
  
 **Change Support Required** 
-- Read-Only. Automatically updated. 
+- Automatically updated. 
  
 ---
  
 ### Version 
  
 - **Column Name:** `APP_VERSION` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation** 
@@ -219,14 +219,14 @@
 - This field will be automatically populated by the connector. 
  
 **Change Support Required** 
-- Read-Only. Automatically updated. 
+- Automatically updated. 
  
 ---
  
 ### Last Maintained By 
  
 - **Column Name:** `LST_MAINT_USR_ID` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation** 
@@ -236,14 +236,14 @@
 - This field will be automatically populated by the connector. 
  
 **Change Support Required** 
-- Read-Only. Automatically updated. 
+- Automatically updated. 
  
 ---
  
 ### Last Maintained 
  
 - **Column Name:** `LST_MAINT_DT` 
-- **Default Type:** Read-Only/Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** _null_ 
  
 **Explanation** 
@@ -253,20 +253,18 @@
 - This field will be automatically populated by the connector. 
  
 **Change Support Required** 
-- Read-Only. Automatically updated. 
+- Automatically updated. 
 
 ### [↑ Back to Top](#quick-links)
 
 ---
-
-## [↑ Back to Top](#quick-links)
  
 ## Items Up 
  
 ### Add Update Items Up 
  
 - **Column Name:** `ADD_UPDATE_ITEMS_UP` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** Y 
  
 **Explanation** 
@@ -870,7 +868,7 @@
 ### Product Metafield Namespace 
  
 - **Column Name:** `PRODUCT_METAFIELD_NAMESPACE` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** Rapid 
  
 **Explanation** 
@@ -895,6 +893,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Change Support Required** 
 - Change should be made by Rapid staff. 
  
+### [↑ Back to Top](#quick-links)
+ 
 ---
  
 ## Orders Down 
@@ -902,7 +902,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Add Orders Down 
  
 - **Column Name:** `ADD_ORDERS_DOWN` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** Y 
  
 **Explanation** 
@@ -930,7 +930,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Use Shopify Order Number as Ticket # 
  
 - **Column Name:** `USE_SHOPIFY_ORDER_NO_AS_TKT_NO` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** Y 
  
 **Explanation** 
@@ -958,7 +958,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Order Source 
  
 - **Column Name:** `ORDER_SOURCE` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** All 
  
 **Explanation** 
@@ -1019,7 +1019,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Store 
  
 - **Column Name:** `STR_ID` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 201 
  
 **Explanation** 
@@ -1049,7 +1049,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Station 
  
 - **Column Name:** `STA_ID` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 201-01 
  
 **Explanation** 
@@ -1079,7 +1079,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Drawer 
  
 - **Column Name:** DRW_ID 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 201-01 
  
 **Explanation** 
@@ -1109,7 +1109,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### User 
  
 - **Column Name:** `USR_ID` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** EC_SHOPIFY 
  
 **Explanation** 
@@ -1170,7 +1170,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Pay Code 
  
 - **Column Name:** `PAYCOD_ID` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** EC_SHOPIFY 
  
 **Explanation** 
@@ -1296,7 +1296,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Interim Item # 
  
 - **Column Name:** `INTERIM_ITEM_NO` 
-- **Default Type:** Sticky
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** SHOPIFY_INTERIM_ITEM 
  
 **Explanation** 
@@ -1322,6 +1322,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change should be made by Rapid staff. 
+ 
+### [↑ Back to Top](#quick-links)
  
 ---
  
@@ -1428,6 +1430,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Applies to newly canceled orders in Counterpoint going forward. 
 - Consult Rapid staff if guidance is needed on accessing the EC_SHOPIFY pay code in Touchscreen. 
  
+### [↑ Back to Top](#quick-links)
+ 
 ---
  
 ## Customers Down 
@@ -1435,7 +1439,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Workgroup 
  
 - **Column Name:** `WRKGRP_ID` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 201 
  
 **Explanation** 
@@ -1558,6 +1562,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Change can be made by a client. 
 - Applies to newly imported Shopify orders with customer updates going forward. 
  
+### [↑ Back to Top](#quick-links)
+ 
 ---
 
 ## CRON Job Schedules 
@@ -1565,7 +1571,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Daily Event Execution Time 
  
 - **Column Name:** `DAILY_EVENT_EXEC_TIME` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 0 6 * * * 
  
 **Explanation** 
@@ -1579,7 +1585,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Order Sync Execution Time 
  
 - **Column Name:** `ORDER_SYNC_EXEC_TIME` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** */15 * * * * 
  
 **Explanation** 
@@ -1593,7 +1599,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Item Sync Execution Time 
  
 - **Column Name:** `ITEM_SYNC_EXEC_TIME` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** */15 * * * * 
  
 **Explanation** 
@@ -1607,7 +1613,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Customer Sync Execution Time 
  
 - **Column Name:** `CUSTOMER_SYNC_EXEC_TIME` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** */15 * * * * 
  
 **Explanation** 
@@ -1621,7 +1627,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Manual Run Connector Execution Time 
  
 - **Column Name:** `RUN_CONNECTOR_EXEC_TIME` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** * * * * * 
  
 **Explanation** 
@@ -1637,7 +1643,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Manual Run Connector 
  
 - **Column Name:** `RUN_CONNECTOR` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** N 
  
 **Explanation** 
@@ -1647,6 +1653,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - This flag is changed to **yes** by clicking the **Run Shopify Connector** button (menu option), and then automatically cleared (set to **no**) when execution begins. 
+ 
+### [↑ Back to Top](#quick-links)
  
 ---
  
@@ -1687,7 +1695,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Max Number of Items to Sync 
  
 - **Column Name:** `MAX_ITEMS_TO_SYNC` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 500 
  
 **Explanation** 
@@ -1704,7 +1712,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Max Number of Customers to Sync 
  
 - **Column Name:** `MAX_CUSTOMERS_TO_SYNC` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 250 
  
 **Explanation** 
@@ -1723,7 +1731,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Max Number of Log Files to Keep 
  
 - **Column Name:** `LOG_MAX_FILES_TO_KEEP` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 10 
  
 **Explanation** 
@@ -1741,7 +1749,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Max Log File Size 
  
 - **Column Name:** `LOG_MAX_FILE_SIZE` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** 10000000 
  
 **Explanation** 
@@ -1758,7 +1766,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Message Group # 
  
 - **Column Name:** `MAIL_GRP_ID` 
-- **Default Type:** Sticky 
+- **Default Type:** Sticky (Read-Only) 
 - **Default Value:** EC_SHOPIFY 
  
 **Explanation** 
@@ -1784,6 +1792,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
+ 
+### [↑ Back to Top](#quick-links)
  
 ---
  
@@ -1830,6 +1840,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Change Support Required** 
 - This setting should only be modified with a clear understanding of its impact. 
 - Incorrect use can unintentionally block all item synchronization or restrict processing to a single item.
+ 
+### [↑ Back to Top](#quick-links)
  
 ---
  
