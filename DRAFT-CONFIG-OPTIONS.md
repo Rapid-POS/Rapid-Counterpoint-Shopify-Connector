@@ -333,7 +333,7 @@ These default types are intended to help identify which settings are broadly rec
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly created items using "Copy From" going forward. 
+- Applies only to newly created items using "Copy From." 
   
 ---
  
@@ -363,7 +363,7 @@ These default types are intended to help identify which settings are broadly rec
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly created Shopify Item Records going forward. 
+- Applies only to newly created Shopify Item Records. 
  
 ---
  
@@ -393,7 +393,7 @@ These default types are intended to help identify which settings are broadly rec
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly deleted Shopify Item Records going forward. 
+- Applies only to newly deleted Shopify Item Records. 
  
 ---
  
@@ -429,7 +429,7 @@ These default types are intended to help identify which settings are broadly rec
 **Change Support Required** 
 - Consult Rapid staff. 
 - If Update Title is Yes, a full resync is recommended to update product titles on Shopify. 
-- If Update Title is No, this setting can be changed by a client and applies to newly created Shopify Item Records going forward. 
+- If Update Title is No, this setting can be changed by a client and applies only to newly created Shopify Item Records. 
  
 ---
  
@@ -692,7 +692,7 @@ These default types are intended to help identify which settings are broadly rec
 - Consult Rapid staff. 
 - This query should be written and reviewed by Rapid staff. 
 - If Update Handle is Yes, a full resync is recommended to update handles on Shopify. 
-- If Update Handle is No, this setting applies to newly created Shopify Item Records going forward. 
+- If Update Handle is No, this setting applies only to newly created Shopify Item Records. 
  
 ---
  
@@ -814,7 +814,7 @@ These default types are intended to help identify which settings are broadly rec
 - When set to **No**, subcategories will not be added on Shopify as collections. Existing collections will not be updated (overwritten) by the connector. 
  
 **Change Support Required** 
-- Changing from **Yes → No** can be done by a client and applies to newly created Shopify Item Records only (existing collections must be manually removed on Shopify). 
+- Changing from **Yes → No** can be done by a client and applies only to newly created Shopify Item Records (existing collections must be manually removed on Shopify). 
 - Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to update collections on Shopify. 
  
 ---
@@ -849,7 +849,7 @@ These default types are intended to help identify which settings are broadly rec
 - When set to **No**, item attributes will not be added on Shopify as tags. Existing tags will **not** be updated (overwritten) by the connector. 
  
 **Change Support Required** 
-- Changing from **Yes → No** can be done by a client and applies to newly created Shopify Item Records only (existing tags must be manually removed on Shopify). 
+- Changing from **Yes → No** can be done by a client and applies only to newly created Shopify Item Records (existing tags must be manually removed on Shopify). 
 - Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to update tags on Shopify. 
  
 ---
@@ -878,7 +878,7 @@ These default types are intended to help identify which settings are broadly rec
 
  
 **Change Support Required** 
-- Changing from **[Item Field] → [Null]** can be done by a client and applies to newly created Shopify Item Records only (existing tags must be manually removed on Shopify). 
+- Changing from **[Item Field] → [Null]** can be done by a client and applies only to newly created Shopify Item Records (existing tags must be manually removed on Shopify). 
 - Changing from **[Null] → [Item Field]** should be coordinated with Rapid staff. A full resync is recommended to update tags on Shopify. 
  
 ---
@@ -1030,7 +1030,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly imported Shopify orders going forward. 
+- Applies only to newly imported Shopify orders. 
  
 ---
  
@@ -1244,7 +1244,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly imported Shopify orders going forward. 
+- Applies only to newly imported Shopify orders. 
 - Consult Rapid staff if guidance is needed on entering the appropriate field name. 
  
 ---
@@ -1276,7 +1276,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly imported Shopify orders going forward. 
+- Applies only to newly imported Shopify orders. 
  
 ---
  
@@ -1307,7 +1307,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly imported Shopify orders going forward. 
+- Applies only to newly imported Shopify orders. 
  
 ---
  
@@ -1376,7 +1376,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly released lines in Counterpoint going forward. 
+- Applies only to newly released lines in Counterpoint. 
  
 ---
  
@@ -1410,7 +1410,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly refunded lines in Counterpoint going forward. 
+- Applies only to newly refunded lines in Counterpoint. 
 - Consult Rapid staff if guidance is needed on accessing the EC_SHOPIFY pay code in Touchscreen. 
  
 ---
@@ -1445,7 +1445,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly canceled orders in Counterpoint going forward. 
+- Applies only to newly canceled orders in Counterpoint. 
 - Consult Rapid staff if guidance is needed on accessing the EC_SHOPIFY pay code in Touchscreen. 
  
 ### [↑ Back to Top](#quick-links)
@@ -1513,7 +1513,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly imported customer phone numbers in Counterpoint going forward. 
+- Applies only to newly imported customer phone numbers in Counterpoint. 
  
 ---
  
@@ -1544,7 +1544,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly imported/created customers in Counterpoint going forward. 
+- Applies only to newly imported/created customers in Counterpoint. 
  
 ---
  
@@ -1578,7 +1578,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Change Support Required** 
 - Change can be made by a client. 
-- Applies to newly imported Shopify orders with customer updates going forward. 
+- Applies only to newly imported Shopify orders with customer updates. 
  
 ### [↑ Back to Top](#quick-links)
  
