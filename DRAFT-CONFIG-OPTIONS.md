@@ -29,7 +29,7 @@ Each configuration setting in this document follows a standardized format to hel
 - The standard value the connector uses during implementation unless otherwise instructed by the client. 
  
 **Default Type** 
-- These default types are intended to help identify when the default setting value is broadly recommended, when it is dependent on preference, and when it is not intended to be changed by clients. 
+- These default types describe whether the **default value** is recommended, preference-based, or intended to remain unchanged. 
   - **Recommended** – The default value is strongly recommended. 
   - **Common** – The default value is commonly used, though not necessarily recommended for all clients. 
   - **No Preference** – The default value should be changed based on the client’s business processes and operational preferences. 
@@ -48,11 +48,7 @@ Each configuration setting in this document follows a standardized format to hel
 - Provides additional context related to the setting. 
 
 **Create/Overwrite (Insert/Update) Behavior** 
-- Explains how the setting behaves during synchronization, particularly whether the setting applies: 
-  - only when records are first created, 
-  - during future updates, 
-  - or during both create and update operations. 
-- This section may also explain whether the setting affects Shopify → Counterpoint synchronization, Counterpoint → Shopify synchronization, or both. 
+- Explains whether the setting applies during record creation, future updates, or both, and identifies the synchronization direction affected by the setting. 
  
 **Change Impact and Support Required** 
 - Explains the operational impact of changing the setting after implementation. 
