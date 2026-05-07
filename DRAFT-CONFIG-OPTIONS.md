@@ -47,7 +47,7 @@ Each configuration setting in this document follows a standardized format to hel
 **Notes** 
 - Provides additional context related to the setting. 
 
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Explains how the setting behaves during synchronization, particularly whether the setting applies: 
   - only when records are first created, 
   - during future updates, 
@@ -158,10 +158,10 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose**  
-- Identifies the Shopify account and its associated credentials. 
+- Identifies the Shopify connector account. 
  
 **Valid Values**  
-- Rapid will populate this field during install. 
+- Rapid staff will populate this field during install. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -178,9 +178,9 @@ Each configuration setting in this document follows a standardized format to hel
 - Used to temporarily disable the connector while troubleshooting or testing. 
  
 **Valid Values** 
-- Rapid will populate this field during install. 
+- Rapid staff will populate this field during install. 
  
-**Change Impact and Support Required** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Change should be made by Rapid staff. 
  
 ---
@@ -192,10 +192,10 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
-- Identifies the Shopify account and its associated credentials. 
+- Defines the Shopify API endpoint used by the connector. 
  
 **Valid Values** 
-- Rapid will populate this field during install. 
+- Rapid staff will populate this field during install. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -209,10 +209,10 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
-- Identifies the Shopify account and its associated credentials. 
+- Stores the Shopify API Key used for connector authentication. 
  
 **Valid Values** 
-- Rapid will populate this field during install. 
+- Rapid staff will populate this field during install. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -226,10 +226,10 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
-- Identifies the Shopify account and its associated credentials. 
+- Stores the encrypted Shopify API access token used for secure connector authentication. 
  
 **Valid Values** 
-- Rapid will populate this field during install. 
+- Rapid staff will populate this field during install. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -243,7 +243,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
-- Displays the current connector version and the most recent maintenance information for reference. 
+- Displays the date and time of the most recent successful synchronization performed by the connector. 
  
 **Valid Values** 
 - This field will be automatically populated by the connector. 
@@ -260,7 +260,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
-- Displays the current connector version and the most recent maintenance information for reference. 
+- Displays the current connector version. 
  
 **Valid Values** 
 - This field will be automatically populated by the connector. 
@@ -277,7 +277,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
-- Displays the current connector version and the most recent maintenance information for reference. 
+- Displays the most recent maintenance information for reference. 
  
 **Valid Values** 
 - This field will be automatically populated by the connector. 
@@ -294,7 +294,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
-- Displays the current connector version and the most recent maintenance information for reference. 
+- Displays the most recent maintenance date for reference. 
  
 **Valid Values** 
 - This field will be automatically populated by the connector. 
@@ -311,14 +311,14 @@ Each configuration setting in this document follows a standardized format to hel
 ### Add Update Items Up 
  
 - **Column Name:** `ADD_UPDATE_ITEMS_UP` 
-- **Default Value:** Y
+- **Default Value:** Yes (enabled) 
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
 - Controls whether newly added or updated items in Counterpoint with a Shopify Item Record are synchronized to Shopify as products. 
  
 **Valid Values** 
-- **Yes** – Newly added or updated items in Counterpoint with a Shopify Item Record will be created or updated as products in Shopify. 
+- **Yes** – Newly added or updated items in Counterpoint with a Shopify Item Record will be created or updated (overwritten) as products in Shopify. 
 - **No** – Newly added or updated items in Counterpoint will not be synchronized to Shopify. 
  
 **Recommendation** 
@@ -328,7 +328,7 @@ Each configuration setting in this document follows a standardized format to hel
 **Notes** 
 - This setting is typically used by Rapid staff for troubleshooting to temporarily disable item synchronization and should not be adjusted by clients. 
   
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - When set to yes, products on Shopify will be created and updated by the connector. 
   
 **Change Impact and Support Required** 
@@ -339,7 +339,7 @@ Each configuration setting in this document follows a standardized format to hel
 ### Copy From Applies to Shopify Items 
  
 - **Column Name:** `ENABLE_COPY_FROM` 
-- **Default Value:** N
+- **Default Value:** No (disabled) 
 - **Default Type:** No Preference 
  
 **Purpose** 
@@ -357,7 +357,7 @@ Each configuration setting in this document follows a standardized format to hel
 - This setting applies only when creating new items using the “Copy From” functionality on the Item Record in Counterpoint. 
 - When enabled, the Shopify Item Record will inherit values from the source item's Shopify Item Record. 
   
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - None 
  
 **Change Impact and Support Required** 
@@ -381,13 +381,13 @@ Each configuration setting in this document follows a standardized format to hel
 - **Archived** – Products are created on Shopify but are not active and cannot be sold. 
  
 **Recommendation** 
-- Choose **draft**. It allows for review and enhance of products on Shopify before they are made available for sale. This is especially important for adding images and detailed product descriptions prior to publishing the product. 
+- Choose **draft**. It allows products to be reviewed and enhanced on Shopify before they are made available for sale. This is especially important for adding images and detailed product descriptions prior to publishing the product. 
  
 **Notes** 
 - This setting applies when products are first synchronized from Counterpoint to Shopify. 
 - Product status can be changed later directly on Shopify. 
   
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - None 
  
 **Change Impact and Support Required** 
@@ -417,7 +417,7 @@ Each configuration setting in this document follows a standardized format to hel
 - The connector will never delete products in Shopify; it can only archive or unpublish them. This is a safety mechanism to ensure the connector never fully removes a product from Shopify. 
 - If a product needs to be permanently deleted, it must be deleted directly on Shopify. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - When set to **Archive** or **Unpublish**, products on Shopify can be archived or unpublished by the connector. 
  
 **Change Impact and Support Required** 
@@ -452,24 +452,24 @@ Each configuration setting in this document follows a standardized format to hel
 - Product titles on Shopify are not required to be unique and have a maximum length of 255 characters. Most fields in Counterpoint have shorter character limits. 
 - Whether the product title is sent only during the initial synchronization or on subsequent updates is controlled by the **Update Title** configuration setting. 
  
-**Create and Overwrite (Update) Behavior** 
-- Whether the product title is sent only during product creation or is updated on subsequent syncs is controlled by the **Update Title** config setting. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- Whether the product title is sent only during product creation or is updated (overwritten) on subsequent syncs is controlled by the **Update Title** config setting. 
  
 **Change Impact and Support Required** 
 - Consult Rapid staff. 
-- If Update Title is Yes, a full resync is recommended to apply the updated product titles on Shopify. 
-- If Update Title is No, this setting can be changed by a client and applies only to newly created Shopify Item Records. 
+- If Update Title is yes, a full resync is recommended to apply the updated product titles on Shopify. 
+- If Update Title is no, this setting can be changed by a client and applies only to newly created Shopify Item Records. 
  
 ---
  
 ### Update Title 
  
 - **Column Name:** `UPDATE_TITLE` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** Recommended 
  
 **Purpose** 
-- Controls whether the product title on Shopify is updated when the corresponding item in Counterpoint is updated. 
+- Controls whether the product title on Shopify is updated (overwritten) when the corresponding item in Counterpoint is updated. 
  
 **Valid Values** 
 - **Yes** – The product title on Shopify will be updated based on the selected Product Title Field whenever the item is updated in Counterpoint. 
@@ -483,13 +483,13 @@ Each configuration setting in this document follows a standardized format to hel
 - This setting works in conjunction with the **Product Title Field** configuration. 
 - Shopify allows longer and more flexible product titles (up to 255 characters) compared to most fields in Counterpoint, which are typically limited to 30, 50 or 80 characters. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, product titles on Shopify will always be updated (overwritten) by the connector. 
-- When set to **No**, product titles will only be sent to Shopify during product creation. Subsequent syncs will not update (overwrite) data on Shopify. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, product titles on Shopify will always be updated by the connector. 
+- When set to **no**, product titles will only be sent to Shopify during product creation. Subsequent syncs will not update data on Shopify. 
  
 **Change Impact and Support Required** 
-- Changing from **Yes → No** can be done by a client. 
-- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated product titles on Shopify. 
+- Changing from **yes → no** can be done by a client. 
+- Changing from **no → yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated product titles on Shopify. 
  
 ---
  
@@ -512,7 +512,7 @@ Each configuration setting in this document follows a standardized format to hel
 **Notes** 
 - None 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Quantity on Shopify will always be updated (overwritten) by the connector. 
  
 **Change Impact and Support Required** 
@@ -524,7 +524,7 @@ Each configuration setting in this document follows a standardized format to hel
 ### Hide Out of Stock Inventory 
  
 - **Column Name:** `HIDE_OUT_OF_STOCK_INVENTORY` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** Common 
  
 **Purpose** 
@@ -542,9 +542,9 @@ Each configuration setting in this document follows a standardized format to hel
 - This functionality works by removing the product from the **Online Sales Channel** on Shopify, which hides it from the customer-facing website. 
 - This setting only applies to items where the item type in Counterpoint is **Inventory** and the **Continue Selling Out of Stock** option in the Shopify Item Record is not enabled. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, product visibility on Shopify will be updated (overwritten) by the connector. 
-- When set to **No**, product visibility on Shopify will not be updated (overwritten) by the connector. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, product visibility on Shopify will be updated (overwritten) by the connector. 
+- When set to **no**, product visibility on Shopify will not be updated by the connector. 
  
 **Change Impact and Support Required** 
 - Consult Rapid staff. 
@@ -578,7 +578,7 @@ Each configuration setting in this document follows a standardized format to hel
 - If the selected price level is blank for an item, the connector will use Price-1 as a fallback. 
 - Price-4, Price-5, and Price-6 are only available in Counterpoint for clients with an Advanced Pricing subscription from NCR Counterpoint. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Price on Shopify will always be updated (overwritten) by the connector. 
  
 **Change Impact and Support Required** 
@@ -615,7 +615,7 @@ Each configuration setting in this document follows a standardized format to hel
 - Shopify requires the Compare At Price to be greater than the product price. If a value equal to or lower than the product price is sent, Shopify will ignore it. 
 - If the selected price level is blank for an item, the connector will use Price-1 as a fallback. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Compare At Price on Shopify will always be updated (overwritten) by the connector. 
  
 **Change Impact and Support Required** 
@@ -648,7 +648,7 @@ Each configuration setting in this document follows a standardized format to hel
   - The Product Vendor field on the Shopify Item Record can be populated with any value and does not need to match a vendor in Counterpoint. 
   - Some clients use this field to store alternate values such as brand names instead of vendor names. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Product Vendor on Shopify will always be updated (overwritten) by the connector.
  
 **Change Impact and Support Required** 
@@ -681,7 +681,7 @@ Each configuration setting in this document follows a standardized format to hel
 - When a specific barcode type is selected, the connector will send the first barcode that matches that type. 
 - When set to Null, the connector will send the first available barcode regardless of type. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Barcode on Shopify will always be updated (overwritten) by the connector. 
  
 **Change Impact and Support Required** 
@@ -712,27 +712,26 @@ Each configuration setting in this document follows a standardized format to hel
  
 **Notes** 
 - The product handle on Shopify is used in the product URL and should be unique and URL-friendly. When using a query, including the Item Number as part of the URL can help ensure the handle remains unique. 
-- Whether the handle is updated after the initial synchronization is controlled by the **Update Handle** configuration setting. 
  
-**Create and Overwrite (Update) Behavior** 
-- Whether the handle is sent only during product creation or is updated on subsequent syncs is controlled by the **Update Handle** config setting. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- Whether the handle is sent only during product creation or is updated (overwritten) on subsequent syncs is controlled by the **Update Handle** config setting. 
  
 **Change Impact and Support Required** 
 - Consult Rapid staff. 
 - This query should be written and reviewed by Rapid staff. 
-- If Update Handle is Yes, a full resync is recommended to apply the updated handles on Shopify. 
-- If Update Handle is No, this setting applies only to newly created Shopify Item Records. 
+- If Update Handle is yes, a full resync is recommended to apply the updated handles on Shopify. 
+- If Update Handle is no, this setting applies only to newly created Shopify Item Records. 
  
 ---
  
 ### Update Handle 
  
 - **Column Name:** `UPDATE_HANDLE` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** No Preference 
  
 **Purpose** 
-- Controls whether the product handle (URL slug) on Shopify is updated when the corresponding item in Counterpoint is updated. 
+- Controls whether the product handle (URL slug) on Shopify is updated (overwritten) when the corresponding item in Counterpoint is updated. 
  
 **Valid Values** 
 - **Yes** – The product handle on Shopify will be updated based on the Handle Definition Query when the item is updated in Counterpoint. 
@@ -743,26 +742,26 @@ Each configuration setting in this document follows a standardized format to hel
 - Choose **no** if handles are edited or managed directly on Shopify, or if maintaining stable URLs is important for SEO and external links. 
  
 **Notes** 
-- This setting works in conjunction with the **Handle Definition Query** configuration. Changes to the query or underlying data in Counterpoint will only be reflected on Shopify if this setting is set to Yes. 
+- This setting works in conjunction with the **Handle Definition Query** configuration. Changes to the query or underlying data in Counterpoint will only be reflected on Shopify if this setting is set to yes. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, product handles on Shopify will always be updated (overwritten) by the connector. 
-- When set to **No**, product handles will only be sent to Shopify during product creation. Subsequent syncs will **not** update (overwrite) data on Shopify. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, product handles on Shopify will always be updated by the connector. 
+- When set to **no**, product handles will only be sent to Shopify during product creation. Subsequent syncs will **not** update data on Shopify. 
  
 **Change Impact and Support Required** 
-- Changing from **Yes → No** can be done by a client. 
-- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated handles on Shopify. 
+- Changing from **yes → no** can be done by a client. 
+- Changing from **no → yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated handles on Shopify. 
  
 ---
  
 ### Update Html Description 
  
 - **Column Name:** `UPDATE_HTML_DESCR` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** Recommended 
  
 **Purpose** 
-- Controls whether the HTML description on Shopify is updated when the corresponding Shopify Item Record in Counterpoint is updated. 
+- Controls whether the HTML description on Shopify is updated (overwritten) when the corresponding Shopify Item Record in Counterpoint is updated. 
  
 **Valid Values** 
 - **Yes** – The HTML Description field on the Shopify Item Record in Counterpoint will overwrite the product description on Shopify when updated. 
@@ -776,20 +775,20 @@ Each configuration setting in this document follows a standardized format to hel
 - This value is sent to Shopify when the product is first synchronized. 
 - When this setting is enabled, any updates to the HTML Description in Counterpoint will overwrite the existing product description on Shopify. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, product descriptions on Shopify will always be updated (overwritten) by the connector. 
-- When set to **No**, product descriptions will only be sent to Shopify during product creation. Subsequent syncs will **not** update (overwrite) data on Shopify. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, product descriptions on Shopify will always be updated by the connector. 
+- When set to **no**, product descriptions will only be sent to Shopify during product creation. Subsequent syncs will **not** update data on Shopify. 
  
 **Change Impact and Support Required** 
-- Changing from **Yes → No** can be done by a client. 
-- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated HTML descriptions on Shopify. 
+- Changing from **yes → no** can be done by a client. 
+- Changing from **no → yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated HTML descriptions on Shopify. 
  
 ---
  
 ### Item Categories as Product Type 
  
 - **Column Name:** `ITEM_CATEG_AS_PRODUCT_TYPE` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** No Preference 
  
 **Purpose** 
@@ -807,9 +806,9 @@ Each configuration setting in this document follows a standardized format to hel
 - While the item category in Counterpoint is limited to a 10-character code, when this setting is enabled, the connector sends the full description of that code as the product type on Shopify. 
 - The product type on Shopify is used for internal organization, filtering, and reporting. It is not commonly displayed on the customer-facing website. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, product type on Shopify will always be updated (overwritten) by the connector. 
-- When set to **No**, product type will **not** update (overwrite) data on Shopify. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, product type on Shopify will always be updated (overwritten) by the connector. 
+- When set to **no**, product type will **not** update data on Shopify. 
  
 **Change Impact and Support Required** 
 - Consult Rapid staff. 
@@ -820,7 +819,7 @@ Each configuration setting in this document follows a standardized format to hel
 ### Sub-Categories To Collections 
  
 - **Column Name:** `SUBCAT_TO_COLLECTIONS` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** Recommended 
  
 **Purpose** 
@@ -838,20 +837,20 @@ Each configuration setting in this document follows a standardized format to hel
 - The connector sends the description of the code, not the sub-category code. 
 - If the sub-category for an item is changed in Counterpoint, the product will be added to the new collection on Shopify, but it will not be removed from any existing collections. The connector only adds products to collections and does not remove collections. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, subcategories will be added on Shopify as collections. Existing collections will not be updated (overwritten) by the connector. 
-- When set to **No**, subcategories will not be added on Shopify as collections. Existing collections will not be updated (overwritten) by the connector. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, sub-categories will be added on Shopify as collections. Existing collections will not be updated (overwritten) by the connector. 
+- When set to **no**, sub-categories will not be added on Shopify as collections. Existing collections will not be updated by the connector. 
  
 **Change Impact and Support Required** 
-- Changing from **Yes → No** can be done by a client and applies only to newly created Shopify Item Records (existing collections must be manually removed on Shopify). 
-- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated collections on Shopify. 
+- Changing from **yes → no** can be done by a client and applies only to newly created Shopify Item Records (existing collections must be manually removed on Shopify). 
+- Changing from **no → yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated collections on Shopify. 
  
 ---
  
 ### Use Item Attributes For Tags 
  
 - **Column Name:** `USE_ITEM_ATTRIBUTES_AS_TAGS` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** Recommended 
  
 **Purpose** 
@@ -873,13 +872,13 @@ Each configuration setting in this document follows a standardized format to hel
 - If an attribute value is changed in Counterpoint, a new tag will be added on Shopify, but existing tags will not be removed. The connector only adds tags and does not delete them. 
 - Instead of using attribute fields, some clients choose to populate tags on the Shopify Item Record or directly on Shopify. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, item attributes will be added on Shopify as tags. Existing tags will not be updated (overwritten) by the connector. 
-- When set to **No**, item attributes will not be added on Shopify as tags. Existing tags will **not** be updated (overwritten) by the connector. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, item attributes will be added on Shopify as tags. Existing tags will not be updated (overwritten) by the connector. 
+- When set to **no**, item attributes will not be added on Shopify as tags. Existing tags will **not** be updated by the connector. 
  
 **Change Impact and Support Required** 
-- Changing from **Yes → No** can be done by a client and applies only to newly created Shopify Item Records (existing tags must be manually removed on Shopify). 
-- Changing from **No → Yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated tags on Shopify. 
+- Changing from **yes → no** can be done by a client and applies only to newly created Shopify Item Records (existing tags must be manually removed on Shopify). 
+- Changing from **no → yes** should be coordinated with Rapid staff. A full resync is recommended to apply the updated tags on Shopify. 
  
 ---
  
@@ -903,7 +902,7 @@ Each configuration setting in this document follows a standardized format to hel
 - Only one field can be selected using this setting. 
 - If a field such as a category, profile code, or attribute code is selected, the code value will be sent, not the description. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 
  
 **Change Impact and Support Required** 
@@ -934,7 +933,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - The connector uses the namespace as a prefix when creating metafields (e.g., rapid.brand, rapid.color). 
 - Namespaces help organize metafields and prevent naming conflicts with other apps or data. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - When the custom mapping table is used to create product metafields on Shopify, those fields will always be updated (overwritten) by the connector. 
  
 **Change Impact and Support Required** 
@@ -949,7 +948,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Add Orders Down 
  
 - **Column Name:** `ADD_ORDERS_DOWN` 
-- **Default Value:** Y 
+- **Default Value:** Yes (enabled) 
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
@@ -966,8 +965,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Notes** 
 - This setting is typically used by Rapid staff for troubleshooting to temporarily disable order synchronization and should not be adjusted by clients. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, orders on Shopify will be imported (created) in Counterpoint by the connector. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, orders on Shopify will be imported (created) in Counterpoint by the connector. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -977,7 +976,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Use Shopify Order Number as Ticket # 
  
 - **Column Name:** `USE_SHOPIFY_ORDER_NO_AS_TKT_NO` 
-- **Default Value:** Y 
+- **Default Value:** Yes (enabled) 
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
@@ -993,7 +992,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Notes** 
 - Shopify allows a prefix to be added to order numbers. It is recommended to keep this prefix to four or fewer characters. Otherwise, if the resulting order number is too long, Counterpoint may be unable to process it, which can prevent orders from being imported. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1023,7 +1022,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Notes** 
 - None 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1035,7 +1034,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Customer Shopify Notes to Document Notes 
  
 - **Column Name:** `ORDER_NOTE` 
-- **Default Value:** Y 
+- **Default Value:** Yes (enabled) 
 - **Default Type:** Common 
  
 **Purpose** 
@@ -1047,13 +1046,13 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Recommendation** 
 - Choose **yes**. This ensures customer-provided notes (such as special instructions) are available in Counterpoint for order review and processing.
-- Chose **no** if customer notes are not needed or are managed separately.
+- Choose **no** if customer notes are not needed or are managed separately.
  
 **Notes** 
 - Customers can enter notes during checkout on Shopify, which may include special instructions or additional information. 
 - When enabled, these notes are stored in Counterpoint for reference on the order. A Counterpoint user must open the document note to review the content (no notification or pop-up is generated). 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1076,7 +1075,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **[Store ID]** – The selected store in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendation** 
-- This will be set to store **201** to ensure consistency amongst clients. Rapid staff are trained to recognize store 201 as the designated Shopify store. 
+- This will be set to store **201** to ensure consistency across clients. Rapid staff are trained to recognize store 201 as the designated Shopify store. 
 - Choosing a different store number will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
@@ -1084,7 +1083,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Store 201 is the default store created by the installer for Shopify orders in Counterpoint. 
 - This store will be used for Shopify orders and will be saved as the store number in the order header. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1106,7 +1105,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **[Station ID]** – The selected station in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendation** 
-- This will be set to station **201-01** to ensure consistency amongst clients. Rapid staff are trained to recognize station 201-01 as the designated Shopify station. 
+- This will be set to station **201-01** to ensure consistency across clients. Rapid staff are trained to recognize station 201-01 as the designated Shopify station. 
 - Choosing a different station number will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
@@ -1114,7 +1113,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Station 201-01 is the default station created by the installer for Shopify orders in Counterpoint. 
 - This station will be used for Shopify orders and will be saved as the station number in the order header. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1136,7 +1135,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **[Drawer ID]** – The selected drawer in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendation** 
-- This will be set to drawer **201-01** to ensure consistency amongst clients. Rapid staff are trained to recognize drawer 201-01 as the designated Shopify drawer. 
+- This will be set to drawer **201-01** to ensure consistency across clients. Rapid staff are trained to recognize drawer 201-01 as the designated Shopify drawer. 
 - Choosing a different drawer number will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
@@ -1144,7 +1143,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Drawer 201-01 is the default drawer created by the installer for Shopify orders in Counterpoint. 
 - This drawer will be used for Shopify orders and will be saved as the drawer number in the order header. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1166,7 +1165,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **[User ID]** – The selected user in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendation** 
-- This will be set to user **EC_SHOPIFY** to ensure consistency amongst clients. Rapid staff are trained to recognize user EC_SHOPIFY as the designated Shopify user. 
+- This will be set to user **EC_SHOPIFY** to ensure consistency across clients. Rapid staff are trained to recognize user EC_SHOPIFY as the designated Shopify user. 
 - Choosing a different user will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
@@ -1174,7 +1173,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - User EC_SHOPIFY is the default user created by the installer for Shopify orders in Counterpoint. 
 - This user will be assigned to Shopify orders and recorded as the user who created the order in the order header. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do not update (overwrite) existing orders in Counterpoint. 
  
@@ -1205,7 +1204,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
   - Setup > POS > Point of Sale Control > Misc Charges > Misc Charge 
   - Setup > POS > Stores > Shopify Store > Misc Charges Tab > Misc Chg 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do not update (overwrite) existing orders in Counterpoint. 
  
@@ -1227,7 +1226,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **[Pay Code ID]** – The selected pay code in Counterpoint will be assigned to all imported Shopify orders. 
  
 **Recommendation** 
-- This will be set to pay code **EC_SHOPIFY** to ensure consistency amongst clients. Rapid staff are trained to recognize pay code EC_SHOPIFY as the designated Shopify pay code. 
+- This will be set to pay code **EC_SHOPIFY** to ensure consistency across clients. Rapid staff are trained to recognize pay code EC_SHOPIFY as the designated Shopify pay code. 
 - Choosing a different pay code will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
@@ -1235,7 +1234,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - EC_SHOPIFY is the default pay code, created by the installer for Shopify orders in Counterpoint. 
 - This pay code will be assigned to Shopify orders and recorded in the order header to indicate payment was collected on Shopify, representing the “paid on Shopify” tender. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1264,10 +1263,10 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Notes** 
 - By default, the product title from Shopify is used as the line item description when orders are imported into Counterpoint. 
-- If the **Update Title** setting is set to **No**, product titles on Shopify may differ from item descriptions in Counterpoint. 
+- If the **Update Title** setting is set to **no**, product titles on Shopify may differ from item descriptions in Counterpoint. 
 - When a value is selected, that field from Counterpoint will override the Shopify product title for the line item description on imported orders. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1281,7 +1280,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Match by Item # 
  
 - **Column Name:** `MATCH_BY_ITEM_NO` 
-- **Default Value:** Y 
+- **Default Value:** Yes (enabled) 
 - **Default Type:** Recommended 
  
 **Purpose** 
@@ -1299,7 +1298,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - This setting acts as a fallback mechanism for improperly configured Shopify products, as the Shopify Variant ID and/or Product ID should normally match to Counterpoint. 
 - If no match is found and this setting is enabled, the connector will then attempt to match the Shopify line item SKU to a Counterpoint item number. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1312,7 +1311,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Match by Barcode 
  
 - **Column Name:** `MATCH_BY_BARCOD` 
-- **Default Value:** Y 
+- **Default Value:** Yes (enabled) 
 - **Default Type:** Recommended 
  
 **Purpose** 
@@ -1330,7 +1329,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - This setting acts as a fallback mechanism for improperly configured Shopify products, as the Shopify Variant ID and/or Product ID should normally match to Counterpoint. 
 - If no match is found and this setting is enabled, the connector will then attempt to match the Shopify line item SKU to a barcode in Counterpoint. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1361,9 +1360,9 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - When an order is downloaded, each line item is checked for a match in Counterpoint. If no match is found, the connector will use this value as the Counterpoint Item Number for that line. 
 - The default value is SHOPIFY_INTERIM_ITEM and should not be changed. 
 - This placeholder item allows the order to be imported, but the order cannot be released until the interim item is replaced with a valid Counterpoint item. 
-- If Import Orders as Tickets is set to Yes, this value must be left null. In that case, orders containing unmatched items will error out and will not be imported into Counterpoint. 
+- If **Import Orders as Tickets** is set to **yes**, this value must be left null. In that case, orders containing unmatched items will error out and will not be imported into Counterpoint. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
@@ -1379,7 +1378,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Update Orders Up 
  
 - **Column Name:** `UPDATE_ORDERS_UP` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** No Preference 
  
 **Purpose** 
@@ -1399,9 +1398,9 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Only items that match the original Shopify order can be fulfilled. If an order line is edited in Counterpoint, the updated line will not be reflected in Shopify, and the order must be marked as fulfilled manually in Shopify. 
 - If an order contains the SHOPIFY_INTERIM_ITEM, the line must be replaced with the correct item before fulfillment can be sent to Shopify. Because this requires editing the line, the update will not be reflected in Shopify. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, orders on Shopify will be updated (overwritten) by the connector to have lines marked as fulfilled when the specific requirements are met. 
-- When set to **No**, Counterpoint will **not** update (overwrite) fulfillment data on Shopify. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, orders on Shopify will be updated (overwritten) by the connector to have lines marked as fulfilled when the specific requirements are met. 
+- When set to **no**, Counterpoint will **not** update fulfillment data on Shopify. 
  
 **Change Impact and Support Required** 
 - Change can be made by a client. 
@@ -1412,7 +1411,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Add Refunds Up 
  
 - **Column Name:** `ADD_REFUNDS_UP` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** No Preference 
  
 **Purpose** 
@@ -1433,9 +1432,9 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - When enabled, only returns using the EC_SHOPIFY pay code will be sent to Shopify. These will be applied to the original form of payment (such as the customer’s credit card). 
 - Returns processed with other pay codes (such as CASH) are assumed to be handled outside of Shopify and will not trigger a refund to the original payment method. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, orders on Shopify will be updated (overwritten) by the connector to have lines marked as refunded when the specific requirements are met. 
-- When set to **No**, Counterpoint will not update (overwrite) refund data on Shopify. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, orders on Shopify will be updated (overwritten) by the connector to have lines marked as refunded when the specific requirements are met. 
+- When set to **no**, Counterpoint will not update refund data on Shopify. 
  
 **Change Impact and Support Required** 
 - Change can be made by a client. 
@@ -1447,7 +1446,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Add Cancelled Orders Up 
  
 - **Column Name:** `ADD_CANCELLED_ORDERS_UP` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** No Preference 
  
 **Purpose** 
@@ -1465,16 +1464,16 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - This setting pushes order cancellations from Counterpoint up to Shopify, not the other way around.
 - When enabled, cancelling an order in Counterpoint will update the order status in Shopify.
 - Only orders that match the original Shopify order can be cancelled from Counterpoint. If an order is edited in Counterpoint, the order cancellation will not be reflected in Shopify, and the order must be marked as cancelled manually in Shopify.
-- When enabled, only refunds using the EC_SHOPIFY pay code from canceled orders in Counterpoint will be sent to Shopify. These will be applied to the original order and returned to the original form of payment (such as the customer’s credit card). 
+- When enabled, only refunds using the EC_SHOPIFY pay code from cancelled orders in Counterpoint will be sent to Shopify. These will be applied to the original order and returned to the original form of payment (such as the customer’s credit card). 
 - Refunds processed with other pay codes (such as CASH) are assumed to be handled outside of Shopify and will not trigger a refund to the original payment method.
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, orders on Shopify will be updated (overwritten) by the connector as cancelled when the specific requirements are met. 
-- When set to **No**, Counterpoint will not update (overwrite) cancellation data on Shopify. 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, orders on Shopify will be updated (overwritten) by the connector as cancelled when the specific requirements are met. 
+- When set to **no**, Counterpoint will not update cancellation data on Shopify. 
  
 **Change Impact and Support Required** 
 - Change can be made by a client. 
-- Applies only to newly canceled orders in Counterpoint. 
+- Applies only to newly cancelled orders in Counterpoint. 
 - Consult Rapid staff if guidance is needed on accessing the EC_SHOPIFY pay code in Touchscreen. 
  
 ### [↑ Back to Top](#quick-links)
@@ -1496,7 +1495,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **[Workgroup ID]** – The selected workgroup in Counterpoint will be used by the connector for processing Shopify orders. 
  
 **Recommendation** 
--  This will be set to workgroup **201** to ensure consistency amongst clients. Rapid staff are trained to recognize workgroup 201 as the designated Shopify workgroup. 
+-  This will be set to workgroup **201** to ensure consistency across clients. Rapid staff are trained to recognize workgroup 201 as the designated Shopify workgroup. 
 -  Choosing a different workgroup number will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
@@ -1505,7 +1504,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - The workgroup determines which template customer is used when creating new customers from Shopify orders. For Shopify orders, this will be the **EC_SHOPIFY** template customer. When a new customer is created in Counterpoint from a Shopify order, the default values from the EC_SHOPIFY template customer will be applied. 
 - Using a separate workgroup (and therefore template customer) allows ecommerce customers to have different default values than customers created in-store. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders and customers in Counterpoint. 
 - Does not update (overwrite) existing orders or customers. 
  
@@ -1536,7 +1535,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - This setting determines how customer phone numbers from Shopify are formatted when saved in Counterpoint. 
 - The selected format will be applied consistently to all imported customer phone numbers. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when creating customers in Counterpoint. 
 - Does **not** update (overwrite) existing customer phone numbers in Counterpoint. 
  
@@ -1549,7 +1548,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Capitalize Customer Fields 
  
 - **Column Name:** `CAPITALIZE_CUSTOMER_FIELDS` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** No Preference 
  
 **Purpose** 
@@ -1567,7 +1566,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - This setting applies to customer fields such as name, address, city, and state. 
 - When enabled, all applicable fields will be converted to uppercase. 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - Used when creating customers in Counterpoint. 
 - Does not update (overwrite) existing customer addresses in Counterpoint. 
  
@@ -1580,7 +1579,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Order Billing Address Overrides Customer Address 
  
 - **Column Name:** `BILLING_ADDR_OVERRIDES_CUSTOMER_ADDR` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** Common 
  
 **Purpose** 
@@ -1601,9 +1600,9 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - When this setting is enabled, the billing address from Shopify will overwrite the existing customer’s address in Counterpoint. 
 - When disabled, the billing address will remain on the order only and will not affect the customer record. 
  
-**Create and Overwrite (Update) Behavior** 
-- When set to **Yes**, existing customer addresses in Counterpoint will be updated (overwritten) by the connector. 
-- When set to **No**, existing customer addresses in Counterpoint will not be updated (overwritten). 
+**Create/Overwrite (Insert/Update) Behavior** 
+- When set to **yes**, existing customer addresses in Counterpoint will be updated (overwritten) by the connector. 
+- When set to **no**, existing customer addresses in Counterpoint will not be updated. 
  
 **Change Impact and Support Required** 
 - Change can be made by a client. 
@@ -1622,7 +1621,10 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
-- CRON schedule controlling the frequency of the daily event execution. 
+- CRON schedule controlling the frequency of the daily event execution.
+ 
+**Valid Values** 
+- Standard CRON expression. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -1638,6 +1640,9 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Purpose** 
 - CRON schedule controlling the frequency of order synchronization. 
  
+**Valid Values** 
+- Standard CRON expression. 
+ 
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
  
@@ -1652,6 +1657,9 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Purpose** 
 - CRON schedule controlling the frequency of item synchronization. 
  
+**Valid Values** 
+- Standard CRON expression. 
+ 
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
  
@@ -1665,6 +1673,9 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Purpose** 
 - CRON schedule controlling the frequency of customer synchronization. 
+ 
+**Valid Values** 
+- Standard CRON expression. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -1681,7 +1692,10 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - CRON schedule controlling how frequently the system checks for the Manual Run Connector action flag. 
 - When the action flag is detected, if the Shopify connector is not currently running, it will execute for all configured Shopify accounts, typically within one minute. If the connector is already running, the system waits for the current execution to complete, then automatically restarts the connector for all configured Shopify accounts. 
 - In both scenarios, the action flag is automatically cleared when execution begins. 
-  
+ 
+**Valid Values** 
+- Standard CRON expression. 
+ 
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
  
@@ -1690,7 +1704,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### Manual Run Connector 
  
 - **Column Name:** `RUN_CONNECTOR` 
-- **Default Value:** N 
+- **Default Value:** No (disabled) 
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
@@ -1860,7 +1874,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Valid Values** 
 - **0** - Because this value does not match any Shopify Order IDs, setting it to 0 will prevent all orders from importing. 
 - **_Null_** - Leaving this value blank (null) allows all orders to import, based on other configured parameters. 
-- **[Single Shopify Order ID]** - When set to a specific Shopify Order ID, the connector will only attempt to import that order during execution (regardless of fulfillment status). If the order already exists in Rapid POS, it will not be re-imported or updated. 
+- **[Single Shopify Order ID]** - When set to a specific Shopify Order ID, the connector will only attempt to import that order during execution (regardless of fulfillment status). If the order already exists in Counterpoint, it will not be re-imported or updated. 
   
 **Change Impact and Support Required** 
 - This setting should only be modified with a clear understanding of its impact. 
@@ -1870,7 +1884,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 ### Skip All Items Except 
  
-- **Column Name:** `SKIP_ALL_ORDERS_EXCEPT` 
+- **Column Name:** `SKIP_ALL_ITEMS_EXCEPT` 
 - **Default Value:** _null_ 
 - **Default Type:** Recommended 
  
@@ -1910,7 +1924,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Notes** 
 - 
  
-**Create and Overwrite (Update) Behavior** 
+**Create/Overwrite (Insert/Update) Behavior** 
 - 
  
 **Change Impact and Support Required** 
