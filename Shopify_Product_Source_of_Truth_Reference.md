@@ -26,14 +26,33 @@ For product synchronization, fields generally fall into one of three categories:
 
 # Quick Reference
 
-| Product Area | Default System of Truth | Related Configuration Setting(s) | Notes |
-|---|---|---|---|
-| Product Title | Counterpoint Sometimes Overwrites Shopify | Product Title Field, Update Title | If Update Title = Yes, Counterpoint overwrites the Shopify product title. If Update Title = No, Shopify titles can be maintained independently after initial creation. |
-| Product HTML Description | Counterpoint Sometimes Overwrites Shopify | Update HTML Description | If enabled, Counterpoint overwrites the Shopify HTML description during synchronization. If disabled, the Shopify description can be maintained independently. |
-| Product Handle | Counterpoint Sometimes Overwrites Shopify | Handle Definition Query, Update Handle | If Update Handle = Yes, Counterpoint overwrites the Shopify product handle. If Update Handle = No, Shopify handles can be maintained independently after initial creation. |
-| Product Price | Counterpoint Always Overwrites Shopify | Product Price | Shopify pricing is always driven by Counterpoint pricing when synchronization occurs. |
-| Compare At Price | Counterpoint Always Overwrites Shopify | Product Compare At Price | Shopify compare-at pricing is always driven by Counterpoint when synchronization occurs. |
-| Inventory Quantity | Counterpoint Always Overwrites Shopify | Product Inventory Qty, Hide Out of Stock Inventory | Shopify inventory levels are always controlled by Counterpoint inventory quantities. |
-| Product Vendor | Counterpoint Always Overwrites Shopify | Product Vendor Default, Product Vendor field on Shopify Item Record | The Product Vendor field on the Shopify Item Record always takes priority. If blank, the configured fallback behavior is used. |
+# Overall Source of Truth Summary
+
+| Product Area | Default System of Truth | Notes |
+|---|---|---|
+| Product Title | Counterpoint Sometimes Overwrites Shopify | Controlled by `Update Title` configuration. |
+| SKU | Counterpoint Always Overwrites Shopify | Always sourced from Counterpoint Item Number (`ITEM_NO`). |
+| Barcode | Counterpoint Always Overwrites Shopify | Controlled by barcode type configuration. |
+| Product Handle (URL Slug) | Counterpoint Sometimes Overwrites Shopify | Controlled by `Update Handle` configuration. |
+| Product Vendor | Counterpoint Always Overwrites Shopify | Shopify Item Record values take priority when populated. |
+| Tags | Counterpoint Sometimes Overwrites Shopify | Existing Shopify tags may still require manual management. |
+| Product Description (HTML) | Counterpoint Sometimes Overwrites Shopify | Controlled by `Update HTML Description` configuration. |
+| Quantity | Counterpoint Always Overwrites Shopify | Counterpoint inventory is always authoritative. |
+| Out-of-Stock Threshold | Counterpoint Always Overwrites Shopify | Controlled by configurable inventory threshold. |
+| Continue Selling When Out of Stock | Counterpoint Always Overwrites Shopify | Shopify checkbox controlled by Counterpoint. |
+| Track Quantity | Counterpoint Always Overwrites Shopify | Shopify checkbox controlled by Counterpoint. |
+| Price | Counterpoint Always Overwrites Shopify | Typically sourced from Price 1. |
+| Compare At Price | Counterpoint Always Overwrites Shopify | Configurable from Price 1–6. |
+| Online Store Sales Channel | Counterpoint Always Overwrites Shopify | Controlled by Shopify Item Record flags. |
+| Point of Sale Sales Channel | Counterpoint Always Overwrites Shopify | Controlled by Shopify Item Record flags. |
+| Requires Shipping | Counterpoint Always Overwrites Shopify | Shopify checkbox controlled by Counterpoint. |
+| Shipping Weight | Counterpoint Always Overwrites Shopify | Maintained in Shopify Item Record. |
+| Shipping Unit | Counterpoint Always Overwrites Shopify | Maintained in Shopify Item Record. |
+| Product Variants | Counterpoint Always Overwrites Shopify | Controlled by item tracking method and alternate units. |
+| Product Metafields | Counterpoint Always Overwrites Shopify | Controlled by custom metafield mappings. |
+| Product Images | Shopify | Not synchronized from Counterpoint. |
+| Shopify Category (Tax Category) | Shopify | Must be selected directly in Shopify. |
+| Shopify Category Metafields | Shopify | Automatically maintained by Shopify. |
+| SEO Fields | Shopify | Maintained directly in Shopify. |
 
 ---
