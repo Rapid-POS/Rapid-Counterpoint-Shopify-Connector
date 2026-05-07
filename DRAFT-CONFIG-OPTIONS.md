@@ -87,7 +87,7 @@ Each configuration setting in this document follows a standardized format to hel
   - [Filter Item Barcode by ID](#filter-item-barcode-by-id)
   - [Handle Definition Query](#handle-definition-query)
   - [Update Handle](#update-handle)
-  - [Update Html Description](#update-html-description)
+  - [Update HTML Description](#update-html-description)
   - [Item Categories as Product Type](#item-categories-as-product-type)
   - [Sub-Categories To Collections](#sub-categories-to-collections)
   - [Use Item Attributes For Tags](#use-item-attributes-for-tags)
@@ -202,7 +202,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 ---
  
-### API KEY 
+### API Key 
  
 - **Column Name:** `API_KEY` 
 - **Default Value:** _null_
@@ -504,7 +504,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 **Valid Values** 
 - **Item Qty Available** – Uses the available quantity in Counterpoint, which reflects stock available for sale. 
-- **Item Qty on Hand** – Uses the on-hand quantity in Counterpoint, which reflects total physical stock without accounting for commitments (such as unposted tickets), allocations or reservations. 
+- **Item Qty on Hand** – Uses the on-hand quantity in Counterpoint, which reflects total physical stock without accounting for committed inventory (such as unposted tickets), allocations or reservations. 
  
 **Recommendation** 
 - Choose **Item Qty Available**. This ensures that inventory levels on Shopify reflect what is actually available for sale. It accounts for unposted tickets and other committed inventory, helping prevent overselling on Shopify. 
@@ -674,12 +674,12 @@ Each configuration setting in this document follows a standardized format to hel
 - Select a specific barcode type to ensure a consistent and predictable barcode is sent to Shopify.
 - Counterpoint allows only one barcode with a type of **ITEM** per item, making it the most consistent and predictable option. Using ITEM ensures the same barcode is always sent to Shopify.
 - If multiple barcodes exist for other types (such as UPC), it may be difficult to control which barcode is listed first in Counterpoint and therefore which one is sent to Shopify.
-- If many items do not have a barcode defined with a type of ITEM, consider using another type or leaving this value as Null so that at least the first available barcode is sent to Shopify.
+- If many items do not have a barcode defined with a type of ITEM, consider using another type or leaving this value blank so that at least the first available barcode is sent to Shopify.
  
 **Notes** 
 - Items in Counterpoint can have multiple barcodes, each optionally assigned a type. 
 - When a specific barcode type is selected, the connector will send the first barcode that matches that type. 
-- When set to Null, the connector will send the first available barcode regardless of type. 
+- When left blank, the connector will send the first available barcode regardless of type. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - Barcode on Shopify will always be updated (overwritten) by the connector. 
@@ -754,7 +754,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 ---
  
-### Update Html Description 
+### Update HTML Description 
  
 - **Column Name:** `UPDATE_HTML_DESCR` 
 - **Default Value:** No (disabled) 
@@ -884,7 +884,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 ### Tags Item Field 
  
-- **Column Name:** ITEM_FIELD_TO_TAGS 
+- **Column Name:** `ITEM_FIELD_TO_TAGS` 
 - **Default Value:** _null_ 
 - **Default Type:** Recommended 
  
@@ -1124,7 +1124,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 ### Drawer 
  
-- **Column Name:** DRW_ID 
+- **Column Name:** `DRW_ID` 
 - **Default Value:** 201-01 
 - **Default Type:** Sticky (Read-Only) 
  
@@ -1169,13 +1169,13 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Choosing a different user will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
-- It is important to use a dedicated user for Shopify orders to support accurate tracking and reporting. The EC_SHOPIFY user cannot login to Touchscreen. Orders must be reviewed and fulfilled by actual users in Counterpoint. 
+- It is important to use a dedicated user for Shopify orders to support accurate tracking and reporting. The EC_SHOPIFY user cannot log in to Touchscreen. Orders must be reviewed and fulfilled by actual users in Counterpoint. 
 - User EC_SHOPIFY is the default user created by the installer for Shopify orders in Counterpoint. 
 - This user will be assigned to Shopify orders and recorded as the user who created the order in the order header. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
-- Changes do not update (overwrite) existing orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -1206,7 +1206,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
-- Changes do not update (overwrite) existing orders in Counterpoint. 
+- Changes do **not** update (overwrite) existing orders in Counterpoint. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -1259,7 +1259,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Recommendation** 
 - **DESCR** is the recommended option, as it aligns with the line item description typically used in Counterpoint. This ensures consistency across orders, even if product titles on Shopify differ from item descriptions in Counterpoint. 
-- Use **Null** if it is important for the order in Counterpoint to match exactly what the customer saw during checkout for the Shopify product title. 
+- Leave this **blank** if it is important for the order in Counterpoint to match exactly what the customer saw during checkout for the Shopify product title. 
  
 **Notes** 
 - By default, the product title from Shopify is used as the line item description when orders are imported into Counterpoint. 
@@ -1350,17 +1350,17 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Valid Values** 
 - **[Item Number]** – The selected item number will be used as a placeholder for any unmatched line items. 
-- **Null** – Orders with unmatched items will not be imported into Counterpoint. 
+- **[Null]** – Orders with unmatched items will not be imported into Counterpoint. 
  
 **Recommendation** 
 - Use the default value of **SHOPIFY_INTERIM_ITEM** to allow orders with unmatched items to be imported and reviewed. 
-- Only use **null** if unmatched items should prevent the order from being imported into Counterpoint. 
+- Only leave this **blank** if unmatched items should prevent the order from being imported into Counterpoint. 
  
 **Notes** 
 - When an order is downloaded, each line item is checked for a match in Counterpoint. If no match is found, the connector will use this value as the Counterpoint Item Number for that line. 
 - The default value is SHOPIFY_INTERIM_ITEM and should not be changed. 
 - This placeholder item allows the order to be imported, but the order cannot be released until the interim item is replaced with a valid Counterpoint item. 
-- If **Import Orders as Tickets** is set to **yes**, this value must be left null. In that case, orders containing unmatched items will error out and will not be imported into Counterpoint. 
+- If **Import Orders as Tickets** is set to **yes**, this value must be left **blank**. In that case, orders containing unmatched items will error out and will not be imported into Counterpoint. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
@@ -1382,7 +1382,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **Default Type:** No Preference 
  
 **Purpose** 
-- Controls whether line-level order fulfillment in Counterpoint is pushed up to Shopify. 
+- Controls whether line-level fulfillment status in Counterpoint is pushed up to Shopify. 
  
 **Valid Values** 
 - **Yes** – When order lines are released in Counterpoint, the fulfilled quantities will be sent up to Shopify at the line level. Shopify will use this information to mark orders as fulfilled or partially fulfilled. 
@@ -1428,7 +1428,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 **Notes** 
 - This setting pushes order refunds from Counterpoint up to Shopify, not the other way around. 
 - This applies to validated returns created from both posted and unposted tickets in Counterpoint. 
-- Only lines that match the original Shopify order can be updated from Counterpoint. If an order line is edited in Counterpoint, the returned line will not be reflected in Shopify, and the line must be marked as returned manually in Shopify. 
+- Only lines that match the original Shopify order can be updated from Counterpoint. If an order line is edited in Counterpoint, the returned item will not be reflected in Shopify, and the line must be marked as returned manually in Shopify. 
 - When enabled, only returns using the EC_SHOPIFY pay code will be sent to Shopify. These will be applied to the original form of payment (such as the customer’s credit card). 
 - Returns processed with other pay codes (such as CASH) are assumed to be handled outside of Shopify and will not trigger a refund to the original payment method. 
  
@@ -1690,7 +1690,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Purpose** 
 - CRON schedule controlling how frequently the system checks for the Manual Run Connector action flag. 
-- When the action flag is detected, if the Shopify connector is not currently running, it will execute for all configured Shopify accounts, typically within one minute. If the connector is already running, the system waits for the current execution to complete, then automatically restarts the connector for all configured Shopify accounts. 
+- When the action flag is detected, if the Shopify connector is not currently running, it will execute for all configured Shopify connector accounts, typically within one minute. If the connector is already running, the system waits for the current execution to complete, then automatically restarts the connector for all configured Shopify connector accounts. 
 - In both scenarios, the action flag is automatically cleared when execution begins. 
  
 **Valid Values** 
@@ -1748,7 +1748,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - The **Orders Down Start Date** is always respected as the absolute limit. 
  
 **Change Impact and Support Required** 
-- Consult Rapid Staff. 
+- Consult Rapid staff. 
 - Changes to this value will impact log file size and may increase the overall runtime of the connector. 
  
 ---
@@ -1873,7 +1873,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Valid Values** 
 - **0** - Because this value does not match any Shopify Order IDs, setting it to 0 will prevent all orders from importing. 
-- **_Null_** - Leaving this value blank (null) allows all orders to import, based on other configured parameters. 
+- **[Null]** - Leaving this value blank allows all orders to import, based on other configured parameters. 
 - **[Single Shopify Order ID]** - When set to a specific Shopify Order ID, the connector will only attempt to import that order during execution (regardless of fulfillment status). If the order already exists in Counterpoint, it will not be re-imported or updated. 
   
 **Change Impact and Support Required** 
@@ -1895,7 +1895,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Valid Values** 
 - **0** - Because this value does not match any Counterpoint Item Numbers, setting it to 0 will prevent all items from syncing. 
-- **_Null_** - Leaving this value blank (null) allows all Shopify Item Records to sync. 
+- **[Null]** - Leaving this value blank allows all Shopify Item Records to sync. 
 - **[Single Counterpoint Item Number]** - When set to a specific Counterpoint Item Number, the connector will only attempt to sync that Shopify Item Record during execution. 
   
 **Change Impact and Support Required** 
@@ -1905,28 +1905,3 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 ### [↑ Back to Top](#quick-links)
  
 ---
- 
-### Field 
- 
-- **Column Name:** 
-- **Default Value:** 
-- **Default Type:** 
- 
-**Purpose** 
--  
- 
-**Valid Values** 
-- 
- 
-**Recommendation** 
--  
- 
-**Notes** 
-- 
- 
-**Create/Overwrite (Insert/Update) Behavior** 
-- 
- 
-**Change Impact and Support Required** 
-- 
- 
