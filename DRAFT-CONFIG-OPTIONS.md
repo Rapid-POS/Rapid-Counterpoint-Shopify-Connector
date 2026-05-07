@@ -59,7 +59,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 ---
  
-## Full List of Configuration Changes
+## Configuration Setting Index 
 
 - [Overall](#overall)
   - [Account Name](#account-name)
@@ -373,7 +373,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **Default Type:** Recommended 
  
 **Purpose** 
-- Controls the default status assigned to products on Shopify when they are first synchronized from Counterpoint. 
+- Controls the default status assigned to products on Shopify when they are initially synchronized from Counterpoint. 
  
 **Valid Values** 
 - **Draft** – Products are created on Shopify but are not visible to customers. 
@@ -384,7 +384,7 @@ Each configuration setting in this document follows a standardized format to hel
 - Choose **draft**. It allows products to be reviewed and enhanced on Shopify before they are made available for sale. This is especially important for adding images and detailed product descriptions prior to publishing the product. 
  
 **Notes** 
-- This setting applies when products are first synchronized from Counterpoint to Shopify. 
+- This setting applies when products are initially synchronized from Counterpoint to Shopify. 
 - Product status can be changed later directly on Shopify. 
   
 **Create/Overwrite (Insert/Update) Behavior** 
@@ -411,7 +411,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **Nothing** – No action is taken on Shopify; the product remains unchanged. 
  
 **Recommendation** 
-- Choose **archive**. This removes products from sale while preserving product data and history. It also helps prevent outdated or no longer synced products from remaining visible, while keeping them clearly segregated within Shopify. 
+- Choose **archive**. This removes products from sale while preserving product data and history. It also helps prevent outdated or no longer synchronized products from remaining visible, while keeping them clearly segregated within Shopify. 
  
 **Notes** 
 - The connector will never delete products in Shopify; it can only archive or unpublish them. This is a safety mechanism to ensure the connector never fully removes a product from Shopify. 
@@ -645,7 +645,7 @@ Each configuration setting in this document follows a standardized format to hel
 - The Product Vendor field on the Shopify Item Record always takes priority over this (fallback) setting. This setting is only used when the Product Vendor field is left blank. 
 - The product vendor on Shopify is typically not displayed on the customer-facing website and is most often used for internal organization and filtering within Shopify. 
 - _Special Note:_ 
-  - The Product Vendor field on the Shopify Item Record can be populated with any value and does not need to match a vendor in Counterpoint. 
+  - The Product Vendor field on the Shopify Item Record can be populated with any value and does **not** need to match a vendor in Counterpoint. 
   - Some clients use this field to store alternate values such as brand names instead of vendor names. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
@@ -772,7 +772,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 **Notes** 
 - The HTML Description field on the Shopify Item Record in Counterpoint allows for plain text or HTML-formatted content to be entered. 
-- This value is sent to Shopify when the product is first synchronized. 
+- This value is sent to Shopify when the product is initially synchronized. 
 - When this setting is enabled, any updates to the HTML Description in Counterpoint will overwrite the existing product description on Shopify. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
@@ -799,7 +799,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **No** – The product type on Shopify will not be populated from item categories. 
  
 **Recommendation** 
-- Choose **yes** if it is helpful to sync the item category to the product type on Shopify. 
+- Choose **yes** if it is helpful to synchronize the item category to the product type on Shopify. 
 - Choose **no** if product types are managed directly on Shopify or if item categories in Counterpoint do not reflect how products should be organized on Shopify. 
  
 **Notes** 
@@ -835,7 +835,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 **Notes** 
 - The connector sends the description of the code, not the sub-category code. 
-- If the sub-category for an item is changed in Counterpoint, the product will be added to the new collection on Shopify, but it will not be removed from any existing collections. The connector only adds products to collections and does not remove collections. 
+- If the sub-category for an item is changed in Counterpoint, the product will be added to the new collection on Shopify, but it will not be removed from any existing collections. The connector only adds products to collections and does **not** remove collections. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - When set to **yes**, sub-categories will be added on Shopify as collections. Existing collections will not be updated (overwritten) by the connector. 
@@ -861,15 +861,15 @@ Each configuration setting in this document follows a standardized format to hel
 - **No** – Item attributes will not be used to populate product tags on Shopify. 
  
 **Recommendation** 
-- Choose **no**. Most clients do not have consistent attribute data, which can lead to cluttered tags. Managing tags on Shopify or using custom metafields to sync specific item attributes is typically a better approach. 
+- Choose **no**. Most clients do not have consistent attribute data, which can lead to cluttered tags. Managing tags on Shopify or using custom metafields to synchronize specific item attributes is typically a better approach. 
  
 **Notes** 
 - Product tags on Shopify are used for filtering, search, and automated collection rules and are often managed directly on Shopify. 
-- Instead of syncing attributes as tags, many clients prefer to sync specific attributes as metadata using the custom mapping table (a separate configuration option). 
+- Instead of synchronizing attributes as tags, many clients prefer to synchronize specific attributes as metadata using the custom mapping table (a separate configuration option). 
 - Up to six item attribute fields can be defined per item in Counterpoint. When enabled, these are located on the Description tab of the Item Record. Example item attributes include values such as brand or color, and are defined and customized per client. Most clients do not use all six fields. 
 - When this setting is enabled, all populated attribute values will be sent to Shopify as product tags. 
 - The connector sends the description of the attribute value, not the attribute code. 
-- If an attribute value is changed in Counterpoint, a new tag will be added on Shopify, but existing tags will not be removed. The connector only adds tags and does not delete them. 
+- If an attribute value is changed in Counterpoint, a new tag will be added on Shopify, but existing tags will not be removed. The connector only adds tags and does **not** delete them. 
 - Instead of using attribute fields, some clients choose to populate tags on the Shopify Item Record or directly on Shopify. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
@@ -928,7 +928,7 @@ Each configuration setting in this document follows a standardized format to hel
 The standard namespace used by the connector is "**Rapid**" and should not be changed. Using a consistent namespace ensures compatibility and prevents conflicts with other metafields or integrations. 
  
 **Notes** 
-- This setting is used in conjunction with custom field mappings from Counterpoint, where item fields are synced as product metafields on Shopify. 
+- This setting is used in conjunction with custom field mappings from Counterpoint, where item fields are synchronized as product metafields on Shopify. 
 - Shopify metafields use a combination of namespace (prefix) and key to uniquely identify each field. 
 - The connector uses the namespace as a prefix when creating metafields (e.g., rapid.brand, rapid.color). 
 - Namespaces help organize metafields and prevent naming conflicts with other apps or data. 
@@ -1506,7 +1506,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders and customers in Counterpoint. 
-- Does not update (overwrite) existing orders or customers. 
+- Does **not** update (overwrite) existing orders or customers. 
  
 **Change Impact and Support Required** 
 - Change should be made by Rapid staff. 
@@ -1568,7 +1568,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when creating customers in Counterpoint. 
-- Does not update (overwrite) existing customer addresses in Counterpoint. 
+- Does **not** update (overwrite) existing customer addresses in Counterpoint. 
  
 **Change Impact and Support Required** 
 - Change can be made by a client. 
@@ -1872,7 +1872,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - The value should be the Shopify Order ID. 
  
 **Valid Values** 
-- **0** - Because this value does not match any Shopify Order IDs, setting it to 0 will prevent all orders from importing. 
+- **0** - Because this value does **not** match any Shopify Order IDs, setting it to 0 will prevent all orders from importing. 
 - **[Null]** - Leaving this value blank allows all orders to import, based on other configured parameters. 
 - **[Single Shopify Order ID]** - When set to a specific Shopify Order ID, the connector will only attempt to import that order during execution (regardless of fulfillment status). If the order already exists in Counterpoint, it will not be re-imported or updated. 
   
@@ -1894,9 +1894,9 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - The value should be the Counterpoint Item Number. 
  
 **Valid Values** 
-- **0** - Because this value does not match any Counterpoint Item Numbers, setting it to 0 will prevent all items from syncing. 
+- **0** - Because this value does **not** match any Counterpoint Item Numbers, setting it to 0 will prevent all items from syncing. 
 - **[Null]** - Leaving this value blank allows all Shopify Item Records to sync. 
-- **[Single Counterpoint Item Number]** - When set to a specific Counterpoint Item Number, the connector will only attempt to sync that Shopify Item Record during execution. 
+- **[Single Counterpoint Item Number]** - When set to a specific Counterpoint Item Number, the connector will only attempt to synchronize that Shopify Item Record during execution. 
   
 **Change Impact and Support Required** 
 - This setting should only be modified with a clear understanding of its impact. 
