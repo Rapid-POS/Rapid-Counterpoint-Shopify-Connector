@@ -22,7 +22,7 @@ This release introduces major architectural enhancements to the Shopify Connecto
     - Customer Sync Execution Time
   - Enhanced synchronization processing to allow multiple synchronization tasks to run independently and simultaneously, eliminating delays caused by sequential processing dependencies.
 
-- Updated the Shopify Connector execution process to run connector operations directly from the server.
+- Updated the **Run Shopify Connector Manually** execution process to run connector operations directly from the server.
   - Added support for triggering manual connector runs from a workstation while automatically routing execution through the server.
   - Added a Manual Run flag to the Shopify configuration that is monitored by the connector service.
   - Enhanced connector execution handling to automatically process manual run requests when the connector is idle within one minute through scheduled CRON monitoring.
@@ -120,16 +120,6 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Added fallback pricing behavior for alternate units when a configured price level is unavailable.
     - First fallback uses the configured stocking unit price level multiplied by the numerator/denominator calculation.
     - Second fallback uses Price 1 multiplied by the numerator/denominator calculation when no configured price level exists.
-
----
-
-## Upgrade Considerations
-
-- Existing Task Scheduler jobs related to the Shopify Connector should be reviewed and disabled after upgrading to version 3.00.00.
-- Shopify custom app configuration is required to comply with updated Shopify authentication and platform requirements.
-- Clients should review all new synchronization schedules and CRON configuration settings after installation.
-- Multi-account environments may require additional configuration and testing following upgrade completion.
-- Due to the extensive architectural changes included in this release, testing in a non-production environment is strongly recommended before deployment to production systems.
 
 ---
 
