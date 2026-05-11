@@ -57,7 +57,7 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Provides improved visibility into Shopify Location IDs used for Counterpoint-Shopify inventory synchronization.
 
 - Added the Shopify Customer Matching Priority menu option.
-  - Added support for configurable customer matching priorities during Shopify customer synchronization.
+  - Exposed existing Shopify customer matching priority functionality within the Counterpoint user interface for improved visibility and configuration management.
   - Email matching remains the default fallback matching method when no other matching configuration exists or no configured matches are found.
 
 - Added the Shopify Custom Field Mapping menu option.
