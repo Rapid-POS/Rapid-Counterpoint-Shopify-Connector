@@ -61,13 +61,16 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Moved Shopify location maintenance from the `INV_LOC` table to a dedicated `USER_SHOPIFY_LOC` table.
   - The new table controls which Counterpoint inventory locations are synchronized to Shopify.
   - Provides improved visibility into Shopify Location IDs used for Counterpoint-Shopify inventory synchronization.
+  - Best viewed in Table View.
 
 - Added the Shopify Customer Matching Priority menu option.
   - Exposed existing Shopify customer matching priority functionality within the Counterpoint user interface for improved visibility and configuration management.
   - Email matching remains the default fallback matching method when no other matching configuration exists or no configured matches are found.
+  - Best viewed in Table View.
 
 - Added the Shopify Custom Field Mapping menu option.
   - Allows users to review Shopify custom field and metadata synchronization configuration directly within Counterpoint.
+  - Best viewed in Table View.
 
 - Added the Shopify Customer Record menu option.
   - Displays each customer’s Shopify ID and current synchronization status when a Shopify relationship exists.
@@ -92,11 +95,11 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Displays the original ecommerce platform associated with imported orders, when applicable.
   - Displays the original ecommerce order number from the source ecommerce platform.
   - Improves troubleshooting visibility for imported ecommerce orders.
-  - Especially useful for environments where Import Orders as Tickets is enabled and Use Shopify Order Number as Ticket Number cannot be used.
+  - Especially useful for environments where **Import Orders as Tickets** is enabled and **Use Shopify Order Number as Ticket Number** cannot be used.
 
 ---
 
-## Synchronization and Performance Enhancements
+## Functionality Enhancements
 
 - Added new Shopify Connector configuration options for improved performance tuning, troubleshooting, and synchronization management.
   - Added the **Mark Alerts as Read in Message Center After Days** configuration option to automatically mark connector alerts as read after a defined number of days, reducing repeated Message Center pop-up notifications.
@@ -114,11 +117,10 @@ This release introduces major architectural enhancements to the Shopify Connecto
 ## Bug Fixes and Performance Enhancements
 
 - Improved the reliability of the Mark All Messages as Read functionality.
-  - Added multi-account awareness support, allowing messages to be marked as read independently for each Shopify account.
+  - Also added multi-account awareness support, allowing messages to be marked as read independently for each Shopify account.
 
-- Fixed an issue where Shopify discounts were incorrectly applied twice in Counterpoint when Import Orders as Tickets was enabled.
+- Fixed an issue where Shopify discounts were incorrectly applied twice in Counterpoint when **Import Orders as Tickets** was enabled.
   - Corrected ticket subtotal and total calculations so imported Shopify orders now properly reflect the actual customer-paid subtotal, discounts, fees, and total amounts.
-  - Resolved an issue that caused Daily Drawer Reports to become unbalanced due to discounts being deducted twice during ticket total calculation processing.
   - Updated order import logic so discounts are now applied only once through the existing Counterpoint discount calculation mechanisms.
 
 - Fixed an issue where the Barcode ID Filter was not properly filtering by unit.
@@ -127,9 +129,9 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 - Fixed an issue where alternate-unit pricing always defaulted to Price 1, regardless of the configured product price level.
   - Updated pricing logic to properly respect the configured Product Price setting for alternate units.
-  - Added fallback pricing behavior for alternate units when a configured price level is unavailable.
-    - First fallback uses the configured stocking unit price level multiplied by the numerator/denominator calculation.
-    - Second fallback uses Price 1 multiplied by the numerator/denominator calculation when no configured price level exists.
+  - Added fallback pricing behavior for alternate units when a configured price level for that alternate unit is not populated.
+    - First fallback uses the **configured price level for the stocking unit** multiplied by the alternate unit numerator/denominator calculation.
+    - Second fallback (no configured price level exists) uses **Price 1 for the stocking unit** multiplied by the alternate unit numerator/denominator calculation.
 
 ---
 
