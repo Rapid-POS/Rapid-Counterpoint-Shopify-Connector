@@ -112,6 +112,12 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Displays the original ecommerce order number from the source ecommerce platform.
   - Improves troubleshooting visibility for imported ecommerce orders.
   - Especially useful for environments where **Import Orders as Tickets** is enabled and **Use Shopify Order Number as Ticket Number** cannot be used.
+ 
+- Renamed configuration options for improved clarity and consistency.
+  - Updated the former **Order Cutoff Date** configuration option to the new **Orders Down Start Date** configuration option.
+    - Defines the earliest Shopify order date eligible for import into Counterpoint.
+  - Updated the former **Start Date Days** configuration option to the new **Orders Down Lookback Days** configuration option.
+    - Controls how many days back the connector checks for missed Shopify orders during synchronization recovery scenarios.
 
 ---
 
@@ -120,10 +126,6 @@ This release introduces major architectural enhancements to the Shopify Connecto
 - Added new Shopify Connector configuration options for improved performance tuning, troubleshooting, and synchronization management.
   - Added the **Enabled** configuration option to allow the connector to be temporarily disabled for troubleshooting, maintenance, or testing purposes.
   - Added the **Mark Alerts as Read in Message Center After Days** configuration option to automatically mark connector alerts as read after a defined number of days, reducing repeated Message Center pop-up notifications.
-  - Added the **Max Number of Items to Sync** configuration option to control the maximum number of items processed during a single connector run for improved synchronization performance optimization.
-  - Added the **Max Number of Customers to Sync** configuration option to control the maximum number of customers processed during a single connector run for improved synchronization performance optimization.
-  - Added the **Orders Down Start Date** configuration option to define the earliest Shopify order date eligible for import into Counterpoint.
-  - Added the **Orders Down Lookback Days** configuration option to control how many days back the connector checks for missed Shopify orders during synchronization recovery scenarios.
 
 - Enhanced **Calculated/Promotional Price functionality** to support Shopify price rules with **specific** start and end times.
   - Existing "beginning of day" and "end of day" promotional pricing behavior remains supported.
