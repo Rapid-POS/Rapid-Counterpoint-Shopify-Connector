@@ -9,6 +9,18 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 ---
 
+## Table of Contents
+
+- [Architecture and Platform Enhancements](#architecture-and-platform-enhancements)
+- [Multi-Account Enhancements](#multi-account-enhancements)
+- [New Menu Options (Touchscreen Buttons)](#new-menu-options-touchscreen-buttons)
+- [New Visibility Tools](#new-visibility-tools)
+- [Functionality Enhancements](#functionality-enhancements)
+- [Bug Fixes and Performance Enhancements](#bug-fixes-and-performance-enhancements)
+- [Additional Notes](#additional-notes)
+
+---
+
 ## Architecture and Platform Enhancements
 
 - Migrated all customer and product functionality from the Shopify REST API to the Shopify GraphQL API for improved compatibility, performance, and long-term Shopify platform support.
