@@ -36,7 +36,8 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 - Redesigned the Shopify Connector architecture to support multi-account functionality within a single connector instance. 
   - Added support for synchronizing data from a single Counterpoint instance to multiple Shopify websites simultaneously. 
-  - Removed the previous two-store limitation that required separate Shopify connector instances ("Shopify" and "Shopify 2") for multi-store environments. The Shopify Connector can now support more than two Shopify websites within a single connector installation. 
+  - Removed the previous two-store limitation that required separate Shopify connector instances ("Shopify" and "Shopify 2") for multi-store environments.
+  - The Shopify Connector can now support more than two Shopify websites within a single connector installation. 
   - Removed all tables, fields, and references related to "Shopify 2," which was previously used to support secondary Shopify website instances. 
 
 - Added multi-account support to:
@@ -54,7 +55,8 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 ## New Menu Options (Touchscreen Buttons)
 
-- Displays status summary reporting for Shopify item records by connector status (0, 1, 2, 9).
+- Added the Shopify Items Status View menu option for improved visibility into Shopify item synchronization activity.
+  - Displays status summary reporting for Shopify item records by connector status (0, 1, 2, 9).
   - Statuses with no associated item records are automatically excluded from the view. If no items are currently associated with a particular status, that status will not appear in the table.
   - The table can be refreshed at any time to display the most current synchronization status information.
   - Best viewed in Table View.
@@ -123,8 +125,8 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 - Fixed an issue where Shopify discounts were incorrectly applied twice in Counterpoint when **Import Orders as Tickets** was enabled, causing ticket totals to appear lower than the actual totals from Shopify.
   - Corrected ticket subtotal and total calculations so imported Shopify orders now properly reflect the actual customer-paid subtotal, discounts, fees, and total amounts.
-  - Resolved an issue regarding order import logic where discounts were being subtracted from `EXT_PRC` during order import processing and then subtracted a second time during `SAL_TOT()` ticket total calculation processing through `PS_DOC_DISC` records (the existing Counerpoint discount calculation mechanism). 
-  - Updated order import logic so `EXT_PRC` now stores the gross line item price, allowing discounts to be applied only once through the existing `PS_DOC_DISC` / `SAL_TOT()` calculation mechanism.
+  - Resolved an issue in order import processing where discounts were being subtracted from `EXT_PRC` during order import processing and then subtracted a second time during `SAL_TOT()` ticket total calculation processing through `PS_DOC_DISC` records (the existing Counterpoint discount calculation mechanism). 
+  - Updated order import logic so `EXT_PRC` now stores the gross Shopify line item price, allowing discounts to be applied only once through the existing `PS_DOC_DISC` / `SAL_TOT()` calculation mechanism.
 
 - Fixed an issue where the Barcode ID Filter was not properly filtering by unit.
   - Corrected barcode lookup logic to ensure the appropriate barcode is selected based on both the Barcode ID Filter and the associated unit.
@@ -142,3 +144,4 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 - Shopify Connector 3.00.00 includes major architectural enhancements focused on multi-account support, improved synchronization performance, expanded Shopify visibility within Counterpoint, and compatibility with updated Shopify platform requirements.
 - This release contains significant backend and synchronization framework changes intended to improve long-term scalability, maintainability, and connector reliability.
+- Shopify custom app configuration and migration to Shopify GraphQL APIs are required to comply with updated Shopify authentication, platform, and API requirements.
