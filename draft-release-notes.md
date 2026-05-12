@@ -88,7 +88,7 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Displays the stocking unit’s Shopify Variant ID for simple items and items with alternate units.
   - Gridded items do not utilize a default variant ID, so this field remains blank for gridded products.
 
-- Added new Ecommerce Platform and Ecommerce Order Number fields to Ticket History Lookup.
+- Added new **Ecommerce Platform** and **Ecommerce Order Number** fields to Ticket History Lookup.
   - Displays the original ecommerce platform associated with imported orders, when applicable.
   - Displays the original ecommerce order number from the source ecommerce platform.
   - Improves troubleshooting visibility for imported ecommerce orders.
