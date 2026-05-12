@@ -39,13 +39,19 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Removed all tables, fields, and references related to "Shopify 2," which was previously used to support secondary Shopify website instances.
 
 - Added multi-account support to:
-  - Shopify Item Record functionality
-  - Shopify Configuration functionality
-  - Mark All Messages as Read functionality
+  - Shopify Configuration
+  - Shopify Items
+  - Shopify Item Variants
+  - Shopify Items Status View
+  - Shopify Locations (inventory locations)
+  - Shopify Customers
+  - Shopify Customer Matching Priority
+  - Mark All Messages as Read
+  - Shopify Custom Field Mapping (for syncing Shopify product metadata fields)
 
 ---
 
-## New Menu Options and Visibility Tools
+## New Menu Options (Touchscreen Buttons)
 
 - Added the Shopify Item Status View menu option for improved visibility into Shopify item synchronization activity.
   - Displays status summary reporting for Shopify item records by connector status (0, 1, 2, 9).
@@ -70,9 +76,13 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 - Added the Shopify Item Variants menu option.
   - Displays individual variant records for gridded items and items with alternate units.
+    - **Gridded:** Moved gridded item Shopify data from the `INV_CELL` table to the `USER_SHOPIFY_ITEM_VARIANTS` table.
+    - **Alt-Units:** Added visibility into Shopify variant information for alternate units, which was not previously accessible to end users.
   - Simple products with a single variant are excluded from this view.
-  - Moved gridded item Shopify data from the `INV_CELL` table to the `USER_SHOPIFY_ITEM_VARIANTS` table.
-  - Added visibility into Shopify variant information for alternate units, which was not previously accessible to end users.
+
+---
+
+## New Visibility Tools
 
 - Added a Default Variant ID field to the Shopify Item Record for improved Shopify variant visibility.
   - Displays the stocking unit’s Shopify Variant ID for simple items and items with alternate units.
