@@ -69,7 +69,7 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 - Added the Shopify Customer Matching Priority menu option.
   - Exposed existing Shopify customer matching priority functionality within the Counterpoint user interface for improved visibility and configuration management.
-  - Email matching remains the default fallback matching method when no other matching configuration exists or no configured matches are found.
+  - Email matching remains the default fallback matching method when no other matching configuration exists, or no configured matches are found.
   - Best viewed in Table View.
 
 - Added the Shopify Custom Field Mapping menu option.
@@ -124,9 +124,9 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Also added multi-account awareness support, allowing messages to be marked as read independently for each Shopify account.
 
 - Fixed an issue where Shopify discounts were incorrectly applied twice in Counterpoint when **Import Orders as Tickets** was enabled, causing ticket totals to appear lower than the actual totals from Shopify.
-  - Corrected ticket subtotal and total calculations so imported Shopify orders now properly reflect the actual customer-paid subtotal, discounts, fees, and total amounts.
+  - Corrected ticket subtotal and total calculations so imported Shopify orders now accurately reflect the actual customer-paid subtotal, discounts, fees, and total amounts.
   - Resolved an issue in order import processing where discounts were being subtracted from `EXT_PRC` during order import processing and then subtracted a second time during `SAL_TOT()` ticket total calculation processing through `PS_DOC_DISC` records (the existing Counterpoint discount calculation mechanism). 
-  - Updated order import logic so `EXT_PRC` now stores the gross Shopify line item price, allowing discounts to be applied only once through the existing `PS_DOC_DISC` / `SAL_TOT()` calculation mechanism.
+  - Updated order import logic so `EXT_PRC` now stores the gross Shopify line-item price, allowing discounts to be applied only once through the existing `PS_DOC_DISC` / `SAL_TOT()` calculation mechanism.
 
 - Fixed an issue where the Barcode ID Filter was not properly filtering by unit.
   - Corrected barcode lookup logic to ensure the appropriate barcode is selected based on both the Barcode ID Filter and the associated unit.
