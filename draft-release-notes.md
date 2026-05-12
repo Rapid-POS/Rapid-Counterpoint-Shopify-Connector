@@ -123,7 +123,7 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 ## Functionality Enhancements
 
-- Added new Shopify Connector configuration options for improved performance tuning, troubleshooting, and synchronization management.
+- Added new Shopify Connector configuration options for improved performance and troubleshooting.
   - Added the **Enabled** configuration option to allow the connector to be temporarily disabled for troubleshooting, maintenance, or testing purposes.
   - Added the **Mark Alerts as Read in Message Center After Days** configuration option to automatically mark connector alerts as read after a defined number of days, reducing repeated Message Center pop-up notifications.
 
