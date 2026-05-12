@@ -34,9 +34,10 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 ## Multi-Account Enhancements
 
-- Redesigned the Shopify Connector architecture to support multi-account functionality within a single connector instance.
-  - Added support for synchronizing data from a single Counterpoint instance to multiple Shopify websites simultaneously.
-  - Removed all tables, fields, and references related to "Shopify 2," which was previously used to support secondary Shopify website instances.
+- Redesigned the Shopify Connector architecture to support multi-account functionality within a single connector instance. 
+  - Added support for synchronizing data from a single Counterpoint instance to multiple Shopify websites simultaneously. 
+  - Removed the previous two-store limitation that required separate Shopify connector instances ("Shopify" and "Shopify 2") for multi-store environments. The Shopify Connector can now support more than two Shopify websites within a single connector installation. 
+  - Removed all tables, fields, and references related to "Shopify 2," which was previously used to support secondary Shopify website instances. 
 
 - Added multi-account support to:
   - Shopify Configuration
@@ -53,8 +54,9 @@ This release introduces major architectural enhancements to the Shopify Connecto
 
 ## New Menu Options (Touchscreen Buttons)
 
-- Added the Shopify Item Status View menu option for improved visibility into Shopify item synchronization activity.
-  - Displays status summary reporting for Shopify item records by connector status (0, 1, 2, 9).
+- Displays status summary reporting for Shopify item records by connector status (0, 1, 2, 9).
+  - Statuses with no associated item records are automatically excluded from the view. If no items are currently associated with a particular status, that status will not appear in the table.
+  - The table can be refreshed at any time to display the most current synchronization status information.
   - Best viewed in Table View.
 
 - Added the Shopify Locations menu option for improved multi-location inventory management.
@@ -69,7 +71,7 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Best viewed in Table View.
 
 - Added the Shopify Custom Field Mapping menu option.
-  - Allows users to review Shopify custom field and metadata synchronization configuration directly within Counterpoint.
+  - Allows users to review Shopify product custom field and metadata synchronization configuration directly within Counterpoint.
   - Best viewed in Table View.
 
 - Added the Shopify Customer Record menu option.
@@ -81,15 +83,15 @@ This release introduces major architectural enhancements to the Shopify Connecto
   - Displays individual variant records for gridded items and items with alternate units.
     - **Gridded:** Moved gridded item Shopify data from the `INV_CELL` table to the `USER_SHOPIFY_ITEM_VARIANTS` table.
     - **Alt-Units:** Added visibility into Shopify variant information for alternate units, which was not previously accessible to end users.
-  - Simple products with a single variant are excluded from this view.
+    - **Simple:** Simple products with a single variant are **excluded** from this view.
 
 ---
 
 ## New Visibility Tools
 
-- Added a Default Variant ID field to the Shopify Item Record for improved Shopify variant visibility.
-  - Displays the stocking unit’s Shopify Variant ID for simple items and items with alternate units.
-  - Gridded items do not utilize a default variant ID, so this field remains blank for gridded products.
+- Added a **Default Variant ID** field to the Shopify Item Record for improved Shopify variant visibility.
+  - Displays the stocking unit’s Shopify Variant ID for **simple** items and items with **alternate units**.
+  - **Gridded** items do not utilize a default variant ID, so this field remains blank for gridded products.
 
 - Added new **Ecommerce Platform** and **Ecommerce Order Number** fields to Ticket History Lookup.
   - Displays the original ecommerce platform associated with imported orders, when applicable.
@@ -102,14 +104,14 @@ This release introduces major architectural enhancements to the Shopify Connecto
 ## Functionality Enhancements
 
 - Added new Shopify Connector configuration options for improved performance tuning, troubleshooting, and synchronization management.
+  - Added the **Enabled** configuration option to allow the connector to be temporarily disabled for troubleshooting, maintenance, or testing purposes.
   - Added the **Mark Alerts as Read in Message Center After Days** configuration option to automatically mark connector alerts as read after a defined number of days, reducing repeated Message Center pop-up notifications.
   - Added the **Max Number of Items to Sync** configuration option to control the maximum number of items processed during a single connector run for improved synchronization performance optimization.
   - Added the **Max Number of Customers to Sync** configuration option to control the maximum number of customers processed during a single connector run for improved synchronization performance optimization.
   - Added the **Orders Down Start Date** configuration option to define the earliest Shopify order date eligible for import into Counterpoint.
   - Added the **Orders Down Lookback Days** configuration option to control how many days back the connector checks for missed Shopify orders during synchronization recovery scenarios.
-  - Added the **Enabled** configuration option to allow the connector to be temporarily disabled for troubleshooting, maintenance, or testing purposes.
 
-- Enhanced Calculated/Promotional Price functionality to support Shopify price rules with specific start and end times.
+- Enhanced **Calculated/Promotional Price functionality** to support Shopify price rules with **specific** start and end times.
   - Existing "beginning of day" and "end of day" promotional pricing behavior remains supported.
 
 ---
@@ -119,9 +121,10 @@ This release introduces major architectural enhancements to the Shopify Connecto
 - Improved the reliability of the Mark All Messages as Read functionality.
   - Also added multi-account awareness support, allowing messages to be marked as read independently for each Shopify account.
 
-- Fixed an issue where Shopify discounts were incorrectly applied twice in Counterpoint when **Import Orders as Tickets** was enabled.
+- Fixed an issue where Shopify discounts were incorrectly applied twice in Counterpoint when **Import Orders as Tickets** was enabled, causing ticket totals to appear lower than the actual totals from Shopify.
   - Corrected ticket subtotal and total calculations so imported Shopify orders now properly reflect the actual customer-paid subtotal, discounts, fees, and total amounts.
-  - Updated order import logic so discounts are now applied only once through the existing Counterpoint discount calculation mechanisms.
+  - Resolved an issue regarding order import logic where discounts were being subtracted from `EXT_PRC` during order import processing and then subtracted a second time during `SAL_TOT()` ticket total calculation processing through `PS_DOC_DISC` records (the existing Counerpoint discount calculation mechanism). 
+  - Updated order import logic so `EXT_PRC` now stores the gross line item price, allowing discounts to be applied only once through the existing `PS_DOC_DISC` / `SAL_TOT()` calculation mechanism.
 
 - Fixed an issue where the Barcode ID Filter was not properly filtering by unit.
   - Corrected barcode lookup logic to ensure the appropriate barcode is selected based on both the Barcode ID Filter and the associated unit.
