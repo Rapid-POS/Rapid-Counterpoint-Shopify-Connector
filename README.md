@@ -28,7 +28,7 @@ The Rapid POS Shopify Connector allows you to:
 
 ### Items (Products)
 - Flow **from Counterpoint → Shopify**  
-- Includes both standard items (simple products) and gridded items (product with alternate units).  
+- Includes both standard items (simple products) and gridded items (products with variants).  
 - Can be configured to send specific alternate units as variants (for example, selling by unit or by case).  
 
 ### Orders & Customers
