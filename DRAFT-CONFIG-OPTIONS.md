@@ -3,10 +3,10 @@
 ## Quick Links
 
 - [Overall](#overall)
-- [Items Up](#items-up-counterpoint--shopify)
-- [Orders Down](#orders-down-shopify--counterpoint)
-- [Orders Up](#orders-up-counterpoint--shopify)
-- [Customers Down](#customers-down-shopify--counterpoint)
+- [Items Up](#items-up)
+- [Orders Down](#orders-down)
+- [Orders Up](#orders-up)
+- [Customers Down](#customers-down)
 - [CRON Job Schedules](#cron-job-schedules)
 - [Sync Limits](#sync-limits)
 - [Log Files and Alerts](#log-files-and-alerts)
