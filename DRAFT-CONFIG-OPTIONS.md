@@ -634,19 +634,19 @@ Each configuration setting in this document follows a standardized format to hel
 ### Product Vendor Default 
  
 - **Column Name:** `PRODUCT_VENDOR_DEFAULT` 
-- **Default Value:** Primary Vendor Name 
+- **Default Value:** None
 - **Default Type:** No Preference 
  
 **Purpose** 
 - Controls the fallback vendor assigned to products on Shopify when the Product Vendor field on the Shopify Item Record in Counterpoint is blank. 
  
 **Valid Values** 
-- **Primary Vendor Name** – Uses the primary vendor from the Item Record in Counterpoint as the product vendor on Shopify (only when the Product Vendor field on the Shopify Item Record is blank).
 - **None** – No value is sent to Shopify. Shopify will default the vendor to the store name.
+- **Primary Vendor Name** – Uses the primary vendor from the Item Record in Counterpoint as the product vendor on Shopify (only when the Product Vendor field on the Shopify Item Record is blank).
  
 **Recommendation** 
-- Choose **Primary Vendor Name** if sending product vendor values from Counterpoint is helpful for organization or reporting in Shopify. 
 - Choose **None** if you plan to regularly populate the Product Vendor field on the Shopify Item Record, or if you prefer Shopify to default the vendor to the store name. 
+- Choose **Primary Vendor Name** if sending product vendor values from Counterpoint is helpful for organization or reporting in Shopify. 
  
 **Notes** 
 - The Product Vendor field on the Shopify Item Record always takes priority over this (fallback) setting. This setting is only used when the Product Vendor field is left blank. 
