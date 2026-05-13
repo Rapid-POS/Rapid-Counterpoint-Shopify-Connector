@@ -168,16 +168,18 @@ Each configuration setting in this document follows a standardized format to hel
  
 - **Column Name:** `IS_ENABLED` 
 - **Default Value:** Yes (enabled) 
-- **Default Type:** Sticky (Read-Only) 
+- **Default Type:** Recommended 
  
 **Purpose** 
-- Used to temporarily disable the connector while troubleshooting or testing. 
+- Controls whether the Shopify connector is enabled and allowed to execute synchronization processes. 
  
 **Valid Values** 
-- Rapid staff will populate this field during install. 
+- **Yes** – The connector will execute as configured and synchronization processes will run normally. 
+- **No** – The connector will not execute and no synchronization processes will occur. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
-- Change should be made by Rapid staff. 
+- Change can be made by a client. 
+- Consult Rapid staff before disabling the connector for an extended period of time. 
  
 ---
  
