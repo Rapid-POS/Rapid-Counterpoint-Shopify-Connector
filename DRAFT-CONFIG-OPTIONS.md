@@ -167,7 +167,7 @@ Each configuration setting in this document follows a standardized format to hel
 ### Enabled 
  
 - **Column Name:** `IS_ENABLED` 
-- **Default Value:** _null_ 
+- **Default Value:** Yes (enabled) 
 - **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
