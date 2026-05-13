@@ -314,7 +314,7 @@ Each configuration setting in this document follows a standardized format to hel
  
 - **Column Name:** `ADD_UPDATE_ITEMS_UP` 
 - **Default Value:** Yes (enabled) 
-- **Default Type:** Sticky (Read-Only) 
+- **Default Type:** Recommended 
  
 **Purpose** 
 - Controls whether newly added or updated items in Counterpoint with a Shopify Item Record are synchronized to Shopify as products. 
@@ -325,16 +325,16 @@ Each configuration setting in this document follows a standardized format to hel
  
 **Recommendation** 
 - Choose **yes**. This should always be set to **yes** to ensure that product data is synchronized to Shopify. 
-- Choosing no will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
-- This setting is typically used by Rapid staff for troubleshooting to temporarily disable item synchronization and should not be adjusted by clients. 
+- This setting is typically used for troubleshooting to temporarily disable item synchronization. 
   
 **Create/Overwrite (Insert/Update) Behavior** 
-- When set to yes, products on Shopify will be created and updated by the connector. 
+- When set to **yes**, products on Shopify will be created and updated by the connector. 
   
 **Change Impact and Support Required** 
-- Change should be made by Rapid staff. 
+- Change can be made by a client.
+- Applies to all Shopify Item Records. 
   
 ---
  
