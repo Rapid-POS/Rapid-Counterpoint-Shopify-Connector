@@ -956,7 +956,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 - **Column Name:** `ADD_ORDERS_DOWN` 
 - **Default Value:** Yes (enabled) 
-- **Default Type:** Sticky (Read-Only) 
+- **Default Type:** Recommended 
  
 **Purpose** 
 - Controls whether orders on Shopify are imported into Counterpoint. 
@@ -967,16 +967,16 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Recommendation** 
 - Choose **yes**. This should always be set to yes to ensure that orders are always imported into Counterpoint. 
-- Choosing no will require approval as well as additional configuration and testing, which will result in billable services from Rapid. 
  
 **Notes** 
-- This setting is typically used by Rapid staff for troubleshooting to temporarily disable order synchronization and should not be adjusted by clients. 
+- This setting is typically used for troubleshooting to temporarily disable order synchronization. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - When set to **yes**, orders on Shopify will be imported (created) in Counterpoint by the connector. 
  
 **Change Impact and Support Required** 
-- Change should be made by Rapid staff. 
+- Change can be made by a client. 
+- Applies to all Shopify orders. 
  
 ---
  
@@ -1193,7 +1193,7 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 - **Column Name:** `MISC_CHRG_NO_FOR_SHIPPING` 
 - **Default Value:** 4 
-- **Default Type:** Common 
+- **Default Type:** Sticky (Read-Only) 
  
 **Purpose** 
 - Controls which miscellaneous charge in Counterpoint is used to record shipping charges from Shopify orders. 
@@ -1202,14 +1202,15 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - **[Misc Charge #]** – The selected miscellaneous charge number will be used to record shipping charges on imported Shopify orders. 
  
 **Recommendation** 
-- **Misc Charge 4** is typically configured as the shipping charge and is the most common setup. Alternative miscellaneous charge numbers (1, 2, 3, or 5) may be used if preferred. 
+- **Misc Charge 4** is typically configured as the shipping charge and is the most common setup. Alternative miscellaneous charge numbers (1, 2, 3, or 5) may be used if preferred during initial implementation. 
  
 **Notes** 
 - Shipping charges calculated by Shopify will be imported into Counterpoint as a miscellaneous charge on the order. 
 - To ensure shipping charges import correctly, the selected miscellaneous charge must be configured in all of the following locations in Counterpoint: 
   - System > Quick Setup > Point of Sale Tab > Misc Charges 
   - Setup > POS > Point of Sale Control > Misc Charges > Misc Charge 
-  - Setup > POS > Stores > Shopify Store > Misc Charges Tab > Misc Chg 
+  - Setup > POS > Stores > Shopify Store > Misc Charges Tab > Misc Chg
+- While any miscellaneous charge number may be selected, this value should generally remain fixed after implementation. Changing the miscellaneous charge number in the future may require additional configuration updates and should only be done in coordination with Rapid staff. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
