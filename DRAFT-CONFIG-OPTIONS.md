@@ -175,9 +175,13 @@ Each configuration setting in this document follows a standardized format to hel
  
 **Valid Values** 
 - **Yes** – The connector will execute as configured and synchronization processes will run normally. 
-- **No** – The connector will not execute and no synchronization processes will occur. 
+- **No** – The connector will not execute and no synchronization processes will occur.
+
+**Recommendation** 
+- Leave this set to **yes** during normal operations.
+- This setting should only be set to no temporarily while troubleshooting, testing, or performing maintenance activities.
  
-**Create/Overwrite (Insert/Update) Behavior** 
+**Change Impact and Support Required**
 - Change can be made by a client. 
 - Consult Rapid staff before disabling the connector for an extended period of time. 
  
