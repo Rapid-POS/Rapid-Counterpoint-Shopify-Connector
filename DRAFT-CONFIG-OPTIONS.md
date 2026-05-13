@@ -324,7 +324,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **No** – Newly added or updated items in Counterpoint will not be synchronized to Shopify. 
  
 **Recommendation** 
-- Choose **yes**. This should always be set to **yes** to ensure that product data is synchronized to Shopify. 
+- Choose **yes**. This should always be set to yes to ensure that product data is synchronized to Shopify. 
  
 **Notes** 
 - This setting is typically used for troubleshooting to temporarily disable item synchronization. 
