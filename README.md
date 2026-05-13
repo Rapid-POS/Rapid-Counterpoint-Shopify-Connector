@@ -45,7 +45,7 @@ Review the full [Shopify Configuration Guide](Configuration-Guide.md).
 
 ## Section 3: Shopify Item Status View
 
-Each item flagged as an Ecommerce Item includes a **sync status** that indicates its current state in the connector process. In some cases, it is helpful to review how many items fall into a particular status category.
+Every Shopify Item Record includes a **sync status** that indicates its current state in the connector process. In some cases, it is helpful to review how many items fall into a particular status category.
 
 For example, you may want to identify that an item has encountered an error (status 9) so that record can be reviewed and remediated.
 
@@ -55,7 +55,7 @@ The **Shopify Item Status View** displays a summary table showing:
 
 ### Shopify Sync Status Codes
 
-Each item flagged as an ecommerce item includes a sync status value indicating its current state in the sync process:
+Every Shopify Item Record includes a **sync status** indicating its current state in the sync process:
 
 - **0** – Fully synced; nothing pending  
 - **1** – Recently created or updated; will sync on the next connector run  
@@ -69,6 +69,6 @@ Each item flagged as an ecommerce item includes a sync status value indicating i
 
 ---
 
-## Section 3: Notes
+## Section 4: Notes
 
 Rapid POS does not provide website design or hosting services. We recommend working with a qualified ecommerce professional to build and maintain your Shopify storefront.
