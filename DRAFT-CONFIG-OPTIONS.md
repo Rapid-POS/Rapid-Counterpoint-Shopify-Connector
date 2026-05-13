@@ -579,7 +579,7 @@ Each configuration setting in this document follows a standardized format to hel
 **Notes** 
 - If the selected price level is blank for an item, the connector will use Price-1 as a fallback.
   - If the selected price level is blank for an **alternate unit**, the connector will use the configured price level for the **stocking unit** multiplied by the alternate unit numerator/denominator calculation.
-    - If the selected price level is blank for an **alternate unit**, and the selected price level is blank for the **stocking unit**, the connector will use the stocking unit's Price-1 multiplied by the alternate unit numerator/denominator calculation.
+  - If the selected price level is blank for an **alternate unit** and the **stocking unit**, the connector will use the stocking unit's Price-1 multiplied by the alternate unit numerator/denominator calculation.
 - **Price-4**, **Price-5**, and **Price-6** are only available in Counterpoint for clients with an Advanced Pricing subscription from NCR Counterpoint. 
 - **Calculated Price** support in the Shopify connector is limited to a specific subset of Counterpoint pricing rules and scenarios. 
   - Clients should consult Rapid staff before changing this setting to Calculated Price to confirm whether their pricing configuration is supported. 
