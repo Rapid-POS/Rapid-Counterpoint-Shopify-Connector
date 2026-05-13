@@ -571,14 +571,19 @@ Each configuration setting in this document follows a standardized format to hel
 - **Price-5** – Uses Price-5 as the product price on Shopify. 
 - **Price-6** – Uses Price-6 as the product price on Shopify. 
 - **Regular Price** – Uses Regular Price as the product price on Shopify. 
-- **Calculated Price** – Uses the calculated price in Counterpoint based on a limited set of price rules (see documentation for more details). 
+- **Calculated Price** – Uses the calculated price in Counterpoint based on a limited subset of supported pricing rules and configurations (consult Rapid staff for compatibility details). 
  
 **Recommendation** 
 - Typically **Price-1** is the standard selling price in Counterpoint. Use alternative price levels only if they are specifically configured for selling online. 
  
 **Notes** 
-- If the selected price level is blank for an item, the connector will use Price-1 as a fallback. 
-- Price-4, Price-5, and Price-6 are only available in Counterpoint for clients with an Advanced Pricing subscription from NCR Counterpoint. 
+- If the selected price level is blank for an item, the connector will use Price-1 as a fallback.
+  - If the selected price level is blank for an **alternate unit**, the connector will use the configured price level for the **stocking unit** multiplied by the alternate unit numerator/denominator calculation.
+    - If the selected price level is blank for an **alternate unit**, and the selected price level is blank for the **stocking unit**, the connector will use the stocking unit's Price-1 multiplied by the alternate unit numerator/denominator calculation.
+- **Price-4**, **Price-5**, and **Price-6** are only available in Counterpoint for clients with an Advanced Pricing subscription from NCR Counterpoint. 
+- **Calculated Price** support in the Shopify connector is limited to a specific subset of Counterpoint pricing rules and scenarios. 
+  - Clients should consult Rapid staff before changing this setting to Calculated Price to confirm whether their pricing configuration is supported. 
+  - Additional configuration, testing, and billable services may be required when implementing Calculated Price functionality. 
  
 **Create/Overwrite (Insert/Update) Behavior** 
 - Price on Shopify will always be updated (overwritten) by the connector. 
@@ -606,7 +611,7 @@ Each configuration setting in this document follows a standardized format to hel
 - **Price-5** – Uses Price-5 as the product compare at price on Shopify. 
 - **Price-6** – Uses Price-6 as the product compare at price on Shopify. 
 - **Regular Price** – Uses Regular Price as the product compare at price on Shopify. 
-- **Calculated Price** – Uses the calculated price in Counterpoint based on a limited set of price rules (see documentation for more details). 
+- **Calculated Price** – Uses the calculated price in Counterpoint based on a limited subset of supported pricing rules and configurations (consult Rapid staff for compatibility details). 
  
 **Recommendation** 
 - To omit the Compare At Price, **select the same price field** used for the product price. Shopify will ignore the value when both prices are equal. 
