@@ -1792,6 +1792,8 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Change should be made by Rapid staff. 
 - This setting is specifically configured to optimize the connector’s efficiency and stability. Changing this value may impact connector performance. 
  
+### [↑ Back to Top](#quick-links) 
+ 
 ---
  
 ## Log Files and Alerts 
