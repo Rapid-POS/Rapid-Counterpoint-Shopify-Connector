@@ -1,4 +1,4 @@
-# Rapid POS Shopify Connector v3.00.13 Release Notes  
+# Rapid POS Shopify Connector v3.00.14 Release Notes  
 
 _Release Date: May 19, 2026_
 
@@ -27,6 +27,9 @@ _Release Date: May 19, 2026_
   - Updated variant creation logic to directly append newly created variants to the `productVariants` list.
   - Enhanced error handling in `ListAsync` and other methods by throwing descriptive exceptions.
   - Replaced `return null` patterns with exception handling to improve error propagation and troubleshooting visibility.
+
+- Added a Shopify Connector enable/disable (`Y/N`) library variable for improved operational control.
+  - Allows the connector to be temporarily disabled during installation or maintenance without removing configuration settings.
 
 ## Additional Notes
 - This release primarily focuses on GraphQL stability improvements, barcode handling fixes, configuration consistency, memory management improvements, and overall code maintainability enhancements.
