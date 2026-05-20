@@ -30,6 +30,10 @@ _Release Date: May 19, 2026_
 
 - Added a Shopify Connector enable/disable (`Y/N`) library variable for improved operational control.
   - Allows the connector to be temporarily disabled during installation or maintenance without removing configuration settings.
+ 
+- Fixed an issue where deleted Shopify item records could continue to be repeatedly processed when the associated Shopify item no longer existed in Shopify.
+  - This issue only affected environments where the **Delete Item Type** configuration setting was set to **Archive** or **Unpublish**.
+  - Updated `DeleteItemsInShopify` processing to automatically remove obsolete `USER_SHOPIFY_ITEM_DEL` records when the related Shopify ID cannot be found.
 
 ## Additional Notes
 - This release primarily focuses on GraphQL stability improvements, barcode handling fixes, configuration consistency, memory management improvements, and overall code maintainability enhancements.
