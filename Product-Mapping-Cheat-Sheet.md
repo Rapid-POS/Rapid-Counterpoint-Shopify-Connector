@@ -168,6 +168,8 @@ Below is a summary of the current field mapping from Counterpoint items to Shopi
   - The product must also be active in Shopify.
 - Counterpoint is system of truth (overwrites on every sync).
 
+**Note:** Additional sales channels are managed directly on Shopify.
+
 ### [↑ Back to Top](#table-of-contents)
 
 ---
@@ -238,5 +240,15 @@ The list below is not intended to be inclusive but rather to call out some speci
 
 - **Category Metafields**
   - Populated by Shopify directly based on the chosen tax category.
+
+- **Collections**
+  - While a single collection can be sourced from the Counterpoint subcategory (if configured), all other collections must be managed directly on Shopify.
+
+- **Images/Media**
+  - Images must be managed directly on Shopify.
+
+- **Status**
+  - While the initial status is set by the connector (typically configured to draft), subsequent changes must be managed directly on Shopify.
+  - The only exception is when a Shopify Item Record is deleted in Counterpoint, that can trigger the Shopify product to be archived (if configured to do so). 
 
 ### [↑ Back to Top](#table-of-contents)
