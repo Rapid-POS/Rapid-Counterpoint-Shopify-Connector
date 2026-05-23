@@ -1,6 +1,8 @@
-# Items Up Product Mapping Cheat Sheet
+# Shopify Items Up Product Mapping Cheat Sheet
 
 _Updated: May 22, 2026_
+
+### A reference guide for Shopify connectors version 3 and higher
 
 Below is a summary of the current field mapping from Counterpoint to Shopify for items/products. This includes some relevant (but not all) configuration options as well as some notes on preferences and limitations. 
 
