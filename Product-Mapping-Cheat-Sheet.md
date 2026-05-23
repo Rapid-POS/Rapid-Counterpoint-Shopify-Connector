@@ -2,9 +2,9 @@
 
 _Updated: May 22, 2026_
 
-### A reference guide for Shopify connectors version 3 and higher
+### A reference guide for Shopify connector versions 3 and higher
 
-Below is a summary of the current field mapping from Counterpoint items to Shopify products, aslo referred to as **Items Up** mapping. This includes some relevant (but not all) configuration options, as well as some notes on preferences and limitations. 
+Below is a summary of the current field mapping from Counterpoint items to Shopify products, also referred to as the **Items Up** mapping. This includes some relevant (but not all) configuration options, as well as some notes on preferences and limitations. 
 
 ## Table of Contents
 
@@ -206,7 +206,7 @@ Below is a summary of the current field mapping from Counterpoint items to Shopi
 
 - If the Counterpoint tracking method is `Normal`, the product is synced to Shopify without variants.
 - If the tracking method is `Gridded`, the product is synced to Shopify with variants for each grid cell.
-- Note: All grid cells will be sent as variants. Currently, there is no way to limit which grid cells are sent.
+- Note: All grid cells will be sent as variants. Currently, there is no way to selectively limit which grid cells are sent.
 
 ### Counterpoint Item Alternate Units
 
@@ -245,10 +245,10 @@ The list below is not intended to be inclusive but rather to call out some speci
   - While a single collection can be sourced from the Counterpoint subcategory (if configured), all other collections must be managed directly on Shopify.
 
 - **Images/Media**
-  - Images must be managed directly on Shopify.
+  - Images and other media must be managed directly on Shopify.
 
 - **Status**
   - While the initial status is set by the connector (typically configured to draft), subsequent changes must be managed directly on Shopify.
-  - The only exception is when a Shopify Item Record is deleted in Counterpoint, that can trigger the Shopify product to be archived (if configured to do so). 
+  - The only exception is when a Shopify Item Record is deleted in Counterpoint, that can trigger the Shopify product to be archived (if configured to do so).
 
 ### [↑ Back to Top](#table-of-contents)
