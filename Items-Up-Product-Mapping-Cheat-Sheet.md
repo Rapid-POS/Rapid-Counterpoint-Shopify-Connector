@@ -91,7 +91,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
   - OR send on every sync (Counterpoint as system of truth).
 - Most clients prefer populating product descriptions directly in Shopify using the WYSIWYG editor.
 
-### [↑ Back to Top](#quick-links)
+### [↑ Back to Top](#table-of-contents)
 
 ---
 
@@ -144,7 +144,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
   - Calculated Price (requires adherence to very specific price rule parameters)
 - Counterpoint is system of truth (overwrites on every sync).
 
-### [↑ Back to Top](#quick-links)
+### [↑ Back to Top](#table-of-contents)
 
 ---
 
@@ -166,7 +166,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
   - The product must also be active in Shopify.
 - Counterpoint is system of truth (overwrites on every sync).
 
-### [↑ Back to Top](#quick-links)
+### [↑ Back to Top](#table-of-contents)
 
 ---
 
@@ -192,7 +192,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
   - `g`
 - Counterpoint is system of truth (overwrites on every sync).
 
-### [↑ Back to Top](#quick-links)
+### [↑ Back to Top](#table-of-contents)
 
 ---
 
@@ -210,7 +210,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
   - When a unit’s flag is enabled, that unit will be sent to Shopify as a product variant.
   - Note: If the item is gridded, the grid cells will be sent to Shopify as the variants. In that case, the alternate units cannot be sent.
 
-### [↑ Back to Top](#quick-links)
+### [↑ Back to Top](#table-of-contents)
 
 ---
 
@@ -222,7 +222,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
 - Nearly any field from the Counterpoint Item record can be pushed to Shopify as-is.
 - Enabling this is billable. Inquire with Rapid for pricing. 
 
-### [↑ Back to Top](#quick-links)
+### [↑ Back to Top](#table-of-contents)
 
 ---
 
@@ -237,4 +237,4 @@ The list below is not intended to be inclusive but rather to call out some speci
 - **Category Metafields**
   - Populated by Shopify directly based on the chosen tax category.
 
-### [↑ Back to Top](#quick-links)
+### [↑ Back to Top](#table-of-contents)
