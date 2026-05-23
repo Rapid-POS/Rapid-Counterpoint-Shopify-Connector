@@ -1,8 +1,8 @@
-# Shopify Connector – Product Mapping
+# Items Up Product Mapping Cheat Sheet
 
 _Updated: May 22, 2026_
 
-Summary of the current field mapping from Counterpoint to Shopify  
+Below is a summary of the current field mapping from Counterpoint to Shopify for items/products. This includes some relevant (but not all) configuration options as well as some notes on preferences and limitations. 
 
 ## Table of Contents
 
@@ -210,6 +210,7 @@ Summary of the current field mapping from Counterpoint to Shopify
 
 - Supported via a custom mapping table.
 - Nearly any field from the Counterpoint Item record can be pushed to Shopify as-is.
+- Enabling this is billable. Inquire with Rapid for pricing. 
 
 ---
 
