@@ -1,10 +1,10 @@
-# Shopify Items Up Product Mapping Cheat Sheet
+# Shopify Connector Product Mapping Cheat Sheet
 
 _Updated: May 22, 2026_
 
 ### A reference guide for Shopify connectors version 3 and higher
 
-Below is a summary of the current field mapping from Counterpoint to Shopify for items/products. This includes some relevant (but not all) configuration options as well as some notes on preferences and limitations. 
+Below is a summary of the current field mapping from Counterpoint items to Shopify products, aslo referred to as **Items Up** mapping. This includes some relevant (but not all) configuration options, as well as some notes on preferences and limitations. 
 
 ## Table of Contents
 
@@ -62,7 +62,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
 
 ### Handle (URL Slug)
 
-- Sourced from Counterpoint item fields and **configurable to send a queried value** such as item number, description + item number, etc.
+- Sourced from Counterpoint item fields and **configurable to send a calculated value** such as item number, description + item number, long description + item number, etc.
 - Configurable:
   - Send only on first sync (allows Shopify to manage handles).
   - OR send on every sync (Counterpoint as system of truth).
@@ -81,7 +81,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
 
 - If desired, this is sourced from the **Shopify Items Record** via a **comma-delimited text box**.
 - Caveats:
-  - Typing/consistency errors are common
+  - Typing/consistency errors are common.
   - Tags deleted in Counterpoint are not removed on Shopify.
 - Most clients prefer managing tags directly on Shopify.
 
@@ -91,7 +91,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
 - Configurable:
   - Send only on first sync (allows Shopify to manage product descriptions).
   - OR send on every sync (Counterpoint as system of truth).
-- Most clients prefer populating product descriptions directly in Shopify using the WYSIWYG editor.
+- Most clients prefer managing product descriptions directly on Shopify using the WYSIWYG editor.
 
 ### [↑ Back to Top](#table-of-contents)
 
@@ -106,7 +106,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
 
 ### Out-of-Stock Quantity
 
-- This is a configurable quantity threshold **used to reduce the quantity value** sent to Shopify.
+- This is a configurable quantity threshold **used to reduce the quantity** reported to Shopify.
 
 ### Continue Selling When Out of Stock
 
@@ -162,7 +162,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
 
 ### Sales Channel – Point of Sale
 
-- Corresponds to Shopify’s Point of Sale sales channel. Used by some clients for in-person or off-site sales. 
+- Corresponds to Shopify’s Point of Sale sales channel. Used by some clients for off-site sales. 
 - Requirements for Product Visibility:
   - POS channel must be enabled. If this channel is not used, this checkbox can be ignored.
   - The product must also be active in Shopify.
@@ -204,7 +204,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
 
 - If the Counterpoint tracking method is `Normal`, the product is synced to Shopify without variants.
 - If the tracking method is `Gridded`, the product is synced to Shopify with variants for each grid cell.
-- Note: All grid cells will be sent as variants. There is currently no way to limit this.
+- Note: All grid cells will be sent as variants. Currently, there is no way to limit which grid cells are sent.
 
 ### Counterpoint Item Alternate Units
 
@@ -222,7 +222,7 @@ Below is a summary of the current field mapping from Counterpoint to Shopify for
 
 - Supported via a custom mapping table.
 - Nearly any field from the Counterpoint Item record can be pushed to Shopify as-is.
-- Enabling this is billable. Inquire with Rapid for pricing. 
+- Enabling this feature is billable. Contact Rapid for pricing information.
 
 ### [↑ Back to Top](#table-of-contents)
 
