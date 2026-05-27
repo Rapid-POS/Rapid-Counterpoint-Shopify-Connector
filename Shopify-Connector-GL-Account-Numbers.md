@@ -44,6 +44,7 @@ These accounts are required for Counterpoint Store configuration, even if you ar
 >
 >- Profit centers are commonly used by multi-store clients who utilize classes within their accounting software.
 >- During installation, if the connector detects that profit centers are enabled for the company, the Profit Center Method will automatically be changed from: **None** to **Store**
+>- If you are using profit centers, please notify Rapid prior to connector installation if you would like the Store 201 profit center set to something other than 201. 
 
 ---
 
