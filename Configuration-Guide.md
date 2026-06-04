@@ -999,10 +999,11 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
  
 **Notes** 
 - Counterpoint ticket numbers are limited to **15 characters**.
-- When this setting is enabled, release tickets are created using the format **[OrderNumber]-01**.
-- Because the suffix `-01` consumes 3 characters, the **Shopify order number** must be **12 characters or fewer**.
+- Release tickets are created using the format **[OrderNumber]-01**.
+- Because the suffix `-01` consumes 3 characters, the order numbers in Counterpoint must be **12 characters or fewer**.
+- This setting should only be enabled if Shopify order numbers are always 12 charcters or fewer. 
 - Shopify allows prefixes to be added to order numbers. Any prefix characters count toward the 12-character limit.
-- If the resulting ticket number exceeds 15 characters, Counterpoint may be unable to process the order, which can prevent the order from being imported.
+- If this setting is enabled, and the resulting ticket number exceeds 15 characters, Counterpoint may be unable to import or process the order.
 
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
