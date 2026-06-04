@@ -998,8 +998,12 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - Choose **yes**. Using the Shopify order number ensures consistency between Shopify and Counterpoint and simplifies order tracking and customer support. 
  
 **Notes** 
-- Shopify allows a prefix to be added to order numbers. It is recommended to keep this prefix to four or fewer characters. Otherwise, if the resulting order number is too long, Counterpoint may be unable to process it, which can prevent orders from being imported. 
- 
+- Counterpoint ticket numbers are limited to **15 characters**.
+- When this setting is enabled, release tickets are created using the format **[OrderNumber]-01**.
+- Because the suffix `-01` consumes 3 characters, the **Shopify order number** must be **12 characters or fewer**.
+- Shopify allows prefixes to be added to order numbers. Any prefix characters count toward the 12-character limit.
+- If the resulting ticket number exceeds 15 characters, Counterpoint may be unable to process the order, which can prevent the order from being imported.
+
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
 - Changes do **not** update (overwrite) existing orders in Counterpoint. 
