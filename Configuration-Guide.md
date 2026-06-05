@@ -1004,6 +1004,10 @@ The standard namespace used by the connector is "**Rapid**" and should not be ch
 - This setting should only be enabled if Shopify order numbers are always 12 charcters or fewer. 
 - Shopify allows prefixes to be added to order numbers. Any prefix characters count toward the 12-character limit.
 - If this setting is enabled, and the resulting ticket number exceeds 15 characters, Counterpoint may be unable to import or process the order.
+- Regardless of this setting, the original ecommerce platform, order ID and order number are always retained in Counterpoint for reference:
+  - Ecommerce Platform: `USER_ECOMM_PLATFORM`
+  - Ecommerce Order ID: `USER_ECOMM_ORDER_ID` 
+  - Ecommerce Order Number: `USER_ECOMM_ORDER_NUMBER`
 
 **Create/Overwrite (Insert/Update) Behavior** 
 - Used when importing (creating) orders in Counterpoint. 
