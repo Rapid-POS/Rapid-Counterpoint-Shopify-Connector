@@ -2,7 +2,9 @@
 
 _Updated: June 9, 2026_
 
-Counterpoint's promotional prices utility lets you set sale prices that sync automatically to Shopify. This guide walks through the one-time configuration, the rules your promotions must follow, and how to troubleshoot if prices are not showing up correctly.
+Rapid's Shopify Connector can be configured to sync promotional prices, allowing sale prices set in Counterpoint to display automatically on your Shopify storefront.
+
+For most use cases, **we strongly recommend using Shopify's native Discounts functionality to manage sale prices directly in Shopify**. However, if you prefer to manage promotional prices in Counterpoint and push them to Shopify, that can be done using the Calculated Price method described in this guide — including [one-time configuration](#1-shopify-connector-configuration), [promotion rules](#2-setting-up-a-promotional-price), and [troubleshooting](#3-troubleshooting).
 
 ---
 
