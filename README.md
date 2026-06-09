@@ -1,5 +1,5 @@
 # Rapid POS Shopify Connector - Version 3.00.00
-Updated 5/13/2026
+Updated 6/9/2026
 
 ---
 
@@ -16,6 +16,9 @@ The **Rapid POS Shopify Connector** seamlessly integrates your Counterpoint POS 
 - Minimum PowerShell version: **5.1**  
 
 If you would like the Shopify connector but your system does not meet these minimum requirements, please consult your Care Team Lead (vCIO) for an upgrade quote.
+
+> [!WARNING]
+> Your environment must meet our [CI/CD Connector Requirements](https://github.com/Rapid-POS/Miscellaneous-Documents/blob/main/CICD-Connector-Requirements.md) (server access, firewall rules, etc.) before any install or upgrade. Troubleshooting, manual installs, or follow-up work resulting from unmet requirements will be billed at standard T&M rates.
 
 ---
 
