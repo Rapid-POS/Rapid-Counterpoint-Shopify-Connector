@@ -1,6 +1,6 @@
 # Rapid POS Shopify Connector v3.00.14 Release Notes  
 
-_Release Date: May 19, 2026_
+_Release Date: May 19, 2026_ 
 
 ---
 
