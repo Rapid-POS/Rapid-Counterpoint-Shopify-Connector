@@ -1,4 +1,4 @@
-# Shopify Bulk Item Setup
+# Shopify Bulk Item Setup Tool
 
 _Updated June 18, 2026_
 
