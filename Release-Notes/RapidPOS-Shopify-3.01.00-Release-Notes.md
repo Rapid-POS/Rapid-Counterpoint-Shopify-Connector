@@ -18,7 +18,7 @@ Added a new **Shopify Bulk Item Setup** tool that allows users to create Shopify
 - Shopify item records appear in Counterpoint immediately after creation. Syncing to Shopify happens as the connector runs and processes each record — large batches may take some time to fully appear on Shopify. Sync status can be monitored on individual Shopify item records.
 - This tool only creates new Shopify item records. Items that already have a Shopify item record will not appear in the table, even if they match the filter. Existing Shopify item records must still be edited individually.
 
-For full usage details, refer to the [Shopify Bulk Item Setup documentation]({{DOCUMENTATION_LINK}}).
+For full usage details, refer to the [Shopify Bulk Item Setup documentation](https://github.com/Rapid-POS/Rapid-Counterpoint-Shopify-Connector/blob/main/Shopify-Bulk-Item-Setup-Tool.md).
 
 ---
 
