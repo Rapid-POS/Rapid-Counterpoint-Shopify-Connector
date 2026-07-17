@@ -1,8 +1,9 @@
 # Shopify Connector Configuration Guide
-Updated: 5/13/2026
+Updated: 7/17/2026
 
 ## Quick Links
 
+- [Using this Document](#using-this-document)
 - [Overall](#overall)
 - [Items Up](#items-up)
 - [Orders Down](#orders-down)
@@ -14,50 +15,11 @@ Updated: 5/13/2026
 - [Troubleshooting Controls](#troubleshooting-controls)
  
 ---
- 
-## Using this Document 
- 
-Each configuration setting in this document follows a standardized format to help explain how the setting works, which values are supported, Rapid’s recommendations, and the impact of changing the setting after implementation. 
- 
-**Field** 
-- The display name of the configuration setting as it appears in the Shopify Connector configuration. 
- 
-**Column Name** 
-- The database column (internal field) associated with the configuration setting. 
-- This is primarily included for reference and troubleshooting purposes. 
- 
-**Default Value** 
-- The standard value the connector uses during implementation unless otherwise instructed by the client. 
- 
-**Default Type** 
-- These default types describe whether the **default value** is recommended, preference-based, or intended to remain unchanged. 
-  - **Recommended** – The default value is strongly recommended. 
-  - **Common** – The default value is commonly used, though not necessarily recommended for all clients. 
-  - **No Preference** – The default value should be changed based on the client’s business processes and operational preferences. 
-  - **Sticky (Read-Only)** – The default value is set by Rapid and not intended to be changed by clients. Alternative configurations are only supported in rare situations and require approval from Rapid (and may require billable services). 
- 
-**Purpose** 
-- Provides an overview of what the setting controls. 
- 
-**Valid Values** 
-- Lists the supported configuration options for the setting. 
- 
-**Recommendation** 
-- Provides Rapid’s recommended configuration based on common Shopify and Counterpoint workflows and implementation experience. 
- 
-**Notes** 
-- Provides additional context related to the setting. 
 
-**Create/Overwrite (Insert/Update) Behavior** 
-- Explains whether the setting applies during record creation, future updates, or both, and identifies the synchronization direction affected by the setting. 
- 
-**Change Impact and Support Required** 
-- Explains the operational impact of changing the setting after implementation. 
- 
----
- 
 ## Configuration Setting Index 
 
+- [Using this Document](#using-this-document)
+    
 - [Overall](#overall)
   - [Account Name](#account-name)
   - [Enabled](#enabled)
@@ -141,6 +103,49 @@ Each configuration setting in this document follows a standardized format to hel
 - [Troubleshooting Controls](#troubleshooting-controls)
   - [Skip All Orders Except](#skip-all-orders-except)
   - [Skip All Items Except](#skip-all-items-except)
+
+### [↑ Back to Top](#quick-links)
+
+---
+ 
+## Using this Document 
+ 
+Each configuration setting in this document follows a standardized format to help explain how the setting works, which values are supported, Rapid’s recommendations, and the impact of changing the setting after implementation. 
+ 
+**Field** 
+- The display name of the configuration setting as it appears in the Shopify Connector configuration. 
+ 
+**Column Name** 
+- The database column (internal field) associated with the configuration setting. 
+- This is primarily included for reference and troubleshooting purposes. 
+ 
+**Default Value** 
+- The standard value the connector uses during implementation unless otherwise instructed by the client. 
+ 
+**Default Type** 
+- These default types describe whether the **default value** is recommended, preference-based, or intended to remain unchanged. 
+  - **Recommended** – The default value is strongly recommended. 
+  - **Common** – The default value is commonly used, though not necessarily recommended for all clients. 
+  - **No Preference** – The default value should be changed based on the client’s business processes and operational preferences. 
+  - **Sticky (Read-Only)** – The default value is set by Rapid and not intended to be changed by clients. Alternative configurations are only supported in rare situations and require approval from Rapid (and may require billable services). 
+ 
+**Purpose** 
+- Provides an overview of what the setting controls. 
+ 
+**Valid Values** 
+- Lists the supported configuration options for the setting. 
+ 
+**Recommendation** 
+- Provides Rapid’s recommended configuration based on common Shopify and Counterpoint workflows and implementation experience. 
+ 
+**Notes** 
+- Provides additional context related to the setting. 
+
+**Create/Overwrite (Insert/Update) Behavior** 
+- Explains whether the setting applies during record creation, future updates, or both, and identifies the synchronization direction affected by the setting. 
+ 
+**Change Impact and Support Required** 
+- Explains the operational impact of changing the setting after implementation. 
 
 ### [↑ Back to Top](#quick-links)
 
