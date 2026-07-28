@@ -61,3 +61,11 @@ The connector now validates alternate unit ("alt unit") selections on Shopify It
 
 - Prevents a $0 variant from being created in Shopify due to an alt unit checkbox being selected in error.
 - Alt units that do exist on the item record continue to sync correctly as Shopify variants when selected.
+
+### Custom Field Mapping Sync Issue
+ 
+Custom fields synced from Counterpoint to Shopify using the Custom Field Mapping table could sometimes push a value of `0` instead of the actual field value. This has been fixed.
+ 
+- The issue occurred when the mapped column name in `USER_SHOPIFY_CUSTOM_FIELD_MAPPING.COLUMN_NAME` contained trailing whitespace, which prevented the connector from correctly matching and retrieving the intended value.
+- The connector now trims whitespace from this field so custom field values sync correctly.
+  
