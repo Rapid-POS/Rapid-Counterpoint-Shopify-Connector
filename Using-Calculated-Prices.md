@@ -41,7 +41,7 @@ Navigate to **Promotional Prices** in Counterpoint and create or edit a promotio
 
 If using specific dates, the promotion will activate and deactivate automatically at the configured times. 
 
-If no dates are set, the promotion runs indefinitely until manually disabled.
+If no dates are set, the promotion runs indefinitely until manually disabled. 
 
 ![Promotional Prices Main Tab](images/counterpoint-promotional-prices-main-tab.png)
 
@@ -58,19 +58,21 @@ If no dates are set, the promotion runs indefinitely until manually disabled.
 
 ### Rules Tab — Items
 
-The item filter must use **"is exactly"** and target either **item number(s)**, **item category(s)**, or a combination of a single **item category** with a single related **subcategory**. No other filter types will sync.
+The item filter must use **"is exactly"** and target one of the following: one or more **item numbers**, one or more **item categories**, or a **single item category paired with one of its subcategories**. 
 
-Multiple item numbers or categories can be included in a single rule line. However, only a single subcategory per rule line is supported, and it must be in combination with the related category. 
+Note: A subcategory cannot be used without its parent category, and only one category-subcategory pair is supported per rule line. 
 
-Here is an example of item numbers:
+No other filter types will sync. 
+
+Here is an example of item numbers: 
 
 ![Promotional Prices Rules Tab with Items Tab](images/counterpoint-promotional-prices-rules-tab-items-tab-item-numbers.png)
 
-Here is an example of item categories:
+Here is an example of item categories: 
 
 ![Promotional Prices Rules Tab with Items Tab](images/counterpoint-promotional-prices-rules-tab-items-tab-item-categories.png)
 
-Here is an example of a single item category with a single related subcategory:
+Here is an example of a single item category paired with one of its subcategories: 
 
 ![Promotional Prices Rules Tab with Items Tab](images/counterpoint-promotional-prices-rules-tab-items-tab-subcategory.png)
 
