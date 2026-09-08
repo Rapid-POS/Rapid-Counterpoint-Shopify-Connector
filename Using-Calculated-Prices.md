@@ -58,11 +58,21 @@ If no dates are set, the promotion runs indefinitely until manually disabled.
 
 ### Rules Tab — Items
 
-The item filter must use **"is exactly"** and target either **item number(s)** or **item category(s)** — no other filter types will sync.
+The item filter must use **"is exactly"** and target either **item number(s)**, **item category(s)**, or a combination of a single **item category** with a single related **subcategory**. No other filter types will sync.
 
-You can include multiple item numbers or categories in a single rule.
+You can include multiple item numbers or categories in a single rule line.
 
-![Promotional Prices Rules Tab with Items Tab](images/counterpoint-promotional-prices-rules-tab-items-tab.png)
+Here is an example of item numbers:
+
+![Promotional Prices Rules Tab with Items Tab](images/counterpoint-promotional-prices-rules-tab-items-tab-item-numbers.png)
+
+Here is an example of item categories:
+
+![Promotional Prices Rules Tab with Items Tab](images/counterpoint-promotional-prices-rules-tab-items-tab-item-categories.png)
+
+Here is an example of a single item category with a single related subcategory:
+
+![Promotional Prices Rules Tab with Items Tab](images/counterpoint-promotional-prices-rules-tab-items-tab-subcategory.png)
 
 ### Rules Tab — Customers
 
