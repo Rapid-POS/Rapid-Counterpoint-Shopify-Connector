@@ -60,7 +60,7 @@ If no dates are set, the promotion runs indefinitely until manually disabled.
 
 The item filter must use **"is exactly"** and target either **item number(s)**, **item category(s)**, or a combination of a single **item category** with a single related **subcategory**. No other filter types will sync.
 
-You can include multiple item numbers or categories in a single rule line.
+Multiple item numbers or categories can be included in a single rule line. However, only a single subcategory per rule line is supported, and it must be in combination with the related category. 
 
 Here is an example of item numbers:
 
