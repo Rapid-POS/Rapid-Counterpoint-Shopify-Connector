@@ -1,6 +1,6 @@
 # Using Promotional (Calculated) Prices with the Shopify Connector
 
-_Updated: June 9, 2026_
+_Updated: September 8, 2026_
 
 Rapid's Shopify Connector can be configured to sync promotional prices, allowing sale prices set in Counterpoint to display automatically on your Shopify storefront.
 
