@@ -33,6 +33,10 @@ The ecommerce fields recently added to the Counterpoint order and ticket header 
 
 ![Ecommerce Fields on View Orders](images/counterpoint-view-orders-custom-tab-ecommerce-fields.png)
 
+### Dedicated SQL Login for the Connector
+
+_Please check back tomorrow for additional details._
+
 ---
 
 ## Bug Fixes and Performance Enhancements
